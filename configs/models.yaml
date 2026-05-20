@@ -1,0 +1,124 @@
+models:
+  qwen35_35b_a3b_q4:
+    family: qwen3.5
+    size_b: 35
+    architecture: moe
+    local: true
+    backend: llamacpp
+    base_url: http://localhost:8080/v1
+    model_name: qwen35-35b-a3b-q4
+    quantization: Q4
+    context_length: 32768
+    source_repo: Qwen/Qwen3.5-35B-A3B
+
+  qwen35_27b_q4:
+    family: qwen3.5
+    size_b: 27
+    architecture: dense
+    local: true
+    backend: llamacpp
+    base_url: http://localhost:8080/v1
+    model_name: qwen35-27b-q4
+    quantization: Q4
+    context_length: 32768
+    source_repo: Qwen/Qwen3.5-27B
+
+  qwen35_9b_q4:
+    family: qwen3.5
+    size_b: 9
+    architecture: dense
+    local: true
+    backend: llamacpp
+    base_url: http://localhost:8080/v1
+    model_name: qwen35-9b-q4
+    quantization: Q4
+    context_length: 32768
+    source_repo: Qwen/Qwen3.5-9B
+
+  qwen35_4b_q4:
+    family: qwen3.5
+    size_b: 4
+    architecture: dense
+    local: true
+    backend: llamacpp
+    base_url: http://localhost:8080/v1
+    model_name: qwen35-4b-q4
+    quantization: Q4
+    context_length: 32768
+    source_repo: Qwen/Qwen3.5-4B
+
+  qwen35_2b_q4:
+    family: qwen3.5
+    size_b: 2
+    architecture: dense
+    local: true
+    backend: llamacpp
+    base_url: http://localhost:8080/v1
+    model_name: qwen35-2b-q4
+    quantization: Q4
+    context_length: 32768
+    source_repo: Qwen/Qwen3.5-2B
+
+  qwen35_08b_q4:
+    family: qwen3.5
+    size_b: 0.8
+    architecture: dense
+    local: true
+    backend: llamacpp
+    base_url: http://localhost:8080/v1
+    model_name: qwen35-0.8b-q4
+    quantization: Q4
+    context_length: 32768
+    source_repo: Qwen/Qwen3.5-0.8B
+
+  qwen36_35b_a3b_q4:
+    family: qwen3.6
+    size_b: 35
+    architecture: moe
+    local: true
+    backend: llamacpp
+    base_url: http://localhost:8080/v1
+    model_name: qwen36-35b-a3b-q4
+    quantization: Q4
+    context_length: 32768
+    source_repo: Qwen/Qwen3.6-35B-A3B
+
+  qwen36_27b_q4:
+    family: qwen3.6
+    size_b: 27
+    architecture: dense
+    local: true
+    backend: llamacpp
+    base_url: http://localhost:8080/v1
+    model_name: qwen36-27b-q4
+    quantization: Q4
+    context_length: 32768
+    source_repo: Qwen/Qwen3.6-27B
+
+  qwen36_27b_ud_q4kxl:
+    family: qwen3.6
+    size_b: 27
+    architecture: dense
+    local: true
+    backend: llamacpp
+    base_url: http://100.94.174.31:8080/v1
+    model_name: qwen36-27b-ud-q4kxl
+    quantization: UD-Q4_K_XL
+    context_length: 131072
+    source_repo: Qwen/Qwen3.6-27B
+    generation:
+      temperature: 0.0
+      max_tokens: 8192
+      chat_template_kwargs:
+        enable_thinking: false
+
+  mock:
+    family: mock
+    size_b: 0
+    architecture: deterministic
+    local: true
+    backend: mock
+    base_url: null
+    model_name: mock
+    quantization: none
+    context_length: 32768

@@ -1,0 +1,19 @@
+runtime:
+  temperature: 0.0
+  max_iterations: 1000
+  max_tool_calls: 1000
+  max_consecutive_protocol_errors: 8
+  timeout_seconds_per_task: 3600
+  bash_timeout_seconds: 60
+  repetitions: 3
+  network_enabled: false
+  clean_workspace_per_attempt: true
+
+paths:
+  data_dir: data
+  runs_dir: runs
+  reports_dir: runs/derived_artifacts
+
+execution:
+  backend: local
+  expose_sensitive_env: false

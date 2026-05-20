@@ -1,0 +1,11 @@
+{
+  "has_stops": true,
+  "has_routes": true,
+  "has_trips": true,
+  "has_stop_times": true,
+  "n_stops": 81,
+  "n_routes": 47,
+  "n_trips": 80,
+  "n_stop_times": 180,
+  "missing_required_columns": []
+}

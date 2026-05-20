@@ -1,0 +1,6 @@
+{
+  "threshold_overall_pass_rate": 0.85,
+  "threshold_time_multiplier": 2.0,
+  "sweet_spot_model": null,
+  "note": "No model satisfies the threshold or no attempts are available."
+}

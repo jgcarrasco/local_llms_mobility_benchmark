@@ -1,0 +1,161 @@
+indicator_id,indicator_name,theme,description,unit,expected_direction
+TT1003V,Share of journeys to work by car -%,mobility,Share of journeys to work by car -% from Eurostat dataset urb_ctran,percent,lower_is_better
+TT1010V,"Share of journeys to work by public transport (rail, metro, bus, tram) -%",mobility,"Share of journeys to work by public transport (rail, metro, bus, tram) -% from Eurostat dataset urb_ctran",percent,higher_is_better
+TT1006V,Share of journeys to work by motor cycle -%,mobility,Share of journeys to work by motor cycle -% from Eurostat dataset urb_ctran,percent,higher_is_better
+TT1007V,Share of journeys to work by bicycle -%,mobility,Share of journeys to work by bicycle -% from Eurostat dataset urb_ctran,percent,higher_is_better
+TT1008V,Share of journeys to work by foot -%,mobility,Share of journeys to work by foot -% from Eurostat dataset urb_ctran,percent,higher_is_better
+TT1012V,Share of journeys to work by car or motor cycle -%,mobility,Share of journeys to work by car or motor cycle -% from Eurostat dataset urb_ctran,percent,lower_is_better
+TT1019V,Average time of journey to work - minutes,mobility,Average time of journey to work - minutes from Eurostat dataset urb_ctran,minutes,contextual
+TT1020V,Average length of journey to work by private car - km,mobility,Average length of journey to work by private car - km from Eurostat dataset urb_ctran,value,lower_is_better
+TT1064V,People commuting into the city,mobility,People commuting into the city from Eurostat dataset urb_ctran,value,higher_is_better
+TT1065V,People commuting out of the city,mobility,People commuting out of the city from Eurostat dataset urb_ctran,value,higher_is_better
+TT1079V,Length of bicycle network (dedicated cycle paths and lanes) - km,mobility,Length of bicycle network (dedicated cycle paths and lanes) - km from Eurostat dataset urb_ctran,value,higher_is_better
+TT1080V,Cost of a combined monthly ticket (all modes of public transport) for 5-10 km in the central zone - EUR,mobility,Cost of a combined monthly ticket (all modes of public transport) for 5-10 km in the central zone - EUR from Eurostat dataset urb_ctran,value,higher_is_better
+TT1081V,Cost of a taxi ride of 5 km to the centre at day time - EUR,mobility,Cost of a taxi ride of 5 km to the centre at day time - EUR from Eurostat dataset urb_ctran,value,higher_is_better
+TT1057V,Number of private cars registered,mobility,Number of private cars registered from Eurostat dataset urb_ctran,value,lower_is_better
+TT1060V,Number of deaths in road accidents,mobility,Number of deaths in road accidents from Eurostat dataset urb_ctran,value,lower_is_better
+TT1057I,Number of registered cars per 1000 population,mobility,Number of registered cars per 1000 population from Eurostat dataset urb_ctran,value,lower_is_better
+TT1060I,People killed in road accidents per 10000 pop.,mobility,People killed in road accidents per 10000 pop. from Eurostat dataset urb_ctran,value,higher_is_better
+DE1001V,"Population on the 1st of January, total",population_density,"Population on the 1st of January, total from Eurostat dataset urb_cpop1",value,contextual
+DE1002V,"Population on the 1st of January, male",population_density,"Population on the 1st of January, male from Eurostat dataset urb_cpop1",value,contextual
+DE1003V,"Population on the 1st of January, female",population_density,"Population on the 1st of January, female from Eurostat dataset urb_cpop1",value,contextual
+DE1040V,"Population on the 1st of January, 0-4 years, total",population_density,"Population on the 1st of January, 0-4 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1041V,"Population on the 1st of January, 0-4 years, male",population_density,"Population on the 1st of January, 0-4 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1042V,"Population on the 1st of January, 0-4 years, female",population_density,"Population on the 1st of January, 0-4 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1074V,"Population on the 1st of January, 5-9 years, total",population_density,"Population on the 1st of January, 5-9 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1075V,"Population on the 1st of January, 5-9 years, male",population_density,"Population on the 1st of January, 5-9 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1076V,"Population on the 1st of January, 5-9 years, female",population_density,"Population on the 1st of January, 5-9 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1077V,"Population on the 1st of January, 10-14 years, total",population_density,"Population on the 1st of January, 10-14 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1078V,"Population on the 1st of January, 10-14 years, male",population_density,"Population on the 1st of January, 10-14 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1079V,"Population on the 1st of January, 10-14 years, female",population_density,"Population on the 1st of January, 10-14 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1046V,"Population on the 1st of January, 15-19 years, total",population_density,"Population on the 1st of January, 15-19 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1047V,"Population on the 1st of January, 15-19 years, male",population_density,"Population on the 1st of January, 15-19 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1048V,"Population on the 1st of January, 15-19 years, female",population_density,"Population on the 1st of January, 15-19 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1049V,"Population on the 1st of January, 20-24 years, total",population_density,"Population on the 1st of January, 20-24 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1050V,"Population on the 1st of January, 20-24 years, male",population_density,"Population on the 1st of January, 20-24 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1051V,"Population on the 1st of January, 20-24 years, female",population_density,"Population on the 1st of January, 20-24 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1101V,"Population on the 1st of January, 25-29 years, total",population_density,"Population on the 1st of January, 25-29 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1102V,"Population on the 1st of January, 25-29 years, male",population_density,"Population on the 1st of January, 25-29 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1103V,"Population on the 1st of January, 25-29 years, female",population_density,"Population on the 1st of January, 25-29 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1058V,"Population on the 1st of January, 25-34 years, total",population_density,"Population on the 1st of January, 25-34 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1059V,"Population on the 1st of January, 25-34 years, male",population_density,"Population on the 1st of January, 25-34 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1060V,"Population on the 1st of January, 25-34 years, female",population_density,"Population on the 1st of January, 25-34 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1104V,"Population on the 1st of January, 30-34 years, total",population_density,"Population on the 1st of January, 30-34 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1105V,"Population on the 1st of January, 30-34 years, male",population_density,"Population on the 1st of January, 30-34 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1106V,"Population on the 1st of January, 30-34 years, female",population_density,"Population on the 1st of January, 30-34 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1107V,"Population on the 1st of January, 35-39 years, total",population_density,"Population on the 1st of January, 35-39 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1108V,"Population on the 1st of January, 35-39 years, male",population_density,"Population on the 1st of January, 35-39 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1109V,"Population on the 1st of January, 35-39 years, female",population_density,"Population on the 1st of January, 35-39 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1061V,"Population on the 1st of January, 35-44 years, total",population_density,"Population on the 1st of January, 35-44 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1062V,"Population on the 1st of January, 35-44 years, male",population_density,"Population on the 1st of January, 35-44 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1063V,"Population on the 1st of January, 35-44 years, female",population_density,"Population on the 1st of January, 35-44 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1110V,"Population on the 1st of January, 40-44 years, total",population_density,"Population on the 1st of January, 40-44 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1111V,"Population on the 1st of January, 40-44 years, male",population_density,"Population on the 1st of January, 40-44 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1112V,"Population on the 1st of January, 40-44 years, female",population_density,"Population on the 1st of January, 40-44 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1113V,"Population on the 1st of January, 45-49 years, total",population_density,"Population on the 1st of January, 45-49 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1114V,"Population on the 1st of January, 45-49 years, male",population_density,"Population on the 1st of January, 45-49 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1115V,"Population on the 1st of January, 45-49 years, female",population_density,"Population on the 1st of January, 45-49 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1064V,"Population on the 1st of January, 45-54 years, total",population_density,"Population on the 1st of January, 45-54 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1065V,"Population on the 1st of January, 45-54 years, male",population_density,"Population on the 1st of January, 45-54 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1066V,"Population on the 1st of January, 45-54 years, female",population_density,"Population on the 1st of January, 45-54 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1116V,"Population on the 1st of January, 50-54 years, total",population_density,"Population on the 1st of January, 50-54 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1117V,"Population on the 1st of January, 50-54 years, male",population_density,"Population on the 1st of January, 50-54 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1118V,"Population on the 1st of January, 50-54 years, female",population_density,"Population on the 1st of January, 50-54 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1119V,"Population on the 1st of January, 55-59 years, total",population_density,"Population on the 1st of January, 55-59 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1120V,"Population on the 1st of January, 55-59 years, male",population_density,"Population on the 1st of January, 55-59 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1121V,"Population on the 1st of January, 55-59 years, female",population_density,"Population on the 1st of January, 55-59 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1025V,"Population on the 1st of January, 55-64 years, total",population_density,"Population on the 1st of January, 55-64 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1026V,"Population on the 1st of January, 55-64 years, male",population_density,"Population on the 1st of January, 55-64 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1027V,"Population on the 1st of January, 55-64 years, female",population_density,"Population on the 1st of January, 55-64 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1122V,"Population on the 1st of January, 60-64 years, total",population_density,"Population on the 1st of January, 60-64 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1123V,"Population on the 1st of January, 60-64 years, male",population_density,"Population on the 1st of January, 60-64 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1124V,"Population on the 1st of January, 60-64 years, female",population_density,"Population on the 1st of January, 60-64 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1125V,"Population on the 1st of January, 65-69 years, total",population_density,"Population on the 1st of January, 65-69 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1126V,"Population on the 1st of January, 65-69 years, male",population_density,"Population on the 1st of January, 65-69 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1127V,"Population on the 1st of January, 65-69 years, female",population_density,"Population on the 1st of January, 65-69 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1028V,"Population on the 1st of January, 65-74 years, total",population_density,"Population on the 1st of January, 65-74 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1029V,"Population on the 1st of January, 65-74 years, male",population_density,"Population on the 1st of January, 65-74 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1030V,"Population on the 1st of January, 65-74 years, female",population_density,"Population on the 1st of January, 65-74 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1128V,"Population on the 1st of January, 70-74 years, total",population_density,"Population on the 1st of January, 70-74 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1129V,"Population on the 1st of January, 70-74 years, male",population_density,"Population on the 1st of January, 70-74 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1130V,"Population on the 1st of January, 70-74 years, female",population_density,"Population on the 1st of January, 70-74 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1131V,"Population on the 1st of January, 75-79 years, total",population_density,"Population on the 1st of January, 75-79 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1132V,"Population on the 1st of January, 75-79 years, male",population_density,"Population on the 1st of January, 75-79 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1133V,"Population on the 1st of January, 75-79 years, female",population_density,"Population on the 1st of January, 75-79 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1055V,"Population on the 1st of January, 75 years and over, total",population_density,"Population on the 1st of January, 75 years and over, total from Eurostat dataset urb_cpop1",value,contextual
+DE1056V,"Population on the 1st of January, 75 years and over, male",population_density,"Population on the 1st of January, 75 years and over, male from Eurostat dataset urb_cpop1",value,contextual
+DE1057V,"Population on the 1st of January, 75 years and over, female",population_density,"Population on the 1st of January, 75 years and over, female from Eurostat dataset urb_cpop1",value,contextual
+DE1134V,"Population on the 1st of January, 80-84 years, total",population_density,"Population on the 1st of January, 80-84 years, total from Eurostat dataset urb_cpop1",value,contextual
+DE1135V,"Population on the 1st of January, 80-84 years, male",population_density,"Population on the 1st of January, 80-84 years, male from Eurostat dataset urb_cpop1",value,contextual
+DE1136V,"Population on the 1st of January, 80-84 years, female",population_density,"Population on the 1st of January, 80-84 years, female from Eurostat dataset urb_cpop1",value,contextual
+DE1137V,"Population on the 1st of January, 85 years or over, total",population_density,"Population on the 1st of January, 85 years or over, total from Eurostat dataset urb_cpop1",value,contextual
+DE1138V,"Population on the 1st of January, 85 years or over, male",population_density,"Population on the 1st of January, 85 years or over, male from Eurostat dataset urb_cpop1",value,contextual
+DE1139V,"Population on the 1st of January, 85 years or over, female",population_density,"Population on the 1st of January, 85 years or over, female from Eurostat dataset urb_cpop1",value,contextual
+EN1002V,Total number of hours of sunshine per day,environment,Total number of hours of sunshine per day from Eurostat dataset urb_cenv,value,contextual
+EN1003V,Average temperature of warmest month - degrees,environment,Average temperature of warmest month - degrees from Eurostat dataset urb_cenv,value,contextual
+EN1004V,Average temperature of coldest month - degrees,environment,Average temperature of coldest month - degrees from Eurostat dataset urb_cenv,value,contextual
+EN1005V,Rainfall - litre/m²,environment,Rainfall - litre/m² from Eurostat dataset urb_cenv,value,higher_is_better
+EN2002V,Number of days ozone O3 concentrations exceed 120 µg/m³,environment,Number of days ozone O3 concentrations exceed 120 µg/m³ from Eurostat dataset urb_cenv,value,contextual
+EN2003V,Number of hours nitrogen dioxide NO2 concentrations exceed 200 µg/m³,environment,Number of hours nitrogen dioxide NO2 concentrations exceed 200 µg/m³ from Eurostat dataset urb_cenv,value,contextual
+EN2005V,Number of days particulate matter PM10 concentrations exceed 50 µg/m³,environment,Number of days particulate matter PM10 concentrations exceed 50 µg/m³ from Eurostat dataset urb_cenv,value,contextual
+EN2025V,Accumulated ozone concentration in excess 70 µg/m³,environment,Accumulated ozone concentration in excess 70 µg/m³ from Eurostat dataset urb_cenv,value,higher_is_better
+EN2026V,Annual average concentration of NO2 (µg/m³),environment,Annual average concentration of NO2 (µg/m³) from Eurostat dataset urb_cenv,value,contextual
+EN2027V,Annual average concentration of PM10 (µg/m³),environment,Annual average concentration of PM10 (µg/m³) from Eurostat dataset urb_cenv,value,contextual
+EN3003V,Total use of water - m³,environment,Total use of water - m³ from Eurostat dataset urb_cenv,value,contextual
+EN3012V,Share of population connected to potable drinking water system - %,environment,Share of population connected to potable drinking water system - % from Eurostat dataset urb_cenv,percent,contextual
+EN3013V,Share of population connected to sewerage treatment system - %,environment,Share of population connected to sewerage treatment system - % from Eurostat dataset urb_cenv,percent,contextual
+EN3010V,Price of a m³ of domestic water - Euro,environment,Price of a m³ of domestic water - Euro from Eurostat dataset urb_cenv,eur,higher_is_better
+EN3011V,Share of the urban waste water load (in population equivalents) treated according to the applicable standard -%,environment,Share of the urban waste water load (in population equivalents) treated according to the applicable standard -% from Eurostat dataset urb_cenv,percent,contextual
+EN4008V,"Municipal waste generated (domestic and commercial), total - 1000 t",environment,"Municipal waste generated (domestic and commercial), total - 1000 t from Eurostat dataset urb_cenv",value,contextual
+EN5200V,Share of land (%): continuous residential urban fabric,environment,Share of land (%): continuous residential urban fabric from Eurostat dataset urb_cenv,percent,higher_is_better
+EN5201V,Share of land (%): discontinuous residential urban fabric,environment,Share of land (%): discontinuous residential urban fabric from Eurostat dataset urb_cenv,percent,higher_is_better
+EN5202V,"Share of land (%): industrial, commercial, public, military and private units",environment,"Share of land (%): industrial, commercial, public, military and private units from Eurostat dataset urb_cenv",percent,higher_is_better
+EN5203V,Share of land (%): transport infrastructure,environment,Share of land (%): transport infrastructure from Eurostat dataset urb_cenv,percent,higher_is_better
+EN5204V,Share of land (%): other artificial areas,environment,Share of land (%): other artificial areas from Eurostat dataset urb_cenv,percent,higher_is_better
+EN5205V,Share of land (%): green urban areas and sports and leisure facilities,environment,Share of land (%): green urban areas and sports and leisure facilities from Eurostat dataset urb_cenv,percent,higher_is_better
+EN5206V,Share of land (%): agricultural areas,environment,Share of land (%): agricultural areas from Eurostat dataset urb_cenv,percent,higher_is_better
+EN5207V,Share of land (%): natural areas,environment,Share of land (%): natural areas from Eurostat dataset urb_cenv,percent,higher_is_better
+EN2029I,Proportion of residents exposed to air traffic noise >55 dB(A) at night time,environment,Proportion of residents exposed to air traffic noise >55 dB(A) at night time from Eurostat dataset urb_cenv,value,lower_is_better
+EN2032I,Proportion of residents exposed to rail traffic noise >65 dB(A) at day time,environment,Proportion of residents exposed to rail traffic noise >65 dB(A) at day time from Eurostat dataset urb_cenv,value,lower_is_better
+EN2036I,Proportion of residents exposed to rail traffic noise >55 dB(A) at night time,environment,Proportion of residents exposed to rail traffic noise >55 dB(A) at night time from Eurostat dataset urb_cenv,value,lower_is_better
+EN2033I,Proportion of residents exposed to road traffic noise >65 dB(A) at day time,environment,Proportion of residents exposed to road traffic noise >65 dB(A) at day time from Eurostat dataset urb_cenv,value,lower_is_better
+EN2035I,Proportion of residents exposed to road traffic noise >55 dB(A) at night time,environment,Proportion of residents exposed to road traffic noise >55 dB(A) at night time from Eurostat dataset urb_cenv,value,lower_is_better
+DE3001V,Private households (excluding institutional households),living_conditions,Private households (excluding institutional households) from Eurostat dataset urb_clivcon,value,higher_is_better
+DE3017V,Population living in private households (excluding institutional households),living_conditions,Population living in private households (excluding institutional households) from Eurostat dataset urb_clivcon,value,contextual
+DE3002V,One person households,living_conditions,One person households from Eurostat dataset urb_clivcon,value,higher_is_better
+DE3005V,Lone parent private households (with children aged 0 to under 18),living_conditions,Lone parent private households (with children aged 0 to under 18) from Eurostat dataset urb_clivcon,value,contextual
+DE3008V,Lone pensioner (above retirement age) households,living_conditions,Lone pensioner (above retirement age) households from Eurostat dataset urb_clivcon,value,contextual
+DE3011V,Households with children aged 0 to under 18,living_conditions,Households with children aged 0 to under 18 from Eurostat dataset urb_clivcon,value,contextual
+SA1001V,Number of conventional dwellings,living_conditions,Number of conventional dwellings from Eurostat dataset urb_clivcon,value,contextual
+SA1004V,Number of houses,living_conditions,Number of houses from Eurostat dataset urb_clivcon,value,contextual
+SA1005V,Number of apartments,living_conditions,Number of apartments from Eurostat dataset urb_clivcon,value,contextual
+SA1007V,Number of households living in houses,living_conditions,Number of households living in houses from Eurostat dataset urb_clivcon,value,contextual
+SA1008V,Number of households living in apartments,living_conditions,Number of households living in apartments from Eurostat dataset urb_clivcon,value,contextual
+SA1011V,Households owning their own dwelling,living_conditions,Households owning their own dwelling from Eurostat dataset urb_clivcon,value,higher_is_better
+SA1012V,Households in social housing,living_conditions,Households in social housing from Eurostat dataset urb_clivcon,value,higher_is_better
+SA1013V,Households in private rented housing,living_conditions,Households in private rented housing from Eurostat dataset urb_clivcon,value,higher_is_better
+SA1029V,Number of people in accommodation for the homeless,living_conditions,Number of people in accommodation for the homeless from Eurostat dataset urb_clivcon,value,contextual
+SA1050V,Average price for buying a house - EUR,living_conditions,Average price for buying a house - EUR from Eurostat dataset urb_clivcon,value,contextual
+SA1051V,Average price for buying an apartment - EUR,living_conditions,Average price for buying an apartment - EUR from Eurostat dataset urb_clivcon,value,contextual
+SA1049V,Average annual rent for housing per m² - EUR,living_conditions,Average annual rent for housing per m² - EUR from Eurostat dataset urb_clivcon,value,contextual
+SA1018V,Dwellings lacking basic amenities,living_conditions,Dwellings lacking basic amenities from Eurostat dataset urb_clivcon,value,higher_is_better
+SA1025V,Empty conventional dwellings,living_conditions,Empty conventional dwellings from Eurostat dataset urb_clivcon,value,higher_is_better
+SA1022V,Average area of living accommodation - m²/person,living_conditions,Average area of living accommodation - m²/person from Eurostat dataset urb_clivcon,value,contextual
+SA3005V,Number of murders and violent deaths,living_conditions,Number of murders and violent deaths from Eurostat dataset urb_clivcon,value,lower_is_better
+EC3039V,Median disposable annual household income - EUR,living_conditions,Median disposable annual household income - EUR from Eurostat dataset urb_clivcon,value,higher_is_better
+EC3040V,Average disposable annual household income - EUR,living_conditions,Average disposable annual household income - EUR from Eurostat dataset urb_clivcon,value,contextual
+EC3064V,Share of persons living in households with very low work intensity - %,living_conditions,Share of persons living in households with very low work intensity - % from Eurostat dataset urb_clivcon,percent,higher_is_better
+EC3065V,Share of persons at risk of poverty after social transfers -%,living_conditions,Share of persons at risk of poverty after social transfers -% from Eurostat dataset urb_clivcon,percent,higher_is_better
+EC3066V,Share of severely materially deprived persons -%,living_conditions,Share of severely materially deprived persons -% from Eurostat dataset urb_clivcon,percent,higher_is_better
+EC3067V,Share of persons at risk of poverty or social exclusion -%,living_conditions,Share of persons at risk of poverty or social exclusion -% from Eurostat dataset urb_clivcon,percent,higher_is_better
+DE3004I,Average size of households,living_conditions,Average size of households from Eurostat dataset urb_clivcon,value,contextual
+DE3002I,Proportion of households that are 1-person households,living_conditions,Proportion of households that are 1-person households from Eurostat dataset urb_clivcon,value,higher_is_better
+DE3005I,Proportion of households that are lone-parent households,living_conditions,Proportion of households that are lone-parent households from Eurostat dataset urb_clivcon,value,higher_is_better
+DE3008I,Proportion of households that are lone-pensioner households,living_conditions,Proportion of households that are lone-pensioner households from Eurostat dataset urb_clivcon,value,higher_is_better
+DE3011I,Proportion of households with children aged 0-17,living_conditions,Proportion of households with children aged 0-17 from Eurostat dataset urb_clivcon,value,contextual
+DE3016I,Lone parent households per 100 households with children aged 0-17,living_conditions,Lone parent households per 100 households with children aged 0-17 from Eurostat dataset urb_clivcon,value,contextual
+SA1011I,Proportion of households living in owned dwellings,living_conditions,Proportion of households living in owned dwellings from Eurostat dataset urb_clivcon,value,higher_is_better
+SA1007I,Proportion of households living in houses,living_conditions,Proportion of households living in houses from Eurostat dataset urb_clivcon,value,higher_is_better
+SA1008I,Proportion of households living in apartments,living_conditions,Proportion of households living in apartments from Eurostat dataset urb_clivcon,value,higher_is_better
+SA1052V,Average price for buying a house per m2 - EUR,living_conditions,Average price for buying a house per m2 - EUR from Eurostat dataset urb_clivcon,value,contextual
+SA1053V,Average price for buying an apartment  per m2 - EUR,living_conditions,Average price for buying an apartment  per m2 - EUR from Eurostat dataset urb_clivcon,value,contextual

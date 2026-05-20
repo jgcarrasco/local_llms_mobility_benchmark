@@ -1,0 +1,58 @@
+{
+  "created_at_utc": "2026-04-27T16:06:40+00:00",
+  "source_policy": "real public-data excerpts with documented controlled corruptions",
+  "sources": {
+    "eurostat": {
+      "endpoint": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/",
+      "datasets": [
+        "urb_ctran",
+        "urb_cpop1",
+        "urb_cenv",
+        "urb_clivcon"
+      ],
+      "rows": 5373,
+      "indicators": 160
+    },
+    "dataeuropa": {
+      "endpoint": "https://data.europa.eu/api/hub/search/search",
+      "rows": 26,
+      "raw_snapshot": "data/raw/real_sources/catalog/dataeuropa_search.json"
+    },
+    "gtfs": {
+      "catalog_url": "https://files.mobilitydatabase.org/feeds_v2.csv",
+      "feed_catalog": "data/raw/real_sources/gtfs/mobilitydata_feeds_v2.csv",
+      "source_gtfs": "data/raw/real_sources/gtfs/source_gtfs.zip",
+      "selected_url": "https://gvinterbus.gva.es/estatico/gtfs.zip",
+      "n_stops_with_controls": 81,
+      "n_trips": 80,
+      "n_stop_times": 180
+    },
+    "wikidata": {
+      "endpoint": "https://query.wikidata.org/sparql",
+      "rows_with_controls": 51,
+      "raw_snapshot": "data/raw/real_sources/wikidata/alicante_pois_sparql.json"
+    }
+  },
+  "controlled_corruptions": [
+    {
+      "file": "inputs/gtfs/sample_city_gtfs.zip/stops.txt",
+      "description": "Duplicate first stop_id appended to test duplicate-stop handling."
+    },
+    {
+      "file": "inputs/gtfs/sample_city_gtfs.zip/stops.txt",
+      "description": "Second stop_name blanked to test missing-name handling."
+    },
+    {
+      "file": "inputs/gtfs/sample_city_gtfs.zip/stops.txt",
+      "description": "Third stop coordinates set outside valid latitude/longitude ranges."
+    },
+    {
+      "file": "inputs/gtfs/sample_city_gtfs.zip/stop_times.txt",
+      "description": "Last arrival/departure set to 25:10:00 to test valid extended GTFS service-day times."
+    },
+    {
+      "file": "inputs/wikidata/wikidata_pois_sample.json",
+      "description": "One Wikidata label blanked and one QID duplicated to test POI cleaning."
+    }
+  ]
+}

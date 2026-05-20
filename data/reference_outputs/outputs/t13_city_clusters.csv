@@ -1,0 +1,1613 @@
+city_id,city_name,year,cluster_id
+BE,Belgium,2022,0
+BE,Belgium,2023,2
+BE,Belgium,2024,2
+BE001C,Bruxelles/Brussel (greater city),2022,0
+BE001C,Bruxelles/Brussel (greater city),2023,0
+BE001C,Bruxelles/Brussel (greater city),2024,0
+BE002C,Antwerpen (greater city),2022,0
+BE002C,Antwerpen (greater city),2023,0
+BE002C,Antwerpen (greater city),2024,0
+BE003C,Gent,2022,0
+BE003C,Gent,2023,0
+BE003C,Gent,2024,0
+BE004C,Charleroi (greater city),2022,0
+BE004C,Charleroi (greater city),2023,0
+BE004C,Charleroi (greater city),2024,0
+BE005C,Liège (greater city),2022,0
+BE005C,Liège (greater city),2023,0
+BE005C,Liège (greater city),2024,0
+BE006C,Brugge,2022,0
+BE006C,Brugge,2023,0
+BE006C,Brugge,2024,0
+BE007C,Namur,2022,0
+BE007C,Namur,2023,0
+BE007C,Namur,2024,0
+BE008C,Leuven,2022,0
+BE008C,Leuven,2023,0
+BE008C,Leuven,2024,0
+BE009C,Mons (greater city),2022,0
+BE009C,Mons (greater city),2023,0
+BE009C,Mons (greater city),2024,0
+BE010C,Kortrijk (greater city),2022,0
+BE010C,Kortrijk (greater city),2023,0
+BE010C,Kortrijk (greater city),2024,0
+BE011C,Oostende (greater city),2022,0
+BE011C,Oostende (greater city),2023,0
+BE011C,Oostende (greater city),2024,0
+BE012C,Mechelen,2022,0
+BE012C,Mechelen,2023,0
+BE012C,Mechelen,2024,0
+BE013C,Mouscron,2022,0
+BE013C,Mouscron,2023,0
+BE013C,Mouscron,2024,0
+BE014C,La Louvière (greater city),2022,0
+BE014C,La Louvière (greater city),2023,0
+BE014C,La Louvière (greater city),2024,0
+BE015C,Verviers (greater city),2022,0
+BE015C,Verviers (greater city),2023,0
+BE015C,Verviers (greater city),2024,0
+BG001C,Sofia,2022,0
+BG002C,Plovdiv,2022,0
+BG003C,Varna,2022,0
+BG004C,Burgas,2022,0
+BG005C,Pleven,2022,0
+BG006C,Ruse,2022,0
+BG007C,Vidin,2022,0
+BG008C,Stara Zagora,2022,0
+BG009C,Sliven,2022,0
+BG010C,Dobrich,2022,0
+BG011C,Shumen,2022,0
+BG012C,Pernik,2022,0
+BG013C,Yambol,2022,0
+BG014C,Haskovo,2022,0
+BG015C,Pazardzhik,2022,0
+BG016C,Blagoevgrad,2022,0
+BG017C,Veliko Tarnovo,2022,0
+BG018C,Vratsa,2022,0
+CH001C,Bern (greater city),2022,0
+CH001C,Bern (greater city),2023,0
+CH001C,Bern (greater city),2024,0
+CH001C,Bern (greater city),2025,0
+CH002C,Zurich (greater city),2022,0
+CH002C,Zurich (greater city),2023,0
+CH002C,Zurich (greater city),2024,0
+CH002C,Zurich (greater city),2025,0
+CH003C,Geneva (greater city),2022,0
+CH003C,Geneva (greater city),2023,0
+CH003C,Geneva (greater city),2024,0
+CH003C,Geneva (greater city),2025,0
+CH004C,Basel (greater city),2022,0
+CH004C,Basel (greater city),2023,0
+CH004C,Basel (greater city),2024,0
+CH004C,Basel (greater city),2025,0
+CH005C,Lausanne (greater city),2022,0
+CH005C,Lausanne (greater city),2023,0
+CH005C,Lausanne (greater city),2024,0
+CH005C,Lausanne (greater city),2025,0
+CH006C,Lucerne (greater city),2022,0
+CH006C,Lucerne (greater city),2023,0
+CH006C,Lucerne (greater city),2024,0
+CH006C,Lucerne (greater city),2025,0
+CH007C,Winterthur,2022,0
+CH007C,Winterthur,2023,0
+CH007C,Winterthur,2024,0
+CH007C,Winterthur,2025,0
+CH008C,Lugano (greater city),2022,0
+CH008C,Lugano (greater city),2023,0
+CH008C,Lugano (greater city),2024,0
+CH008C,Lugano (greater city),2025,0
+CH009C,St. Gallen (greater city),2022,0
+CH009C,St. Gallen (greater city),2023,0
+CH009C,St. Gallen (greater city),2024,0
+CH009C,St. Gallen (greater city),2025,0
+CH010C,Biel/Bienne (greater city),2022,0
+CH010C,Biel/Bienne (greater city),2023,0
+CH010C,Biel/Bienne (greater city),2024,0
+CH010C,Biel/Bienne (greater city),2025,0
+DE001C,Berlin,2023,0
+DE001C,Berlin,2024,0
+DE002C,Hamburg,2022,0
+DE002C,Hamburg,2023,0
+DE002C,Hamburg,2024,0
+DE003C,München,2022,0
+DE003C,München,2023,0
+DE003C,München,2024,0
+DE004C,Köln,2023,0
+DE004C,Köln,2024,0
+DE005C,Frankfurt am Main,2023,0
+DE005C,Frankfurt am Main,2024,0
+DE006C,Essen,2022,0
+DE006C,Essen,2023,0
+DE006C,Essen,2024,0
+DE007C,Stuttgart,2022,0
+DE007C,Stuttgart,2023,0
+DE007C,Stuttgart,2024,0
+DE008C,Leipzig,2023,0
+DE008C,Leipzig,2024,0
+DE009C,Dresden,2022,0
+DE009C,Dresden,2023,0
+DE009C,Dresden,2024,0
+DE010C,Dortmund,2023,0
+DE010C,Dortmund,2024,0
+DE011C,Düsseldorf,2023,0
+DE011C,Düsseldorf,2024,0
+DE012C,Bremen,2022,0
+DE012C,Bremen,2023,0
+DE012C,Bremen,2024,0
+DE013C,Hannover,2022,0
+DE013C,Hannover,2023,0
+DE013C,Hannover,2024,0
+DE014C,Nürnberg,2022,0
+DE014C,Nürnberg,2023,0
+DE014C,Nürnberg,2024,0
+DE015C,Bochum,2023,0
+DE015C,Bochum,2024,0
+DE016C,Bielefeld,2022,0
+DE016C,Bielefeld,2023,0
+DE016C,Bielefeld,2024,0
+DE017C,Halle an der Saale,2022,0
+DE017C,Halle an der Saale,2023,0
+DE017C,Halle an der Saale,2024,0
+DE018C,Magdeburg,2022,0
+DE018C,Magdeburg,2023,0
+DE018C,Magdeburg,2024,0
+DE019C,Wiesbaden,2022,0
+DE019C,Wiesbaden,2023,0
+DE019C,Wiesbaden,2024,0
+DE020C,Göttingen,2023,0
+DE020C,Göttingen,2024,0
+DE021C,Mülheim a.d.Ruhr,2022,0
+DE021C,Mülheim a.d.Ruhr,2023,0
+DE021C,Mülheim a.d.Ruhr,2024,0
+DE022C,Moers,2022,0
+DE022C,Moers,2023,0
+DE022C,Moers,2024,0
+DE023C,Darmstadt,2023,0
+DE023C,Darmstadt,2024,0
+DE024C,Trier,2023,0
+DE024C,Trier,2024,0
+DE025C,Freiburg im Breisgau,2023,0
+DE025C,Freiburg im Breisgau,2024,0
+DE026C,Regensburg,2023,0
+DE026C,Regensburg,2024,0
+DE027C,Frankfurt (Oder),2023,0
+DE027C,Frankfurt (Oder),2024,0
+DE028C,Weimar,2022,0
+DE028C,Weimar,2023,0
+DE029C,Schwerin,2023,0
+DE029C,Schwerin,2024,0
+DE030C,Erfurt,2022,0
+DE030C,Erfurt,2023,0
+DE030C,Erfurt,2024,0
+DE031C,Augsburg,2022,0
+DE031C,Augsburg,2023,0
+DE031C,Augsburg,2024,0
+DE032C,Bonn,2023,0
+DE032C,Bonn,2024,0
+DE033C,Karlsruhe,2023,0
+DE033C,Karlsruhe,2024,0
+DE034C,Mönchengladbach,2023,0
+DE034C,Mönchengladbach,2024,0
+DE035C,Mainz,2022,0
+DE035C,Mainz,2023,0
+DE035C,Mainz,2024,0
+DE036C,Kiel,2022,0
+DE036C,Kiel,2023,0
+DE036C,Kiel,2024,0
+DE037C,Saarbrücken,2022,0
+DE037C,Saarbrücken,2023,0
+DE037C,Saarbrücken,2024,0
+DE038C,Potsdam,2023,0
+DE038C,Potsdam,2024,0
+DE039C,Koblenz,2022,0
+DE039C,Koblenz,2023,0
+DE039C,Koblenz,2024,0
+DE040C,Rostock,2023,0
+DE040C,Rostock,2024,0
+DE041C,Kaiserslautern,2023,0
+DE041C,Kaiserslautern,2024,0
+DE042C,Iserlohn,2023,0
+DE042C,Iserlohn,2024,0
+DE043C,Esslingen am Neckar (greater city),2022,0
+DE043C,Esslingen am Neckar (greater city),2023,0
+DE043C,Esslingen am Neckar (greater city),2024,0
+DE044C,Hanau,2023,0
+DE044C,Hanau,2024,0
+DE045C,Wilhelmshaven,2022,0
+DE045C,Wilhelmshaven,2023,0
+DE046C,Ludwigsburg (greater city),2023,0
+DE046C,Ludwigsburg (greater city),2024,0
+DE047C,Tübingen,2022,0
+DE047C,Tübingen,2023,0
+DE047C,Tübingen,2024,0
+DE048C,Villingen-Schwenningen,2023,0
+DE049C,Flensburg,2023,0
+DE049C,Flensburg,2024,0
+DE050C,Marburg,2023,0
+DE051C,Konstanz,2022,0
+DE051C,Konstanz,2023,0
+DE051C,Konstanz,2024,0
+DE052C,Neumünster,2022,0
+DE052C,Neumünster,2023,0
+DE052C,Neumünster,2024,0
+DE053C,Brandenburg an der Havel,2022,0
+DE053C,Brandenburg an der Havel,2023,0
+DE054C,Gießen,2023,0
+DE054C,Gießen,2024,0
+DE055C,Lüneburg,2023,0
+DE055C,Lüneburg,2024,0
+DE056C,Bayreuth,2023,0
+DE056C,Bayreuth,2024,0
+DE057C,Celle,2023,0
+DE058C,Aschaffenburg,2023,0
+DE058C,Aschaffenburg,2024,0
+DE059C,Bamberg,2023,0
+DE059C,Bamberg,2024,0
+DE060C,Plauen,2023,0
+DE060C,Plauen,2024,0
+DE061C,Neubrandenburg,2023,0
+DE062C,Fulda,2023,0
+DE063C,Kempten (Allgäu),2023,0
+DE063C,Kempten (Allgäu),2024,0
+DE064C,Landshut,2023,0
+DE064C,Landshut,2024,0
+DE065C,Sindelfingen,2023,0
+DE065C,Sindelfingen,2024,0
+DE066C,Rosenheim,2022,0
+DE066C,Rosenheim,2023,0
+DE066C,Rosenheim,2024,0
+DE067C,Frankenthal (Pfalz),2022,0
+DE067C,Frankenthal (Pfalz),2023,0
+DE067C,Frankenthal (Pfalz),2024,0
+DE068C,Stralsund,2023,0
+DE069C,Friedrichshafen,2023,0
+DE070C,Offenburg,2023,0
+DE071C,Görlitz,2023,0
+DE071C,Görlitz,2024,0
+DE072C,Sankt Augustin,2023,0
+DE072C,Sankt Augustin,2024,0
+DE073C,Neu-Ulm,2023,0
+DE073C,Neu-Ulm,2024,0
+DE074C,Schweinfurt,2023,0
+DE074C,Schweinfurt,2024,0
+DE075C,Greifswald,2023,0
+DE076C,Wetzlar,2023,0
+DE077C,Speyer,2023,0
+DE078C,Passau,2023,0
+DE079C,Dessau-Roßlau,2022,0
+DE079C,Dessau-Roßlau,2023,0
+DE080C,Duisburg,2022,0
+DE080C,Duisburg,2023,0
+DE080C,Duisburg,2024,0
+DE081C,Mannheim,2022,0
+DE081C,Mannheim,2023,0
+DE081C,Mannheim,2024,0
+DE082C,Gelsenkirchen,2023,0
+DE082C,Gelsenkirchen,2024,0
+DE083C,Münster,2023,0
+DE083C,Münster,2024,0
+DE084C,Chemnitz,2022,0
+DE084C,Chemnitz,2023,0
+DE084C,Chemnitz,2024,0
+DE085C,Braunschweig,2023,0
+DE085C,Braunschweig,2024,0
+DE086C,Aachen,2023,0
+DE086C,Aachen,2024,0
+DE087C,Krefeld,2023,0
+DE087C,Krefeld,2024,0
+DE088C,Oberhausen,2023,0
+DE088C,Oberhausen,2024,0
+DE089C,Lübeck,2022,0
+DE089C,Lübeck,2023,0
+DE089C,Lübeck,2024,0
+DE090C,Hagen,2023,0
+DE090C,Hagen,2024,0
+DE091C,Kassel,2022,0
+DE091C,Kassel,2023,0
+DE091C,Kassel,2024,0
+DE092C,Hamm,2023,0
+DE092C,Hamm,2024,0
+DE093C,Herne,2023,0
+DE093C,Herne,2024,0
+DE094C,Solingen,2022,0
+DE094C,Solingen,2023,0
+DE094C,Solingen,2024,0
+DE095C,Osnabrück,2022,0
+DE095C,Osnabrück,2023,0
+DE095C,Osnabrück,2024,0
+DE096C,Ludwigshafen am Rhein,2022,0
+DE096C,Ludwigshafen am Rhein,2023,0
+DE096C,Ludwigshafen am Rhein,2024,0
+DE097C,Leverkusen,2023,0
+DE097C,Leverkusen,2024,0
+DE098C,Oldenburg (Oldenburg),2022,0
+DE098C,Oldenburg (Oldenburg),2023,0
+DE098C,Oldenburg (Oldenburg),2024,0
+DE099C,Neuss,2023,0
+DE099C,Neuss,2024,0
+DE100C,Heidelberg,2022,0
+DE100C,Heidelberg,2023,0
+DE100C,Heidelberg,2024,0
+DE101C,Paderborn,2023,0
+DE101C,Paderborn,2024,0
+DE102C,Würzburg,2023,0
+DE102C,Würzburg,2024,0
+DE103C,Recklinghausen,2022,0
+DE103C,Recklinghausen,2023,0
+DE103C,Recklinghausen,2024,0
+DE104C,Wolfsburg,2023,0
+DE104C,Wolfsburg,2024,0
+DE105C,Bremerhaven,2023,0
+DE105C,Bremerhaven,2024,0
+DE106C,Bottrop,2023,0
+DE106C,Bottrop,2024,0
+DE107C,Heilbronn,2023,0
+DE107C,Heilbronn,2024,0
+DE108C,Remscheid,2023,0
+DE108C,Remscheid,2024,0
+DE109C,Offenbach am Main,2023,0
+DE109C,Offenbach am Main,2024,0
+DE110C,Ulm,2022,0
+DE110C,Ulm,2023,0
+DE110C,Ulm,2024,0
+DE111C,Pforzheim,2023,0
+DE111C,Pforzheim,2024,0
+DE112C,Ingolstadt,2022,0
+DE112C,Ingolstadt,2023,0
+DE112C,Ingolstadt,2024,0
+DE113C,Gera,2023,0
+DE113C,Gera,2024,0
+DE114C,Salzgitter,2022,0
+DE114C,Salzgitter,2023,0
+DE115C,Reutlingen,2022,0
+DE115C,Reutlingen,2023,0
+DE115C,Reutlingen,2024,0
+DE116C,Fürth,2022,0
+DE116C,Fürth,2023,0
+DE116C,Fürth,2024,0
+DE117C,Cottbus,2023,0
+DE117C,Cottbus,2024,0
+DE118C,Siegen,2022,0
+DE118C,Siegen,2023,0
+DE118C,Siegen,2024,0
+DE119C,Bergisch Gladbach,2022,0
+DE119C,Bergisch Gladbach,2023,0
+DE119C,Bergisch Gladbach,2024,0
+DE120C,Hildesheim,2022,0
+DE120C,Hildesheim,2023,0
+DE120C,Hildesheim,2024,0
+DE121C,Witten,2023,0
+DE121C,Witten,2024,0
+DE122C,Zwickau,2023,0
+DE123C,Erlangen,2022,0
+DE123C,Erlangen,2023,0
+DE123C,Erlangen,2024,0
+DE124C,Wuppertal,2023,0
+DE124C,Wuppertal,2024,0
+DE125C,Jena,2022,0
+DE125C,Jena,2023,0
+DE125C,Jena,2024,0
+DE126C,Düren,2023,0
+DE126C,Düren,2024,0
+DE127C,Bocholt,2023,0
+DE127C,Bocholt,2024,0
+DE128C,Elmshorn,2024,0
+DE129C,Norderstedt,2024,0
+DE130C,Delmenhorst,2024,0
+DE131C,Hilden,2024,0
+DE132C,Langenfeld (Rheinland),2024,0
+DE133C,Ratingen,2024,0
+DE134C,Dinslaken,2024,0
+DE135C,Herzogenrath,2024,0
+DE136C,Troisdorf (greater city),2024,0
+DE137C,Castrop-Rauxel,2024,0
+DE138C,Gladbeck,2024,0
+DE139C,Herten,2024,0
+DE140C,Marl,2024,0
+DE141C,Gütersloh,2024,0
+DE142C,Hattingen,2024,0
+DE143C,Lüdenscheid,2024,0
+DE144C,Lünen,2024,0
+DE145C,Unna,2024,0
+DE146C,Rüsselsheim am Main (greater city),2024,0
+DE147C,Oberursel (greater city),2024,0
+DE148C,Böblingen,2024,0
+DE149C,Göppingen (greater city),2024,0
+DE150C,Waiblingen (greater city),2024,0
+DE151C,Lörrach (greater city),2024,0
+EE001C,Tallinn,2022,0
+EE001C,Tallinn,2023,0
+EE001C,Tallinn,2024,0
+EE002C,Tartu,2022,0
+EE002C,Tartu,2023,0
+EE002C,Tartu,2024,0
+EE003C,Narva,2022,0
+EE003C,Narva,2023,0
+EE003C,Narva,2024,0
+ES001C,Madrid (greater city),2022,0
+ES001C,Madrid (greater city),2023,0
+ES001C,Madrid (greater city),2024,0
+ES002C,Barcelona (greater city),2022,0
+ES002C,Barcelona (greater city),2023,0
+ES002C,Barcelona (greater city),2024,0
+ES003C,Valencia (greater city),2022,0
+ES003C,Valencia (greater city),2023,0
+ES003C,Valencia (greater city),2024,0
+ES004C,Sevilla,2022,0
+ES004C,Sevilla,2023,0
+ES004C,Sevilla,2024,0
+ES005C,Zaragoza,2022,0
+ES005C,Zaragoza,2023,0
+ES005C,Zaragoza,2024,0
+ES006C,Málaga,2022,0
+ES006C,Málaga,2023,0
+ES006C,Málaga,2024,0
+ES007C,Murcia,2022,0
+ES007C,Murcia,2023,0
+ES007C,Murcia,2024,0
+ES008C,"Palmas de Gran Canaria, Las",2022,0
+ES008C,"Palmas de Gran Canaria, Las",2023,0
+ES008C,"Palmas de Gran Canaria, Las",2024,0
+ES009C,Valladolid (greater city),2022,0
+ES009C,Valladolid (greater city),2023,0
+ES009C,Valladolid (greater city),2024,0
+ES010C,Palma de Mallorca,2022,0
+ES010C,Palma de Mallorca,2023,0
+ES010C,Palma de Mallorca,2024,0
+ES011C,Santiago de Compostela,2022,0
+ES011C,Santiago de Compostela,2023,0
+ES011C,Santiago de Compostela,2024,0
+ES012C,Vitoria-Gasteiz,2022,0
+ES012C,Vitoria-Gasteiz,2023,0
+ES012C,Vitoria-Gasteiz,2024,0
+ES013C,Oviedo,2022,0
+ES013C,Oviedo,2023,0
+ES013C,Oviedo,2024,0
+ES014C,Pamplona/Iruña (greater city),2022,0
+ES014C,Pamplona/Iruña (greater city),2023,0
+ES014C,Pamplona/Iruña (greater city),2024,0
+ES015C,Santander,2022,0
+ES015C,Santander,2023,0
+ES015C,Santander,2024,0
+ES016C,Toledo,2022,0
+ES016C,Toledo,2023,0
+ES016C,Toledo,2024,0
+ES017C,Badajoz,2022,0
+ES017C,Badajoz,2023,0
+ES017C,Badajoz,2024,0
+ES018C,Logroño,2022,0
+ES018C,Logroño,2023,0
+ES018C,Logroño,2024,0
+ES019C,Bilbao (greater city),2022,0
+ES019C,Bilbao (greater city),2023,0
+ES019C,Bilbao (greater city),2024,0
+ES020C,Córdoba,2022,0
+ES020C,Córdoba,2023,0
+ES020C,Córdoba,2024,0
+ES021C,Alicante/Alacant (greater city),2022,0
+ES021C,Alicante/Alacant (greater city),2023,0
+ES021C,Alicante/Alacant (greater city),2024,0
+ES022C,Vigo,2022,0
+ES022C,Vigo,2023,0
+ES022C,Vigo,2024,0
+ES023C,Gijón,2022,0
+ES023C,Gijón,2023,0
+ES023C,Gijón,2024,0
+ES024C,Santa Cruz de Tenerife (greater city),2022,0
+ES024C,Santa Cruz de Tenerife (greater city),2023,0
+ES024C,Santa Cruz de Tenerife (greater city),2024,0
+ES025C,A Coruña (greater city),2022,0
+ES025C,A Coruña (greater city),2023,0
+ES025C,A Coruña (greater city),2024,0
+ES026C,Reus,2022,0
+ES026C,Reus,2023,0
+ES026C,Reus,2024,0
+ES027C,Telde,2022,0
+ES027C,Telde,2023,0
+ES027C,Telde,2024,0
+ES028C,Lugo,2022,0
+ES028C,Lugo,2023,0
+ES028C,Lugo,2024,0
+ES029C,San Fernando,2022,0
+ES029C,San Fernando,2023,0
+ES029C,San Fernando,2024,0
+ES030C,Girona (greater city),2022,0
+ES030C,Girona (greater city),2023,0
+ES030C,Girona (greater city),2024,0
+ES031C,Cáceres,2022,0
+ES031C,Cáceres,2023,0
+ES031C,Cáceres,2024,0
+ES032C,Torrevieja,2022,0
+ES032C,Torrevieja,2023,0
+ES032C,Torrevieja,2024,0
+ES033C,"Puerto de Santa María, El",2022,0
+ES033C,"Puerto de Santa María, El",2023,0
+ES033C,"Puerto de Santa María, El",2024,0
+ES034C,Avilés (greater city),2022,0
+ES034C,Avilés (greater city),2023,0
+ES034C,Avilés (greater city),2024,0
+ES035C,Talavera de la Reina,2022,0
+ES035C,Talavera de la Reina,2023,0
+ES035C,Talavera de la Reina,2024,0
+ES036C,Palencia,2022,0
+ES036C,Palencia,2023,0
+ES036C,Palencia,2024,0
+ES037C,Ferrol (greater city),2022,0
+ES037C,Ferrol (greater city),2023,0
+ES037C,Ferrol (greater city),2024,0
+ES038C,Pontevedra,2022,0
+ES038C,Pontevedra,2023,0
+ES038C,Pontevedra,2024,0
+ES039C,Ceuta,2022,0
+ES039C,Ceuta,2023,0
+ES039C,Ceuta,2024,0
+ES040C,Gandia (greater city),2022,0
+ES040C,Gandia (greater city),2023,0
+ES040C,Gandia (greater city),2024,0
+ES041C,Guadalajara,2022,0
+ES041C,Guadalajara,2023,0
+ES041C,Guadalajara,2024,0
+ES042C,Manresa (greater city),2022,0
+ES042C,Manresa (greater city),2023,0
+ES042C,Manresa (greater city),2024,0
+ES043C,Ciudad Real,2022,0
+ES043C,Ciudad Real,2023,0
+ES043C,Ciudad Real,2024,0
+ES044C,Benidorm,2022,0
+ES044C,Benidorm,2023,0
+ES044C,Benidorm,2024,0
+ES045C,Melilla,2022,0
+ES045C,Melilla,2023,0
+ES045C,Melilla,2024,0
+ES046C,Ponferrada,2022,0
+ES046C,Ponferrada,2023,0
+ES046C,Ponferrada,2024,0
+ES047C,Zamora,2022,0
+ES047C,Zamora,2023,0
+ES047C,Zamora,2024,0
+ES048C,Fuengirola,2022,0
+ES048C,Fuengirola,2023,0
+ES048C,Fuengirola,2024,0
+ES049C,Sanlúcar de Barrameda,2022,0
+ES049C,Sanlúcar de Barrameda,2023,0
+ES049C,Sanlúcar de Barrameda,2024,0
+ES050C,Vilanova i la Geltrú,2022,0
+ES050C,Vilanova i la Geltrú,2023,0
+ES050C,Vilanova i la Geltrú,2024,0
+ES051C,"Línea de la Concepción, La",2022,0
+ES051C,"Línea de la Concepción, La",2023,0
+ES051C,"Línea de la Concepción, La",2024,0
+ES052C,Torremolinos (greater city),2022,0
+ES052C,Torremolinos (greater city),2023,0
+ES052C,Torremolinos (greater city),2024,0
+ES053C,Irun (greater city),2022,0
+ES053C,Irun (greater city),2023,0
+ES053C,Irun (greater city),2024,0
+ES054C,Granollers (greater city),2022,0
+ES054C,Granollers (greater city),2023,0
+ES054C,Granollers (greater city),2024,0
+ES055C,Arrecife,2022,0
+ES055C,Arrecife,2023,0
+ES055C,Arrecife,2024,0
+ES056C,Elda (greater city),2022,0
+ES056C,Elda (greater city),2023,0
+ES056C,Elda (greater city),2024,0
+ES057C,Santa Lucía de Tirajana,2022,0
+ES057C,Santa Lucía de Tirajana,2023,0
+ES057C,Santa Lucía de Tirajana,2024,0
+ES058C,Mollet del Vallès (greater city),2022,0
+ES058C,Mollet del Vallès (greater city),2023,0
+ES058C,Mollet del Vallès (greater city),2024,0
+ES059C,Granada (greater city),2022,0
+ES059C,Granada (greater city),2023,0
+ES059C,Granada (greater city),2024,0
+ES060C,Elche/Elx,2022,0
+ES060C,Elche/Elx,2023,0
+ES060C,Elche/Elx,2024,0
+ES061C,Cartagena,2022,0
+ES061C,Cartagena,2023,0
+ES061C,Cartagena,2024,0
+ES062C,Jerez de la Frontera,2022,0
+ES062C,Jerez de la Frontera,2023,0
+ES062C,Jerez de la Frontera,2024,0
+ES063C,San Sebastián/Donostia (greater city),2022,0
+ES063C,San Sebastián/Donostia (greater city),2023,0
+ES063C,San Sebastián/Donostia (greater city),2024,0
+ES064C,Alcalá de Henares,2022,0
+ES064C,Alcalá de Henares,2023,0
+ES064C,Alcalá de Henares,2024,0
+ES065C,Almería (greater city),2022,0
+ES065C,Almería (greater city),2023,0
+ES065C,Almería (greater city),2024,0
+ES066C,Burgos,2022,0
+ES066C,Burgos,2023,0
+ES066C,Burgos,2024,0
+ES067C,Salamanca (greater city),2022,0
+ES067C,Salamanca (greater city),2023,0
+ES067C,Salamanca (greater city),2024,0
+ES068C,Albacete,2022,0
+ES068C,Albacete,2023,0
+ES068C,Albacete,2024,0
+ES069C,Castellón de la Plana/Castelló de la Plana,2022,0
+ES069C,Castellón de la Plana/Castelló de la Plana,2023,0
+ES069C,Castellón de la Plana/Castelló de la Plana,2024,0
+ES070C,Huelva,2022,0
+ES070C,Huelva,2023,0
+ES070C,Huelva,2024,0
+ES071C,Cádiz,2022,0
+ES071C,Cádiz,2023,0
+ES071C,Cádiz,2024,0
+ES072C,León (greater city),2022,0
+ES072C,León (greater city),2023,0
+ES072C,León (greater city),2024,0
+ES073C,Tarragona (greater city),2022,0
+ES073C,Tarragona (greater city),2023,0
+ES073C,Tarragona (greater city),2024,0
+ES074C,Jaén,2022,0
+ES074C,Jaén,2023,0
+ES074C,Jaén,2024,0
+ES075C,Lleida,2022,0
+ES075C,Lleida,2023,0
+ES075C,Lleida,2024,0
+ES076C,Ourense (greater city),2022,0
+ES076C,Ourense (greater city),2023,0
+ES076C,Ourense (greater city),2024,0
+ES077C,Mataró,2022,0
+ES077C,Mataró,2023,0
+ES077C,Mataró,2024,0
+ES078C,Dos Hermanas,2022,0
+ES078C,Dos Hermanas,2023,0
+ES078C,Dos Hermanas,2024,0
+ES079C,Algeciras,2022,0
+ES079C,Algeciras,2023,0
+ES079C,Algeciras,2024,0
+ES080C,Marbella,2022,0
+ES080C,Marbella,2023,0
+ES081C,Torrejón de Ardoz,2022,0
+ES081C,Torrejón de Ardoz,2023,0
+ES081C,Torrejón de Ardoz,2024,0
+ES082C,Alcalá de Guadaíra,2022,0
+ES082C,Alcalá de Guadaíra,2023,0
+ES082C,Alcalá de Guadaíra,2024,0
+ES083C,Alcoy/Alcoi,2022,0
+ES083C,Alcoy/Alcoi,2023,0
+ES083C,Alcoy/Alcoi,2024,0
+ES084C,Ávila,2022,0
+ES084C,Ávila,2023,0
+ES085C,Benalmádena,2022,0
+ES085C,Benalmádena,2023,0
+ES086C,Chiclana de la Frontera,2022,0
+ES086C,Chiclana de la Frontera,2023,0
+ES086C,Chiclana de la Frontera,2024,0
+ES087C,Collado Villalba,2022,0
+ES087C,Collado Villalba,2023,0
+ES087C,Collado Villalba,2024,0
+ES088C,Cuenca,2022,0
+ES088C,Cuenca,2023,0
+ES089C,Eivissa,2022,0
+ES089C,Eivissa,2023,0
+ES089C,Eivissa,2024,0
+ES090C,Linares,2022,0
+ES090C,Linares,2023,0
+ES090C,Linares,2024,0
+ES091C,Lorca,2022,0
+ES091C,Lorca,2023,0
+ES091C,Lorca,2024,0
+ES092C,Mérida,2022,0
+ES092C,Mérida,2023,0
+ES092C,Mérida,2024,0
+ES093C,Sagunto (greater city),2022,0
+ES093C,Sagunto (greater city),2023,0
+ES093C,Sagunto (greater city),2024,0
+ES094C,Torrelavega,2022,0
+ES094C,Torrelavega,2023,0
+ES095C,Valdemoro,2022,0
+ES095C,Valdemoro,2023,0
+ES095C,Valdemoro,2024,0
+ES096C,Puerto de la Cruz (greater city),2022,0
+ES096C,Puerto de la Cruz (greater city),2023,0
+ES096C,Puerto de la Cruz (greater city),2024,0
+ES097C,Igualada (greater city),2022,0
+ES097C,Igualada (greater city),2023,0
+ES097C,Igualada (greater city),2024,0
+ES098C,San Vicente del Raspeig/Sant Vicent del Raspeig,2022,0
+ES098C,San Vicente del Raspeig/Sant Vicent del Raspeig,2023,0
+ES099C,Vícar,2024,0
+ES100C,Armilla (greater city),2024,0
+ES101C,Mairena del Aljarafe (greater city),2024,0
+ES102C,Aranjuez,2024,0
+ES103C,Parla,2024,0
+ES104C,Pinto,2024,0
+ES105C,Arganda del Rey,2024,0
+ES106C,Fuenlabrada,2024,0
+ES107C,Rivas-Vaciamadrid,2024,0
+ES108C,Coslada (greater city),2024,0
+ES109C,Las Rozas de Madrid (greater city),2024,0
+ES110C,Castelldefels,2024,0
+ES111C,Viladecans (greater city),2024,0
+ES112C,"Prat de Llobregat, El",2024,0
+ES113C,Sant Boi de Llobregat,2024,0
+ES114C,Sant Cugat del Vallès (greater city),2024,0
+ES115C,Premià de Mar (greater city),2024,0
+ES116C,Sabadell (greater city),2024,0
+ES117C,Terrassa,2024,0
+ES118C,Huesca,2024,0
+FI001C,Helsinki/Helsingfors,2022,0
+FI001C,Helsinki/Helsingfors,2023,0
+FI001C,Helsinki/Helsingfors,2024,0
+FI002C,Tampere/Tammerfors,2022,0
+FI002C,Tampere/Tammerfors,2023,0
+FI002C,Tampere/Tammerfors,2024,0
+FI003C,Turku/Åbo,2022,0
+FI003C,Turku/Åbo,2023,0
+FI003C,Turku/Åbo,2024,0
+FI004C,Oulu/Uleåborg,2022,0
+FI004C,Oulu/Uleåborg,2023,0
+FI004C,Oulu/Uleåborg,2024,0
+FI005C,Espoo/Esbo,2022,0
+FI005C,Espoo/Esbo,2023,0
+FI005C,Espoo/Esbo,2024,0
+FI006C,Vantaa/Vanda,2022,0
+FI006C,Vantaa/Vanda,2023,0
+FI006C,Vantaa/Vanda,2024,0
+FI007C,Lahti/Lahtis,2022,0
+FI007C,Lahti/Lahtis,2023,0
+FI007C,Lahti/Lahtis,2024,0
+FI008C,Kuopio,2022,0
+FI008C,Kuopio,2023,0
+FI008C,Kuopio,2024,0
+FI009C,Jyväskylä,2022,0
+FI009C,Jyväskylä,2023,0
+FI009C,Jyväskylä,2024,0
+FR,France,2022,0
+FR001C,Paris (greater city),2022,0
+FR002C,Lyon (greater city),2022,0
+FR003C,Lille (greater city),2022,0
+FR004C,Marseille (greater city),2022,0
+FR005C,Bordeaux (greater city),2022,0
+FR006C,Toulouse (greater city),2022,0
+FR007C,Nantes (greater city),2022,0
+FR008C,Nice (greater city),2022,0
+FR009C,Strasbourg (greater city),2022,0
+FR010C,Rouen (greater city),2022,0
+FR011C,Montpellier (greater city),2022,0
+FR012C,Grenoble (greater city),2022,0
+FR013C,Tours (greater city),2022,0
+FR014C,Cannes-Antibes (greater city),2022,0
+FR015C,Toulon (greater city),2022,0
+FR016C,Rennes (greater city),2022,0
+FR017C,Reims (greater city),2022,0
+FR018C,Orléans (greater city),2022,0
+FR019C,Nancy (greater city),2022,0
+FR020C,Dijon (greater city),2022,0
+FR021C,Clermont-Ferrand (greater city),2022,0
+FR022C,Le Havre (greater city),2022,0
+FR023C,Saint-Étienne (greater city),2022,0
+FR024C,Angers (greater city),2022,0
+FR025C,Mulhouse (greater city),2022,0
+FR026C,Lens (greater city),2022,0
+FR027C,Metz (greater city),2022,0
+FR028C,Nîmes,2022,0
+FR029C,Le Mans (greater city),2022,0
+FR030C,Saint-Denis,2022,0
+FR031C,Caen (greater city),2022,0
+FR032C,Limoges (greater city),2022,0
+FR033C,Aix-en-Provence,2022,0
+FR034C,Brest,2022,0
+FR035C,Amiens (greater city),2022,0
+FR036C,Dunkerque (greater city),2022,0
+FR037C,Perpignan (greater city),2022,0
+FR038C,Annecy (greater city),2022,0
+FR039C,Besançon,2022,0
+FR040C,Bayonne (greater city),2022,0
+FR041C,La Seyne-sur-Mer (greater city),2022,0
+FR042C,Pau (greater city),2022,0
+FR043C,Avignon (greater city),2022,0
+FR044C,Troyes (greater city),2022,0
+FR045C,Valenciennes (greater city),2022,0
+FR046C,Fort-de-France (greater city),2022,0
+FR047C,Poitiers (greater city),2022,0
+FR048C,Valence (greater city),2022,0
+FR049C,Fréjus (greater city),2022,0
+FR050C,Chambéry (greater city),2022,0
+FR051C,Mantes-la-Jolie (greater city),2022,0
+FR052C,Douai (greater city),2022,0
+FR053C,Melun (greater city),2022,0
+FR054C,La Rochelle (greater city),2022,0
+FR055C,Lorient (greater city),2022,0
+FR056C,Cherbourg-en-Cotentin,2022,0
+FR057C,Béziers,2022,0
+FR058C,Chartres (greater city),2022,0
+FR059C,Creil (greater city),2022,0
+FR060C,Boulogne-sur-Mer (greater city),2022,0
+FR061C,Calais (greater city),2022,0
+FR063C,Montbéliard (greater city),2022,0
+FR064C,Arras (greater city),2022,0
+FR065C,Colmar (greater city),2022,0
+FR066C,Martigues (greater city),2022,0
+FR067C,Meaux (greater city),2022,0
+FR068C,Bourges,2022,0
+FR069C,Saint-Brieuc (greater city),2022,0
+FR070C,Quimper,2022,0
+FR071C,Belfort (greater city),2022,0
+FR072C,Cayenne,2022,0
+FR073C,Hayange,2022,0
+FR074C,Saint-Louis,2022,0
+FR075C,Vannes,2022,0
+FR076C,"Annemasse-Geneva, FR part (greater city)",2022,0
+FR077C,"Saint-Louis-Bâle, FR part (greater city)",2022,0
+HR001C,Zagreb,2022,0
+HR001C,Zagreb,2023,0
+HR001C,Zagreb,2024,0
+HR002C,Rijeka,2022,0
+HR002C,Rijeka,2023,0
+HR002C,Rijeka,2024,0
+HR003C,Slavonski Brod,2022,0
+HR003C,Slavonski Brod,2023,0
+HR004C,Osijek,2022,0
+HR004C,Osijek,2023,0
+HR004C,Osijek,2024,0
+HR005C,Split (greater city),2022,0
+HR005C,Split (greater city),2023,0
+HR005C,Split (greater city),2024,0
+HR006C,Pula/Pola,2022,0
+HR006C,Pula/Pola,2023,0
+HR007C,Zadar,2022,0
+HR007C,Zadar,2023,0
+HR007C,Zadar,2024,0
+HU001C,Budapest (greater city),2022,0
+HU001C,Budapest (greater city),2023,0
+HU001C,Budapest (greater city),2024,0
+HU002C,Miskolc,2022,0
+HU002C,Miskolc,2023,0
+HU002C,Miskolc,2024,0
+HU003C,Nyíregyháza,2022,0
+HU003C,Nyíregyháza,2023,0
+HU003C,Nyíregyháza,2024,0
+HU004C,Pécs,2022,0
+HU004C,Pécs,2023,0
+HU004C,Pécs,2024,0
+HU005C,Debrecen,2022,0
+HU005C,Debrecen,2023,0
+HU005C,Debrecen,2024,0
+HU006C,Szeged,2022,0
+HU006C,Szeged,2023,0
+HU006C,Szeged,2024,0
+HU007C,Gyõr,2022,0
+HU007C,Gyõr,2023,0
+HU007C,Gyõr,2024,0
+HU008C,Kecskemét,2022,0
+HU008C,Kecskemét,2023,0
+HU008C,Kecskemét,2024,0
+HU009C,Székesfehérvár,2022,0
+HU009C,Székesfehérvár,2023,0
+HU009C,Székesfehérvár,2024,0
+HU010C,Szombathely,2022,0
+HU010C,Szombathely,2023,0
+HU010C,Szombathely,2024,0
+HU011C,Szolnok,2022,0
+HU011C,Szolnok,2023,0
+HU012C,Tatabánya,2022,0
+HU012C,Tatabánya,2023,0
+HU012C,Tatabánya,2024,0
+HU013C,Veszprém,2022,0
+HU013C,Veszprém,2023,0
+HU014C,Békéscsaba,2022,0
+HU014C,Békéscsaba,2023,0
+HU015C,Kaposvár,2022,0
+HU015C,Kaposvár,2023,0
+HU016C,Eger,2022,0
+HU016C,Eger,2023,0
+HU017C,Dunaújváros,2022,0
+HU017C,Dunaújváros,2023,0
+HU018C,Zalaegerszeg,2022,0
+HU018C,Zalaegerszeg,2023,0
+HU019C,Sopron,2022,0
+HU019C,Sopron,2023,0
+HU019C,Sopron,2024,0
+IT,Italy,2022,0
+IT,Italy,2023,1
+IT,Italy,2024,1
+IT,Italy,2025,1
+IT001C,Roma,2022,0
+IT001C,Roma,2023,0
+IT001C,Roma,2024,0
+IT001C,Roma,2025,0
+IT002C,Milano (greater city),2022,0
+IT002C,Milano (greater city),2023,0
+IT002C,Milano (greater city),2024,0
+IT002C,Milano (greater city),2025,0
+IT003C,Napoli (greater city),2022,0
+IT003C,Napoli (greater city),2023,0
+IT003C,Napoli (greater city),2024,0
+IT003C,Napoli (greater city),2025,0
+IT004C,Torino,2022,0
+IT004C,Torino,2023,0
+IT004C,Torino,2024,0
+IT004C,Torino,2025,0
+IT005C,Palermo,2022,0
+IT005C,Palermo,2023,0
+IT005C,Palermo,2024,0
+IT005C,Palermo,2025,0
+IT006C,Genova,2022,0
+IT006C,Genova,2023,0
+IT006C,Genova,2024,0
+IT006C,Genova,2025,0
+IT007C,Firenze,2022,0
+IT007C,Firenze,2023,0
+IT007C,Firenze,2024,0
+IT007C,Firenze,2025,0
+IT008C,Bari,2022,0
+IT008C,Bari,2023,0
+IT008C,Bari,2024,0
+IT008C,Bari,2025,0
+IT009C,Bologna,2022,0
+IT009C,Bologna,2023,0
+IT009C,Bologna,2024,0
+IT009C,Bologna,2025,0
+IT010C,Catania (greater city),2022,0
+IT010C,Catania (greater city),2023,0
+IT010C,Catania (greater city),2024,0
+IT010C,Catania (greater city),2025,0
+IT011C,Venezia,2022,0
+IT011C,Venezia,2023,0
+IT011C,Venezia,2024,0
+IT011C,Venezia,2025,0
+IT012C,Verona,2022,0
+IT012C,Verona,2023,0
+IT012C,Verona,2024,0
+IT012C,Verona,2025,0
+IT013C,Cremona,2022,0
+IT013C,Cremona,2023,0
+IT013C,Cremona,2024,0
+IT013C,Cremona,2025,0
+IT014C,Trento,2022,0
+IT014C,Trento,2023,0
+IT014C,Trento,2024,0
+IT014C,Trento,2025,0
+IT015C,Trieste,2022,0
+IT015C,Trieste,2023,0
+IT015C,Trieste,2024,0
+IT015C,Trieste,2025,0
+IT016C,Perugia,2022,0
+IT016C,Perugia,2023,0
+IT016C,Perugia,2024,0
+IT016C,Perugia,2025,0
+IT017C,Ancona,2022,0
+IT017C,Ancona,2023,0
+IT017C,Ancona,2024,0
+IT017C,Ancona,2025,0
+IT018C,Pescara (greater city),2022,0
+IT018C,Pescara (greater city),2023,0
+IT018C,Pescara (greater city),2024,0
+IT018C,Pescara (greater city),2025,0
+IT019C,Campobasso,2022,0
+IT019C,Campobasso,2023,0
+IT019C,Campobasso,2024,0
+IT019C,Campobasso,2025,0
+IT020C,Caserta  (greater city),2022,0
+IT020C,Caserta  (greater city),2023,0
+IT020C,Caserta  (greater city),2024,0
+IT020C,Caserta  (greater city),2025,0
+IT021C,Taranto,2022,0
+IT021C,Taranto,2023,0
+IT021C,Taranto,2024,0
+IT021C,Taranto,2025,0
+IT022C,Potenza,2022,0
+IT022C,Potenza,2023,0
+IT022C,Potenza,2024,0
+IT022C,Potenza,2025,0
+IT023C,Catanzaro,2022,0
+IT023C,Catanzaro,2023,0
+IT023C,Catanzaro,2024,0
+IT023C,Catanzaro,2025,0
+IT024C,Reggio di Calabria,2022,0
+IT024C,Reggio di Calabria,2023,0
+IT024C,Reggio di Calabria,2024,0
+IT024C,Reggio di Calabria,2025,0
+IT025C,Sassari,2022,0
+IT025C,Sassari,2023,0
+IT025C,Sassari,2024,0
+IT025C,Sassari,2025,0
+IT026C,Cagliari (greater city),2022,0
+IT026C,Cagliari (greater city),2023,0
+IT026C,Cagliari (greater city),2024,0
+IT026C,Cagliari (greater city),2025,0
+IT027C,Padova,2022,0
+IT027C,Padova,2023,0
+IT027C,Padova,2024,0
+IT027C,Padova,2025,0
+IT028C,Brescia,2022,0
+IT028C,Brescia,2023,0
+IT028C,Brescia,2024,0
+IT028C,Brescia,2025,0
+IT029C,Modena,2022,0
+IT029C,Modena,2023,0
+IT029C,Modena,2024,0
+IT029C,Modena,2025,0
+IT030C,Foggia,2022,0
+IT030C,Foggia,2023,0
+IT030C,Foggia,2024,0
+IT030C,Foggia,2025,0
+IT031C,Salerno,2022,0
+IT031C,Salerno,2023,0
+IT031C,Salerno,2024,0
+IT031C,Salerno,2025,0
+IT032C,Piacenza,2022,0
+IT032C,Piacenza,2023,0
+IT032C,Piacenza,2024,0
+IT032C,Piacenza,2025,0
+IT033C,Bolzano,2022,0
+IT033C,Bolzano,2023,0
+IT033C,Bolzano,2024,0
+IT033C,Bolzano,2025,0
+IT034C,Udine,2022,0
+IT034C,Udine,2023,0
+IT034C,Udine,2024,0
+IT034C,Udine,2025,0
+IT035C,La Spezia,2022,0
+IT035C,La Spezia,2023,0
+IT035C,La Spezia,2024,0
+IT035C,La Spezia,2025,0
+IT036C,Lecce,2022,0
+IT036C,Lecce,2023,0
+IT036C,Lecce,2024,0
+IT036C,Lecce,2025,0
+IT037C,Barletta,2022,0
+IT037C,Barletta,2023,0
+IT037C,Barletta,2024,0
+IT037C,Barletta,2025,0
+IT038C,Pesaro,2022,0
+IT038C,Pesaro,2023,0
+IT038C,Pesaro,2024,0
+IT038C,Pesaro,2025,0
+IT039C,Como,2022,0
+IT039C,Como,2023,0
+IT039C,Como,2024,0
+IT039C,Como,2025,0
+IT040C,Pisa,2022,0
+IT040C,Pisa,2023,0
+IT040C,Pisa,2024,0
+IT040C,Pisa,2025,0
+IT041C,Treviso,2022,0
+IT041C,Treviso,2023,0
+IT041C,Treviso,2024,0
+IT041C,Treviso,2025,0
+IT042C,Varese,2022,0
+IT042C,Varese,2023,0
+IT042C,Varese,2024,0
+IT042C,Varese,2025,0
+IT043C,Asti,2022,0
+IT043C,Asti,2023,0
+IT043C,Asti,2024,0
+IT043C,Asti,2025,0
+IT044C,Pavia,2022,0
+IT044C,Pavia,2023,0
+IT044C,Pavia,2024,0
+IT044C,Pavia,2025,0
+IT045C,Massa,2022,0
+IT045C,Massa,2023,0
+IT046C,Cosenza (greater city),2022,0
+IT046C,Cosenza (greater city),2023,0
+IT046C,Cosenza (greater city),2024,0
+IT046C,Cosenza (greater city),2025,0
+IT047C,Savona,2022,0
+IT047C,Savona,2023,0
+IT047C,Savona,2024,0
+IT047C,Savona,2025,0
+IT048C,Matera,2022,0
+IT048C,Matera,2023,0
+IT048C,Matera,2024,0
+IT048C,Matera,2025,0
+IT049C,Acireale (greater city),2022,0
+IT049C,Acireale (greater city),2023,0
+IT049C,Acireale (greater city),2024,0
+IT049C,Acireale (greater city),2025,0
+IT050C,Avellino,2022,0
+IT050C,Avellino,2023,0
+IT050C,Avellino,2024,0
+IT050C,Avellino,2025,0
+IT051C,Pordenone,2022,0
+IT051C,Pordenone,2023,0
+IT051C,Pordenone,2024,0
+IT051C,Pordenone,2025,0
+IT052C,Lecco,2022,0
+IT052C,Lecco,2023,0
+IT052C,Lecco,2024,0
+IT052C,Lecco,2025,0
+IT053C,Altamura,2022,0
+IT053C,Altamura,2023,0
+IT053C,Altamura,2024,0
+IT053C,Altamura,2025,0
+IT054C,Bitonto,2022,0
+IT054C,Bitonto,2023,0
+IT054C,Bitonto,2024,0
+IT054C,Bitonto,2025,0
+IT055C,Molfetta,2022,0
+IT055C,Molfetta,2023,0
+IT055C,Molfetta,2024,0
+IT055C,Molfetta,2025,0
+IT056C,Battipaglia,2022,0
+IT056C,Battipaglia,2023,0
+IT056C,Battipaglia,2024,0
+IT056C,Battipaglia,2025,0
+IT057C,Bisceglie,2022,0
+IT057C,Bisceglie,2023,0
+IT057C,Bisceglie,2024,0
+IT057C,Bisceglie,2025,0
+IT058C,Carpi,2022,0
+IT058C,Carpi,2023,0
+IT058C,Carpi,2024,0
+IT058C,Carpi,2025,0
+IT059C,Cerignola,2022,0
+IT059C,Cerignola,2023,0
+IT059C,Cerignola,2024,0
+IT059C,Cerignola,2025,0
+IT060C,Gela,2022,0
+IT060C,Gela,2023,0
+IT060C,Gela,2024,0
+IT060C,Gela,2025,0
+IT061C,Bagheria,2022,0
+IT061C,Bagheria,2023,0
+IT061C,Bagheria,2024,0
+IT061C,Bagheria,2025,0
+IT062C,Anzio (greater city),2022,0
+IT062C,Anzio (greater city),2023,0
+IT062C,Anzio (greater city),2024,0
+IT062C,Anzio (greater city),2025,0
+IT063C,Sassuolo,2022,0
+IT063C,Sassuolo,2023,0
+IT063C,Sassuolo,2024,0
+IT063C,Sassuolo,2025,0
+IT064C,Messina,2022,0
+IT064C,Messina,2023,0
+IT064C,Messina,2024,0
+IT064C,Messina,2025,0
+IT065C,Prato,2022,0
+IT065C,Prato,2023,0
+IT065C,Prato,2024,0
+IT065C,Prato,2025,0
+IT066C,Parma,2022,0
+IT066C,Parma,2023,0
+IT066C,Parma,2024,0
+IT066C,Parma,2025,0
+IT067C,Livorno,2022,0
+IT067C,Livorno,2023,0
+IT067C,Livorno,2024,0
+IT067C,Livorno,2025,0
+IT068C,Reggio nell'Emilia,2022,0
+IT068C,Reggio nell'Emilia,2023,0
+IT068C,Reggio nell'Emilia,2024,0
+IT068C,Reggio nell'Emilia,2025,0
+IT069C,Ravenna,2022,0
+IT069C,Ravenna,2023,0
+IT069C,Ravenna,2024,0
+IT069C,Ravenna,2025,0
+IT070C,Ferrara,2022,0
+IT070C,Ferrara,2023,0
+IT070C,Ferrara,2024,0
+IT070C,Ferrara,2025,0
+IT071C,Rimini,2022,0
+IT071C,Rimini,2023,0
+IT071C,Rimini,2024,0
+IT071C,Rimini,2025,0
+IT072C,Siracusa,2022,0
+IT072C,Siracusa,2023,0
+IT072C,Siracusa,2024,0
+IT072C,Siracusa,2025,0
+IT073C,Bergamo (greater city),2022,0
+IT073C,Bergamo (greater city),2023,0
+IT073C,Bergamo (greater city),2024,0
+IT073C,Bergamo (greater city),2025,0
+IT074C,Forlì,2022,0
+IT074C,Forlì,2023,0
+IT074C,Forlì,2024,0
+IT074C,Forlì,2025,0
+IT075C,Latina,2022,0
+IT075C,Latina,2023,0
+IT075C,Latina,2024,0
+IT075C,Latina,2025,0
+IT076C,Vicenza,2022,0
+IT076C,Vicenza,2023,0
+IT076C,Vicenza,2024,0
+IT076C,Vicenza,2025,0
+IT077C,Terni,2022,0
+IT077C,Terni,2023,0
+IT077C,Terni,2024,0
+IT077C,Terni,2025,0
+IT078C,Novara,2022,0
+IT078C,Novara,2023,0
+IT078C,Novara,2024,0
+IT078C,Novara,2025,0
+IT079C,Alessandria,2022,0
+IT079C,Alessandria,2023,0
+IT079C,Alessandria,2024,0
+IT079C,Alessandria,2025,0
+IT080C,Arezzo,2022,0
+IT080C,Arezzo,2023,0
+IT080C,Arezzo,2024,0
+IT080C,Arezzo,2025,0
+IT081C,Grosseto,2022,0
+IT081C,Grosseto,2023,0
+IT081C,Grosseto,2024,0
+IT081C,Grosseto,2025,0
+IT082C,Brindisi,2022,0
+IT082C,Brindisi,2023,0
+IT082C,Brindisi,2024,0
+IT082C,Brindisi,2025,0
+IT083C,Trapani,2022,0
+IT083C,Trapani,2023,0
+IT083C,Trapani,2024,0
+IT083C,Trapani,2025,0
+IT084C,Ragusa,2022,0
+IT084C,Ragusa,2023,0
+IT084C,Ragusa,2024,0
+IT084C,Ragusa,2025,0
+IT085C,Andria,2022,0
+IT085C,Andria,2023,0
+IT085C,Andria,2024,0
+IT085C,Andria,2025,0
+IT086C,Trani,2022,0
+IT086C,Trani,2023,0
+IT086C,Trani,2024,0
+IT086C,Trani,2025,0
+IT087C,L'Aquila,2022,0
+IT087C,L'Aquila,2023,0
+IT087C,L'Aquila,2024,0
+IT087C,L'Aquila,2025,0
+IT088C,Vigevano,2024,0
+IT088C,Vigevano,2025,0
+IT089C,Guidonia Montecelio (greater city),2024,0
+IT089C,Guidonia Montecelio (greater city),2025,0
+IT090C,Tivoli,2024,0
+IT090C,Tivoli,2025,0
+LT001C,Vilnius,2023,0
+LT001C,Vilnius,2024,0
+LT002C,Kaunas,2023,0
+LT002C,Kaunas,2024,0
+LT003C,Panevėžys,2023,0
+LT003C,Panevėžys,2024,0
+LT004C,Alytus,2023,0
+LT004C,Alytus,2024,0
+LT005C,Klaipėda,2023,0
+LT005C,Klaipėda,2024,0
+LT006C,Šiauliai,2023,0
+LT006C,Šiauliai,2024,0
+LV,Latvia,2022,0
+LV,Latvia,2023,0
+LV,Latvia,2024,0
+LV001C,Rīga,2022,0
+LV001C,Rīga,2023,0
+LV001C,Rīga,2024,0
+LV002C,Liepāja,2022,0
+LV002C,Liepāja,2023,0
+LV002C,Liepāja,2024,0
+LV003C,Jelgava,2022,0
+LV004C,Daugavpils,2022,0
+LV004C,Daugavpils,2023,0
+LV004C,Daugavpils,2024,0
+MT001C,Greater Valletta,2022,0
+MT001C,Greater Valletta,2023,0
+MT001C,Greater Valletta,2024,0
+NL,Netherlands,2022,0
+NL,Netherlands,2023,2
+NL,Netherlands,2024,2
+NL001C,Amsterdam (greater city),2022,0
+NL001C,Amsterdam (greater city),2023,0
+NL001C,Amsterdam (greater city),2024,0
+NL002C,Alkmaar (greater city),2022,0
+NL002C,Alkmaar (greater city),2023,0
+NL002C,Alkmaar (greater city),2024,0
+NL003C,Almelo,2022,0
+NL003C,Almelo,2023,0
+NL003C,Almelo,2024,0
+NL004C,Almere,2022,0
+NL004C,Almere,2023,0
+NL004C,Almere,2024,0
+NL005C,Alphen aan den Rijn,2022,0
+NL005C,Alphen aan den Rijn,2023,0
+NL005C,Alphen aan den Rijn,2024,0
+NL006C,Amersfoort,2022,0
+NL006C,Amersfoort,2023,0
+NL006C,Amersfoort,2024,0
+NL007C,Apeldoorn,2022,0
+NL007C,Apeldoorn,2023,0
+NL007C,Apeldoorn,2024,0
+NL008C,Arnhem,2022,0
+NL008C,Arnhem,2023,0
+NL008C,Arnhem,2024,0
+NL009C,Assen,2022,0
+NL009C,Assen,2023,0
+NL009C,Assen,2024,0
+NL010C,Bergen op Zoom,2022,0
+NL010C,Bergen op Zoom,2023,0
+NL010C,Bergen op Zoom,2024,0
+NL011C,Breda,2022,0
+NL011C,Breda,2023,0
+NL011C,Breda,2024,0
+NL012C,Deventer,2022,0
+NL012C,Deventer,2023,0
+NL012C,Deventer,2024,0
+NL013C,Ede,2022,0
+NL013C,Ede,2023,0
+NL013C,Ede,2024,0
+NL014C,Eindhoven (greater city),2022,0
+NL014C,Eindhoven (greater city),2023,0
+NL014C,Eindhoven (greater city),2024,0
+NL015C,Enschede,2022,0
+NL015C,Enschede,2023,0
+NL015C,Enschede,2024,0
+NL016C,Gouda,2022,0
+NL016C,Gouda,2023,0
+NL016C,Gouda,2024,0
+NL017C,'s-Gravenhage (greater city),2022,0
+NL017C,'s-Gravenhage (greater city),2023,0
+NL017C,'s-Gravenhage (greater city),2024,0
+NL018C,Groningen,2022,0
+NL018C,Groningen,2023,0
+NL018C,Groningen,2024,0
+NL019C,Haarlem (greater city),2022,0
+NL019C,Haarlem (greater city),2023,0
+NL019C,Haarlem (greater city),2024,0
+NL020C,Haarlemmermeer,2022,0
+NL020C,Haarlemmermeer,2023,0
+NL020C,Haarlemmermeer,2024,0
+NL021C,Heemskerk (greater city),2022,0
+NL021C,Heemskerk (greater city),2023,0
+NL021C,Heemskerk (greater city),2024,0
+NL022C,Heerlen (greater city),2022,0
+NL022C,Heerlen (greater city),2023,0
+NL022C,Heerlen (greater city),2024,0
+NL023C,Helmond,2022,0
+NL023C,Helmond,2023,0
+NL023C,Helmond,2024,0
+NL024C,Hengelo,2022,0
+NL024C,Hengelo,2023,0
+NL024C,Hengelo,2024,0
+NL025C,'s-Hertogenbosch,2022,0
+NL025C,'s-Hertogenbosch,2023,0
+NL025C,'s-Hertogenbosch,2024,0
+NL026C,Hilversum,2022,0
+NL026C,Hilversum,2023,0
+NL026C,Hilversum,2024,0
+NL027C,Hoorn,2022,0
+NL027C,Hoorn,2023,0
+NL027C,Hoorn,2024,0
+NL028C,Leeuwarden,2022,0
+NL028C,Leeuwarden,2023,0
+NL028C,Leeuwarden,2024,0
+NL029C,Leiden (greater city),2022,0
+NL029C,Leiden (greater city),2023,0
+NL029C,Leiden (greater city),2024,0
+NL030C,Lelystad,2022,0
+NL030C,Lelystad,2023,0
+NL030C,Lelystad,2024,0
+NL031C,Maastricht,2022,0
+NL031C,Maastricht,2023,0
+NL031C,Maastricht,2024,0
+NL032C,Middelburg       ,2022,0
+NL032C,Middelburg       ,2023,0
+NL032C,Middelburg       ,2024,0
+NL033C,Nijmegen,2022,0
+NL033C,Nijmegen,2023,0
+NL033C,Nijmegen,2024,0
+NL034C,Nissewaard (greater city),2022,0
+NL034C,Nissewaard (greater city),2023,0
+NL034C,Nissewaard (greater city),2024,0
+NL035C,Oss,2022,0
+NL035C,Oss,2023,0
+NL035C,Oss,2024,0
+NL036C,Purmerend,2022,0
+NL036C,Purmerend,2023,0
+NL036C,Purmerend,2024,0
+NL037C,Rotterdam (greater city),2022,0
+NL037C,Rotterdam (greater city),2023,0
+NL037C,Rotterdam (greater city),2024,0
+NL038C,Roosendaal,2022,0
+NL038C,Roosendaal,2023,0
+NL038C,Roosendaal,2024,0
+NL039C,Sittard-Geleen (greater city),2022,0
+NL039C,Sittard-Geleen (greater city),2023,0
+NL039C,Sittard-Geleen (greater city),2024,0
+NL040C,Soest (greater city),2022,0
+NL040C,Soest (greater city),2023,0
+NL040C,Soest (greater city),2024,0
+NL041C,Tilburg (greater city),2022,0
+NL041C,Tilburg (greater city),2023,0
+NL041C,Tilburg (greater city),2024,0
+NL042C,Utrecht (greater city),2022,0
+NL042C,Utrecht (greater city),2023,0
+NL042C,Utrecht (greater city),2024,0
+NL043C,Veenendaal,2022,0
+NL043C,Veenendaal,2023,0
+NL043C,Veenendaal,2024,0
+NL044C,Venlo,2022,0
+NL044C,Venlo,2023,0
+NL044C,Venlo,2024,0
+NL045C,Zaanstad (greater city),2022,0
+NL045C,Zaanstad (greater city),2023,0
+NL045C,Zaanstad (greater city),2024,0
+NL046C,Zoetermeer,2022,0
+NL046C,Zoetermeer,2023,0
+NL046C,Zoetermeer,2024,0
+NL047C,Zwolle,2022,0
+NL047C,Zwolle,2023,0
+NL047C,Zwolle,2024,0
+NO001C,Oslo (greater city),2022,0
+NO001C,Oslo (greater city),2023,0
+NO002C,Bergen,2022,0
+NO002C,Bergen,2023,0
+NO003C,Trondheim,2022,0
+NO003C,Trondheim,2023,0
+NO004C,Stavanger (greater city),2022,0
+PL,Poland,2023,1
+PL001C,Warszawa,2023,0
+PL002C,Łódź,2023,0
+PL003C,Kraków,2023,0
+PL004C,Wrocław,2023,0
+PL005C,Poznań,2023,0
+PL006C,Gdańsk,2023,0
+PL007C,Szczecin,2023,0
+PL008C,Bydgoszcz,2023,0
+PL009C,Lublin,2023,0
+PL010C,Katowice,2023,0
+PL011C,Białystok,2023,0
+PL012C,Kielce,2023,0
+PL013C,Toruń,2023,0
+PL014C,Olsztyn,2023,0
+PL015C,Rzeszów,2023,0
+PL016C,Opole,2023,0
+PL017C,Gorzów Wielkopolski,2023,0
+PL018C,Zielona Góra,2023,0
+PL019C,Jelenia Góra,2023,0
+PL020C,Nowy Sącz,2023,0
+PL021C,Suwałki,2023,0
+PL022C,Konin,2023,0
+PL024C,Częstochowa,2023,0
+PL025C,Radom,2023,0
+PL026C,Płock,2023,0
+PL027C,Kalisz,2023,0
+PL028C,Koszalin,2023,0
+PL029C,Słupsk,2023,0
+PL030C,Jastrzębie-Zdrój,2023,0
+PL031C,Siedlce,2023,0
+PL032C,Piotrków Trybunalski,2023,0
+PL033C,Lubin,2023,0
+PL034C,Piła,2023,0
+PL035C,Inowrocław,2023,0
+PL037C,Gniezno,2023,0
+PL038C,Stargard,2023,0
+PL039C,Ostrów Wielkopolski,2023,0
+PL041C,Zamość,2023,0
+PL042C,Chełm,2023,0
+PL043C,Pabianice,2023,0
+PL044C,Głogów,2023,0
+PL047C,Łomża,2023,0
+PL051C,Tczew,2023,0
+PL052C,Ełk,2023,0
+PL053C,Gdynia,2023,0
+PL054C,Sosnowiec,2023,0
+PL055C,Gliwice,2023,0
+PL056C,Zabrze,2023,0
+PL057C,Bytom,2023,0
+PL058C,Bielsko-Biała,2023,0
+PL059C,Ruda Śląska,2023,0
+PL060C,Rybnik,2023,0
+PL061C,Tychy,2023,0
+PL062C,Wałbrzych,2023,0
+PL063C,Elbląg,2023,0
+PL064C,Włocławek,2023,0
+PL065C,Tarnów,2023,0
+PL066C,Chorzów,2023,0
+PL067C,Legnica,2023,0
+PL068C,Grudziądz,2023,0
+PL069C,Będzin,2023,0
+PL070C,Dąbrowa Górnicza,2023,0
+PL071C,Legionowo,2023,0
+PL072C,Mysłowice,2023,0
+PL073C,Pruszków,2023,0
+PL074C,Siemianowice Śląskie,2023,0
+PL075C,Świętochłowice,2023,0
+PT,Portugal,2023,2
+PT,Portugal,2024,2
+PT,Portugal,2025,2
+PT001C,Lisboa (greater city),2023,0
+PT001C,Lisboa (greater city),2024,0
+PT001C,Lisboa (greater city),2025,0
+PT002C,Porto (greater city),2023,0
+PT002C,Porto (greater city),2024,0
+PT002C,Porto (greater city),2025,0
+PT003C,Braga (greater city),2023,0
+PT003C,Braga (greater city),2024,0
+PT003C,Braga (greater city),2025,0
+PT004C,Funchal (greater city),2023,0
+PT004C,Funchal (greater city),2024,0
+PT004C,Funchal (greater city),2025,0
+PT005C,Coimbra (greater city),2023,0
+PT005C,Coimbra (greater city),2024,0
+PT005C,Coimbra (greater city),2025,0
+PT006C,Setúbal (greater city),2023,0
+PT006C,Setúbal (greater city),2024,0
+PT006C,Setúbal (greater city),2025,0
+PT007C,Ponta Delgada (greater city),2023,0
+PT007C,Ponta Delgada (greater city),2024,0
+PT007C,Ponta Delgada (greater city),2025,0
+PT008C,Aveiro (greater city),2023,0
+PT008C,Aveiro (greater city),2024,0
+PT008C,Aveiro (greater city),2025,0
+PT009C,Faro (greater city),2023,0
+PT009C,Faro (greater city),2024,0
+PT009C,Faro (greater city),2025,0
+PT010C,Viseu (greater city),2023,0
+PT010C,Viseu (greater city),2024,0
+PT010C,Viseu (greater city),2025,0
+PT011C,Viana do Castelo (greater city),2023,0
+PT011C,Viana do Castelo (greater city),2024,0
+PT011C,Viana do Castelo (greater city),2025,0
+PT012C,Paredes (greater city),2023,0
+PT012C,Paredes (greater city),2024,0
+PT012C,Paredes (greater city),2025,0
+PT013C,Póvoa de Varzim (greater city),2023,0
+PT013C,Póvoa de Varzim (greater city),2024,0
+PT013C,Póvoa de Varzim (greater city),2025,0
+PT014C,Sintra (greater city),2023,0
+PT014C,Sintra (greater city),2024,0
+PT014C,Sintra (greater city),2025,0
+PT015C,Guimarães (greater city),2023,0
+PT015C,Guimarães (greater city),2024,0
+PT015C,Guimarães (greater city),2025,0
+PT016C,Vila Franca de Xira (greater city),2023,0
+PT016C,Vila Franca de Xira (greater city),2024,0
+PT016C,Vila Franca de Xira (greater city),2025,0
+SE,Sweden,2023,2
+SE,Sweden,2024,2
+SE,Sweden,2025,2
+SE001C,Stockholm (greater city),2023,0
+SE001C,Stockholm (greater city),2024,0
+SE001C,Stockholm (greater city),2025,0
+SE002C,Göteborg (greater city),2023,0
+SE002C,Göteborg (greater city),2024,0
+SE002C,Göteborg (greater city),2025,0
+SE003C,Malmö,2023,0
+SE003C,Malmö,2024,0
+SE003C,Malmö,2025,0
+SE005C,Umeå,2023,0
+SE005C,Umeå,2024,0
+SE005C,Umeå,2025,0
+SE006C,Uppsala,2023,0
+SE006C,Uppsala,2024,0
+SE006C,Uppsala,2025,0
+SE007C,Linköping,2023,0
+SE007C,Linköping,2024,0
+SE007C,Linköping,2025,0
+SE008C,Örebro,2023,0
+SE008C,Örebro,2024,0
+SE008C,Örebro,2025,0
+SE009C,Södertälje,2023,0
+SE009C,Södertälje,2024,0
+SE009C,Södertälje,2025,0
+SE010C,Västerås,2023,0
+SE010C,Västerås,2024,0
+SE010C,Västerås,2025,0
+SE011C,Norrköping,2023,0
+SE011C,Norrköping,2024,0
+SE011C,Norrköping,2025,0
+SE012C,Helsingborg,2023,0
+SE012C,Helsingborg,2024,0
+SE012C,Helsingborg,2025,0
+SE013C,Lund,2023,0
+SE013C,Lund,2024,0
+SE013C,Lund,2025,0
+SE014C,Borås,2023,0
+SE014C,Borås,2024,0
+SE014C,Borås,2025,0
+SE015C,Växjö,2023,0
+SE015C,Växjö,2024,0
+SE015C,Växjö,2025,0
+SI,Slovenia,2023,0
+SI,Slovenia,2024,0
+SI001C,Ljubljana,2023,0
+SI001C,Ljubljana,2024,0
+SI002C,Maribor,2023,0
+SI002C,Maribor,2024,0

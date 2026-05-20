@@ -1,0 +1,13 @@
+{
+  "source": "eurostat_snapshot",
+  "base_path": "inputs/eurostat/eurostat_city_values_sample.csv",
+  "id_column": "indicator_id",
+  "value_column": "value",
+  "snapshots": {
+    "urb_ctran": "data/raw/real_sources/eurostat/urb_ctran.json",
+    "urb_cpop1": "data/raw/real_sources/eurostat/urb_cpop1.json",
+    "urb_cenv": "data/raw/real_sources/eurostat/urb_cenv.json",
+    "urb_clivcon": "data/raw/real_sources/eurostat/urb_clivcon.json"
+  },
+  "note": "Offline fixed snapshot prepared from Eurostat dissemination API."
+}

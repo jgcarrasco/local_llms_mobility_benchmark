@@ -1,0 +1,373 @@
+{
+  "source": "wikidata_sparql_snapshot",
+  "query": "\nSELECT ?item ?itemLabel ?coord ?typeLabel WHERE {\n  ?item wdt:P131* wd:Q11959 ;\n        wdt:P625 ?coord .\n  OPTIONAL { ?item wdt:P31 ?type . }\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en,es\". }\n}\nLIMIT 50\n",
+  "head": {
+    "vars": [
+      "item",
+      "itemLabel",
+      "poi_type",
+      "coord"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "item": "http://www.wikidata.org/entity/Q108131331",
+        "qid": "Q108131331",
+        "itemLabel": "Q108131331",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.494949 38.366174)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131332",
+        "qid": "Q108131332",
+        "itemLabel": "",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.509212 38.346276)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131333",
+        "qid": "Q108131333",
+        "itemLabel": "Q108131333",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.464536 38.361318)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131334",
+        "qid": "Q108131334",
+        "itemLabel": "Q108131334",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.45383 38.371102)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131335",
+        "qid": "Q108131335",
+        "itemLabel": "Q108131335",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.498204 38.35384)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131336",
+        "qid": "Q108131336",
+        "itemLabel": "Q108131336",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.50756 38.357399)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131337",
+        "qid": "Q108131337",
+        "itemLabel": "Q108131337",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.49811 38.359687)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131339",
+        "qid": "Q108131339",
+        "itemLabel": "Q108131339",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.501422 38.36236)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131340",
+        "qid": "Q108131340",
+        "itemLabel": "Q108131340",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.486107 38.353432)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131341",
+        "qid": "Q108131341",
+        "itemLabel": "Q108131341",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.503515 38.348644)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131342",
+        "qid": "Q108131342",
+        "itemLabel": "Q108131342",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.486397 38.357197)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131343",
+        "qid": "Q108131343",
+        "itemLabel": "Q108131343",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.506557 38.356923)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131345",
+        "qid": "Q108131345",
+        "itemLabel": "Q108131345",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.467901 38.360549)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131346",
+        "qid": "Q108131346",
+        "itemLabel": "Q108131346",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.476253 38.371573)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131347",
+        "qid": "Q108131347",
+        "itemLabel": "Q108131347",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.48755 38.351021)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131348",
+        "qid": "Q108131348",
+        "itemLabel": "Q108131348",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.481328 38.357685)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131349",
+        "qid": "Q108131349",
+        "itemLabel": "Q108131349",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.513868 38.347344)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131350",
+        "qid": "Q108131350",
+        "itemLabel": "Q108131350",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.480504 38.360215)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131351",
+        "qid": "Q108131351",
+        "itemLabel": "Q108131351",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.499379 38.340095)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131352",
+        "qid": "Q108131352",
+        "itemLabel": "Q108131352",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.482847 38.35779)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131353",
+        "qid": "Q108131353",
+        "itemLabel": "Q108131353",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.463223 38.364331)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131354",
+        "qid": "Q108131354",
+        "itemLabel": "Q108131354",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.479611 38.372124)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131355",
+        "qid": "Q108131355",
+        "itemLabel": "Q108131355",
+        "poi_type": "public educational institution",
+        "coord": "Point(-0.482746 38.369552)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131356",
+        "qid": "Q108131356",
+        "itemLabel": "Q108131356",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.48475 38.356313)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131357",
+        "qid": "Q108131357",
+        "itemLabel": "Q108131357",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.488535 38.386157)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131358",
+        "qid": "Q108131358",
+        "itemLabel": "Q108131358",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.504738 38.35177)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131360",
+        "qid": "Q108131360",
+        "itemLabel": "Q108131360",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.468228 38.358375)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131361",
+        "qid": "Q108131361",
+        "itemLabel": "Q108131361",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.515928 38.34941)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132475",
+        "qid": "Q108132475",
+        "itemLabel": "CEIP Azorín",
+        "poi_type": "public educational institution",
+        "coord": "Point(-0.470628 38.363792)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132475",
+        "qid": "Q108132475",
+        "itemLabel": "CEIP Azorín",
+        "poi_type": "center for early childhood and primary education",
+        "coord": "Point(-0.470628 38.363792)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132477",
+        "qid": "Q108132477",
+        "itemLabel": "CEIP Lucentum",
+        "poi_type": "public educational institution",
+        "coord": "Point(-0.494044 38.375581)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132477",
+        "qid": "Q108132477",
+        "itemLabel": "CEIP Lucentum",
+        "poi_type": "center for early childhood and primary education",
+        "coord": "Point(-0.494044 38.375581)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132478",
+        "qid": "Q108132478",
+        "itemLabel": "CEIP San Nicolás de Bari",
+        "poi_type": "public educational institution",
+        "coord": "Point(-0.48592 38.360882)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132478",
+        "qid": "Q108132478",
+        "itemLabel": "CEIP San Nicolás de Bari",
+        "poi_type": "center for early childhood and primary education",
+        "coord": "Point(-0.48592 38.360882)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132480",
+        "qid": "Q108132480",
+        "itemLabel": "CEIP el Tossal",
+        "poi_type": "public educational institution",
+        "coord": "Point(-0.496444 38.352957)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132480",
+        "qid": "Q108132480",
+        "itemLabel": "CEIP el Tossal",
+        "poi_type": "center for early childhood and primary education",
+        "coord": "Point(-0.496444 38.352957)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132486",
+        "qid": "Q108132486",
+        "itemLabel": "CEIP d'Alacant - el Bacarot",
+        "poi_type": "public educational institution",
+        "coord": "Point(-0.55781 38.320065)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132486",
+        "qid": "Q108132486",
+        "itemLabel": "CEIP d'Alacant - el Bacarot",
+        "poi_type": "center for early childhood and primary education",
+        "coord": "Point(-0.55781 38.320065)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132492",
+        "qid": "Q108132492",
+        "itemLabel": "EI el Tossalet",
+        "poi_type": "public educational institution",
+        "coord": "Point(-0.479546 38.371001)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132493",
+        "qid": "Q108132493",
+        "itemLabel": "CEIP Mora Puchol",
+        "poi_type": "public educational institution",
+        "coord": "Point(-0.504609 38.338198)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132493",
+        "qid": "Q108132493",
+        "itemLabel": "CEIP Mora Puchol",
+        "poi_type": "center for early childhood and primary education",
+        "coord": "Point(-0.504609 38.338198)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132504",
+        "qid": "Q108132504",
+        "itemLabel": "IES Virgen del Remedio",
+        "poi_type": "IES",
+        "coord": "Point(-0.490184 38.376725)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132504",
+        "qid": "Q108132504",
+        "itemLabel": "IES Virgen del Remedio",
+        "poi_type": "public educational institution",
+        "coord": "Point(-0.490184 38.376725)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132505",
+        "qid": "Q108132505",
+        "itemLabel": "IES Leonardo Da Vinci",
+        "poi_type": "IES",
+        "coord": "Point(-0.49179 38.376663)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132505",
+        "qid": "Q108132505",
+        "itemLabel": "IES Leonardo Da Vinci",
+        "poi_type": "public educational institution",
+        "coord": "Point(-0.49179 38.376663)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132510",
+        "qid": "Q108132510",
+        "itemLabel": "CEIP José Carlos Aguilera",
+        "poi_type": "public educational institution",
+        "coord": "Point(-0.500784 38.343752)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132510",
+        "qid": "Q108132510",
+        "itemLabel": "CEIP José Carlos Aguilera",
+        "poi_type": "center for early childhood and primary education",
+        "coord": "Point(-0.500784 38.343752)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132526",
+        "qid": "Q108132526",
+        "itemLabel": "CEIP Emilio Varela",
+        "poi_type": "public educational institution",
+        "coord": "Point(-0.495533 38.376999)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132526",
+        "qid": "Q108132526",
+        "itemLabel": "CEIP Emilio Varela",
+        "poi_type": "center for early childhood and primary education",
+        "coord": "Point(-0.495533 38.376999)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108132527",
+        "qid": "Q108132527",
+        "itemLabel": "CEIP Gabriel Miró",
+        "poi_type": "public educational institution",
+        "coord": "Point(-0.506364 38.346701)"
+      },
+      {
+        "item": "http://www.wikidata.org/entity/Q108131331",
+        "qid": "Q108131331",
+        "itemLabel": "Q108131331",
+        "poi_type": "private educational institution",
+        "coord": "Point(-0.494949 38.366174)"
+      }
+    ]
+  }
+}

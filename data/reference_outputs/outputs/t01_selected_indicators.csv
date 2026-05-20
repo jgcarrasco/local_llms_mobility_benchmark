@@ -1,0 +1,13 @@
+indicator_id,indicator_name,theme,justification,expected_direction
+TT1003V,Share of journeys to work by car -%,mobility,Relevant to mobility and livability benchmarking.,lower_is_better
+TT1010V,"Share of journeys to work by public transport (rail, metro, bus, tram) -%",mobility,Relevant to mobility and livability benchmarking.,higher_is_better
+TT1006V,Share of journeys to work by motor cycle -%,mobility,Relevant to mobility and livability benchmarking.,higher_is_better
+TT1007V,Share of journeys to work by bicycle -%,mobility,Relevant to mobility and livability benchmarking.,higher_is_better
+DE1001V,"Population on the 1st of January, total",population_density,Relevant to mobility and livability benchmarking.,contextual
+DE1002V,"Population on the 1st of January, male",population_density,Relevant to mobility and livability benchmarking.,contextual
+EN1002V,Total number of hours of sunshine per day,environment,Relevant to mobility and livability benchmarking.,contextual
+EN1003V,Average temperature of warmest month - degrees,environment,Relevant to mobility and livability benchmarking.,contextual
+EN1004V,Average temperature of coldest month - degrees,environment,Relevant to mobility and livability benchmarking.,contextual
+DE3001V,Private households (excluding institutional households),living_conditions,Relevant to mobility and livability benchmarking.,higher_is_better
+DE3017V,Population living in private households (excluding institutional households),living_conditions,Relevant to mobility and livability benchmarking.,contextual
+DE3002V,One person households,living_conditions,Relevant to mobility and livability benchmarking.,higher_is_better

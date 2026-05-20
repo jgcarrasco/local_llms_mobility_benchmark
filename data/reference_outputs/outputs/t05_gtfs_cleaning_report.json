@@ -1,0 +1,7 @@
+{
+  "invalid_coordinates_removed": 1,
+  "duplicate_stops_removed": 1,
+  "missing_stop_names_filled": 1,
+  "n_clean_stops": 79,
+  "n_clean_stop_times": 176
+}

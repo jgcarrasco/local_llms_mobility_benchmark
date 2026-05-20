@@ -1,0 +1,5 @@
+dataset_id,title,theme,description
+urb_ctran,Transport - cities and greater cities,mobility,Eurostat urban dataset urb_ctran
+urb_cpop1,Population on 1 January by age groups and sex - cities and greater cities,population_density,Eurostat urban dataset urb_cpop1
+urb_cenv,Environment - cities and greater cities,environment,Eurostat urban dataset urb_cenv
+urb_clivcon,Living conditions - cities and greater cities,living_conditions,Eurostat urban dataset urb_clivcon

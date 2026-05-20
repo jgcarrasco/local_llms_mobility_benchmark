@@ -1,0 +1,27 @@
+[
+  {
+    "check_name": "t01_selected_indicators_exists",
+    "passed": true,
+    "message": "outputs/t01_selected_indicators.csv exists."
+  },
+  {
+    "check_name": "t05_clean_stops_columns",
+    "passed": true,
+    "message": "outputs/t05_clean_stops.csv has required columns."
+  },
+  {
+    "check_name": "t08_pois_clean_columns",
+    "passed": true,
+    "message": "outputs/t08_pois_clean.csv has required columns."
+  },
+  {
+    "check_name": "t10_accessibility_scores_range",
+    "passed": true,
+    "message": "outputs/t10_accessibility_scores.csv scores are bounded."
+  },
+  {
+    "check_name": "t13_city_clusters_rows",
+    "passed": true,
+    "message": "outputs/t13_city_clusters.csv covers selected matrix rows."
+  }
+]

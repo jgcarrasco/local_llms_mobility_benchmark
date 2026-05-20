@@ -1,0 +1,401 @@
+{
+  "source": "data.europa.eu_search_snapshot_with_mobilitydata_gtfs_record",
+  "source_url": "https://data.europa.eu/api/hub/search/search",
+  "datasets": [
+    {
+      "id": "agri",
+      "title": "Directorate-General for Agriculture and Rural Development",
+      "description": "Directorate-General for Agriculture and Rural Development",
+      "publisher": "Directorate-General for Agriculture and Rural Development",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "avaandmete-portaal",
+      "title": "Andmete teabevärav",
+      "description": "Estonian Data Portal",
+      "publisher": "Estonian Information System Authority",
+      "country": "Estonia",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "beopen",
+      "title": "BeOpen",
+      "description": "Set of High Value Datasets (HVDs) developed in BeOpen EU project that are open data collections selected for their high reuse potential. They were developed to support the creation of innovative public services across Europe, of Open Data provided by the public sector of many European cities. Available in open, machine-readable formats, they promote interoperability and API-based access and address mobility, urban security, environment, and natural disasters challenges in several EU regions.",
+      "publisher": "BeOpen consortium",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "berec_office",
+      "title": "Agency for Support for BEREC",
+      "description": "Agency for Support for BEREC",
+      "publisher": "Agency for Support for BEREC",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "bev-at",
+      "title": "data.bev.gv.at",
+      "description": "data.bev.gv.at provides Austrian national spatial data as open data as well as -services of the Federal Office of Metrology and Surveying",
+      "publisher": "Federal Office of Metrology and Surveying",
+      "country": "Austria",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "bmlfuw-at",
+      "title": "inspire.gv.at",
+      "description": "Geo Data Portal Austria",
+      "publisher": "Bundesministerium für Landwirtschaft, Regionen und Tourismus (BMLRT)",
+      "country": "Austria",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "budg",
+      "title": "Directorate-General for Budget",
+      "description": "Directorate-General for Budget",
+      "publisher": "Directorate-General for Budget",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "cdt",
+      "title": "Translation Centre",
+      "description": "Translation Centre",
+      "publisher": "Translation Centre",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "cedefop",
+      "title": "Cedefop",
+      "description": "European Centre for the Development of Vocational Training",
+      "publisher": "Cedefop",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "cfca",
+      "title": "European Fisheries Control Agency",
+      "description": "European Fisheries Control Agency",
+      "publisher": "European Fisheries Control Agency",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "chafea",
+      "title": "Consumers, Health, Agriculture and Food Executive Agency",
+      "description": "Consumers, Health, Agriculture and Food Executive Agency",
+      "publisher": "Consumers, Health, Agriculture and Food Executive Agency",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "cinea",
+      "title": "European Climate, Infrastructure and Environment Executive Agency",
+      "description": "European Climate, Infrastructure and Environment Executive Agency",
+      "publisher": "European Climate, Infrastructure and Environment Executive Agency",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "cnect",
+      "title": "Directorate-General for Communications Networks, Content and Technology",
+      "description": "Directorate-General for Communications Networks, Content and Technology",
+      "publisher": "Directorate-General for Communications Networks, Content and Technology",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "codsi",
+      "title": "Official INSPIRE Data and Services Catalogue",
+      "description": "Official Catalogue of Inspire Data and Services (CODSI) provides access INSPIRE data sets, HVD and network services. This catalogue is connected via harvesting or file interchange with the catalogues of national and regional public organisations, is the base for the monitoring process and for feeding the INSPIRE Geoportal. The INSPIRE Geoportal harvests metadata on 15 December each year. This Catalogue has Spain's official HVD in the categories of Geospatial, Earth Observation, Environment and Mobility.",
+      "publisher": "Executive Board of the Geographic Information Infrastructure of Spain (CODIIGE) for managing and controlling Spanish SDI (IDEE)",
+      "country": "Spain",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "commu",
+      "title": "Directorate-General for Communication",
+      "description": "Directorate-General for Communication",
+      "publisher": "Directorate-General for Communication",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "comp",
+      "title": "Directorate-General for Competition",
+      "description": "Directorate-General for Competition",
+      "publisher": "Directorate-General for Competition",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "consil",
+      "title": "Council of the European Union",
+      "description": "Council of the European Union",
+      "publisher": "Council of the European Union",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "cor",
+      "title": "European Committee of the Regions",
+      "description": "European Committee of the Regions",
+      "publisher": "European Committee of the Regions",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "cpvo",
+      "title": "Community Plant Variety Office",
+      "description": "Community Plant Variety Office",
+      "publisher": "Community Plant Variety Office",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "crest",
+      "title": "CREST citizen survey on city resilience to climate change",
+      "description": "CREST is a research project, led by AugmentCity, that applied digital twins for demonstration, co-creation and mobilization of stakeholders for capacity-building and collective decision-making in 3 European urban areas (Bordeaux, France; Kristiansund, Norway; Kolobrzeg, Poland) for resilient urban infrastructure adaptation to climate change.\n\nCREST conducted a citizen survey in the 3 urban areas to assess citizen perceptions on climate change and climate change resilience in their cities, the results of which are enclosed in Microsoft Excel format.",
+      "publisher": "Scott Young",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "csw-sk",
+      "title": "INSPIRE Discovery Service Slovakia",
+      "description": "Geo Data Portal Slovakia",
+      "publisher": "Geodesy, Cartography and Cadastre Authority of Slovak Republic",
+      "country": "Slovakia",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "dados-gov-pt",
+      "title": "dados.gov.pt",
+      "description": "Open Data Portal Portugal",
+      "publisher": "Agência para a Modernização Administrativa",
+      "country": "Portugal",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "dane-gov-pl",
+      "title": "dane.gov.pl",
+      "description": "Poland's Open Data Portal",
+      "publisher": "Ministry of Administration and Digitization of Poland",
+      "country": "Poland",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "data-gov-be",
+      "title": "data.gov.be",
+      "description": "Belgian open data portal, harvesting data from federal, regional and local portals in Belgium",
+      "publisher": "FPS BOSA",
+      "country": "Belgium",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "acer",
+      "title": "European Union Agency for the Cooperation of Energy Regulators",
+      "description": "European Union Agency for the Cooperation of Energy Regulators",
+      "publisher": "European Union Agency for the Cooperation of Energy Regulators",
+      "country": "EU institutions",
+      "distributions": [
+        {
+          "format": "",
+          "downloadURL": ""
+        }
+      ],
+      "license": "",
+      "keywords": []
+    },
+    {
+      "id": "mobilitydata-selected-gtfs",
+      "title": "Alicante area GTFS public transport feed",
+      "description": "Static GTFS feed discovered through the MobilityData catalog and used as the benchmark transit snapshot.",
+      "publisher": "MobilityData catalog source",
+      "country": "ES",
+      "distributions": [
+        {
+          "format": "GTFS ZIP",
+          "downloadURL": "https://gvinterbus.gva.es/estatico/gtfs.zip"
+        }
+      ],
+      "license": "See upstream feed metadata",
+      "keywords": [
+        "GTFS",
+        "public transport",
+        "mobility",
+        "Alicante"
+      ]
+    }
+  ]
+}
