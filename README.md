@@ -1,5 +1,7 @@
 # Evaluating Local Language Model Agents for Reproducible Data Engineering: An Empirical Software Engineering Study of Mobility Workflows
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21397610.svg)](https://doi.org/10.5281/zenodo.21397610)
+
 This repository contains the benchmark code, fixed data fixtures, and result files for the paper "Evaluating Local Language Model Agents for Reproducible Data Engineering: An Empirical Software Engineering Study of Mobility Workflows".
 
 The benchmark evaluates local language models on fifteen mobility data-engineering tasks. Each task asks a model to produce concrete artifacts such as CSV files, JSON summaries, Python scripts, SPARQL queries, validation reports, figures, or Markdown reports. Outputs are scored by deterministic checkers rather than by free-form textual judgment.
