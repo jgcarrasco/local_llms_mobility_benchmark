@@ -111,7 +111,7 @@ These logs are the best place to inspect how a model approached a task: they rec
 
 The full sweep contains 10 model configurations, 15 tasks, 2 interaction modes, and 5 repetitions per condition, for 1500 scored attempts.
 
-In the aggregate results, tool access substantially improves benchmark success. The best overall configuration is `qwen36_27b_q4` in `agent_tools` mode, with 64 successful attempts out of 75 and an 85.3% pass rate. The same model reaches 44.0% in `chat_only` mode. The compact `qwen35_9b_q4` model reaches 69.3% in `agent_tools` mode and 17.3% in `chat_only` mode.
+In the aggregate results, the closed-loop workspace condition substantially improves benchmark success. The best overall configuration is `qwen36_27b_q4` in `agent_tools` mode, with 64 successful attempts out of 75 and an 85.3% pass rate. The same model reaches 44.0% in `chat_only` mode. The compact `qwen35_9b_q4` model reaches 69.3% in `agent_tools` mode and 17.3% in `chat_only` mode.
 
 Across all attempts, the largest unsuccessful categories are logic errors and runtime errors. This reflects the benchmark design: many failures produce parseable artifacts or executable code, but violate task-specific data-engineering rules.
 
@@ -122,3 +122,7 @@ The benchmark uses fixed local snapshots rather than live API calls during evalu
 ## Execution Safety
 
 The benchmark may execute model-generated code. The paper sweep was run with the local backend defined in `configs/benchmark_full_sweep.yaml`, with network access disabled by the harness configuration.
+
+## License
+
+Original software and documentation in this repository are licensed under the [MIT License](LICENSE). The bundled benchmark fixtures include excerpts derived from third-party public-data sources; those source materials remain subject to their respective upstream terms. Source provenance is documented in `data/real_fixture_provenance.json`.
