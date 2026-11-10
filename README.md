@@ -1,15 +1,18 @@
-# Evaluating Local Language Model Agents for Reproducible Data Engineering: An Empirical Software Engineering Study of Mobility Workflows
+# Evaluating Local Language Model Agents for Data Engineering: An Empirical Software Engineering Study of Mobility Workflows
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21397609.svg)](https://doi.org/10.5281/zenodo.21397609)
 
-This repository contains the benchmark code, fixed data fixtures, and result files for the paper "Evaluating Local Language Model Agents for Reproducible Data Engineering: An Empirical Software Engineering Study of Mobility Workflows".
+This repository contains the benchmark code, fixed data fixtures, and result files for the paper "Evaluating Local Language Model Agents for Data Engineering: An Empirical Software Engineering Study of Mobility Workflows".
 
 The benchmark evaluates local language models on fifteen mobility data-engineering tasks. Each task asks a model to produce concrete artifacts such as CSV files, JSON summaries, Python scripts, SPARQL queries, validation reports, figures, or Markdown reports. Outputs are scored by deterministic checkers rather than by free-form textual judgment.
 
-This is release 1.1.1. It extends the 1.0.0 sweep from ten Qwen configurations in two conditions to sixteen
-configurations from six families in three conditions, adds the input-structure condition and the hosted
-reference model, and adds the task-clustered intervals, paired contrasts, reliability, and regression that
-the paper reports. Paths from the machine that ran the sweep are rewritten in the released traces; see
+This is release 1.1.2. Version 1.1.1 extended the 1.0.0 sweep from ten Qwen configurations in two
+conditions to sixteen
+configurations from six families in three conditions, added the input-structure condition and the hosted
+reference model, and added the task-clustered intervals, paired contrasts, reliability, and regression that
+the paper reports. Version 1.1.2 changes only the package metadata, so that this README and the data
+dictionary carry the published title; no code, data, or result differs from 1.1.1. Paths from the machine
+that ran the sweep are rewritten in the released traces; see
 `DATA_DICTIONARY.md`.
 
 ## Repository Structure

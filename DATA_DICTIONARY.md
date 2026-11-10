@@ -1,6 +1,6 @@
 # Data dictionary
 
-Replication package for *Evaluating Local Language Model Agents for Reproducible Data Engineering: An Empirical Software Engineering Study of Mobility Workflows*, version 1.1.1. It describes every directory, file, column, and vocabulary in this repository, so that a value in the paper can be traced to the released data without reading the code.
+Replication package for *Evaluating Local Language Model Agents for Data Engineering: An Empirical Software Engineering Study of Mobility Workflows*, version 1.1.2. It describes every directory, file, column, and vocabulary in this repository, so that a value in the paper can be traced to the released data without reading the code.
 
 ## Contents at a glance
 
@@ -250,7 +250,7 @@ Reference artifacts used by task setup and by checkers that compare against a kn
 
 | Item | Value |
 |---|---|
-| Package version | 1.1.1 |
+| Package version | 1.1.2 |
 | Benchmark | 15 tasks in five workflow families, three conditions |
 | Sweep window | 30 October 2026 to 1 November 2026, with the retry and re-scoring logs released alongside the results |
 | Scored attempts | 3,600 local, 45 hosted |

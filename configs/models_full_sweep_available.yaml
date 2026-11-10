@@ -1,4 +1,4 @@
-# Models available on the sweep host (mariola, RTX 4090 24 GB).
+# Models available on the sweep host (RTX 4090 24 GB).
 #
 # Generation settings follow each vendor's published recommendation as
 # documented by Unsloth. Reasoning-capable models run with reasoning enabled;
