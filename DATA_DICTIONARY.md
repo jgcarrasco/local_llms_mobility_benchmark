@@ -1,6 +1,6 @@
 # Data dictionary
 
-Replication package for *Evaluating Local Language Model Agents for Reproducible Data Engineering: An Empirical Software Engineering Study of Mobility Workflows*, version 1.1.0. It describes every directory, file, column, and vocabulary in this repository, so that a value in the paper can be traced to the released data without reading the code.
+Replication package for *Evaluating Local Language Model Agents for Reproducible Data Engineering: An Empirical Software Engineering Study of Mobility Workflows*, version 1.1.1. It describes every directory, file, column, and vocabulary in this repository, so that a value in the paper can be traced to the released data without reading the code.
 
 ## Contents at a glance
 
@@ -62,7 +62,7 @@ One file per attempt, named after the attempt identifier and containing a single
 | `quantization` | Weight format of the served model file (`Q4_K_M`, `UD-IQ4_NL`, `UD-Q4_K_M`, `BF16`, or `none` for hosted). |
 | `context_length` | Configured context window in tokens. |
 | `source_repo` | Upstream model repository or gateway. |
-| `artifact_repo` | Local path of the served model file. Rewritten to `local:/path/to/model.gguf` in the public release. |
+| `artifact_repo` | Path of the served model file, as recorded during the sweep. The home-directory prefix is rewritten in the public release (`local:/models/gguf/...`); the family directory and file name are unchanged. |
 | `mode` | Interaction condition: `chat_only`, `chat_schema`, or `agent_tools`. |
 | `repetition` | Repetition index, 1--5. |
 | `success` | True when the final checker accepted the submitted artifact. |
@@ -250,7 +250,7 @@ Reference artifacts used by task setup and by checkers that compare against a kn
 
 | Item | Value |
 |---|---|
-| Package version | 1.1.0 |
+| Package version | 1.1.1 |
 | Benchmark | 15 tasks in five workflow families, three conditions |
 | Sweep window | 30 October 2026 to 1 November 2026, with the retry and re-scoring logs released alongside the results |
 | Scored attempts | 3,600 local, 45 hosted |
@@ -259,6 +259,7 @@ Reference artifacts used by task setup and by checkers that compare against a kn
 | Decoding | Per family, fixed within each model; see `configs/models_full_sweep_available.yaml` |
 | Harness caps | 150 model iterations, 150 tool calls, 90 minutes per task, 60 seconds per command |
 | Fixtures | `data/real_fixture_provenance.json` records the source and the controlled modifications |
+| Sanitisation | Paths under the author's home directory are rewritten in every released text file: the code repository to `/benchmark`, the model directory to `/models/gguf`, and any remaining prefix to `/home/user`. Traces are otherwise unedited. |
 
 The exact model files are recorded in `configs/models_full_sweep_available.yaml`, where `artifact_repo` gives the served file and `generation` gives the decoding settings. Attempts that ended on a harness rather than a model failure were repeated; the released set contains no `infrastructure_failure` attempt.
 

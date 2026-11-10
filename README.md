@@ -6,10 +6,11 @@ This repository contains the benchmark code, fixed data fixtures, and result fil
 
 The benchmark evaluates local language models on fifteen mobility data-engineering tasks. Each task asks a model to produce concrete artifacts such as CSV files, JSON summaries, Python scripts, SPARQL queries, validation reports, figures, or Markdown reports. Outputs are scored by deterministic checkers rather than by free-form textual judgment.
 
-This is release 1.1.0. It extends the 1.0.0 sweep from ten Qwen configurations in two conditions to sixteen
+This is release 1.1.1. It extends the 1.0.0 sweep from ten Qwen configurations in two conditions to sixteen
 configurations from six families in three conditions, adds the input-structure condition and the hosted
 reference model, and adds the task-clustered intervals, paired contrasts, reliability, and regression that
-the paper reports.
+the paper reports. Paths from the machine that ran the sweep are rewritten in the released traces; see
+`DATA_DICTIONARY.md`.
 
 ## Repository Structure
 
