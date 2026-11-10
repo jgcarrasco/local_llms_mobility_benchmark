@@ -1,0 +1,38 @@
+# Hosted reference model, kept outside the local sweep and used only to
+# calibrate task difficulty. Not part of the main comparison.
+#
+# Gateway: OpenCode Go. The base URL is documented in the harness table
+# (https://opencode.ai/v2/docs/console/harnesses/) and confirmed by the model
+# catalogue at /inference/go/v1/models. Authentication is a bearer token plus a
+# required x-opencode-session header; omitting the session header returns 400.
+#
+# Model: DeepSeek-V4.1-Flash-1017, a mixture-of-experts model with a 552B
+# backbone that activates 8B parameters during prefill and 16B during decode,
+# with a 1M-token context.
+#
+# The gateway serves an OpenAI-compatible chat-completions schema. The client
+# forwards `generation` verbatim, so this block must contain only fields that
+# endpoint accepts: no top_k, min_p, presence_penalty, repeat_penalty, or
+# chat_template_kwargs.
+
+models:
+  deepseek_v41_flash:
+    family: deepseek
+    size_b: 552
+    architecture: moe
+    local: false
+    backend: openai_compatible
+    base_url: https://opencode.ai/inference/go/openai/v1
+    model_name: deepseek-v4.1-flash
+    quantization: none
+    context_length: 1000000
+    tool_protocol: native
+    source_repo: https://opencode.ai/docs/go/
+    artifact_repo: hosted:opencode-go
+    api_key_env: OPENCODE_API_KEY
+    extra_headers:
+      x-opencode-session: mobility-bench-reference
+    generation:
+      temperature: 0.6
+      top_p: 0.95
+      max_tokens: 32768

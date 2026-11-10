@@ -53,6 +53,9 @@ def test_aggregate_results_writes_required_outputs(tmp_path: Path) -> None:
     assert "source_repo" in attempts.columns
     gain = pd.read_csv(outputs["agentic_gain"])
     assert gain.loc[0, "agentic_gain"] == 1.0
+    categories = pd.read_csv(outputs["failure_categories"])
+    assert "success" in set(categories["failure_category"])
+    assert "none" not in set(categories["failure_category"])
 
 
 def test_create_sweep_manifest_writes_reproducibility_metadata(tmp_path: Path) -> None:
@@ -67,7 +70,8 @@ def test_create_sweep_manifest_writes_reproducibility_metadata(tmp_path: Path) -
 
     data = json.loads(manifest.read_text(encoding="utf-8"))
     assert data["notes"] == "test manifest"
-    assert data["planned_attempts"] == 9 * 2 * 15 * 3
+    assert data["modes"] == ["chat_only", "chat_schema", "agent_tools"]
+    assert data["planned_attempts"] == 9 * 3 * 15 * 3
     assert data["models"]["qwen36_27b_ud_q4kxl"]["source_repo"] == "Qwen/Qwen3.6-27B"
     assert "nvidia_smi" in data["commands"]
 

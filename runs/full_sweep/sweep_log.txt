@@ -1,0 +1,104 @@
+2026-10-30T11:45:59 === sweep start: 16 models, modes=['chat_only', 'chat_schema', 'agent_tools'] ===
+2026-10-30T11:45:59 --- qwen35_9b_q4 (qwen35-9b-q4, native)
+2026-10-30T12:06:05     chat_only: exit=0 1200s
+2026-10-30T12:21:07     chat_schema: exit=0 902s
+2026-10-30T12:27:27 === sweep start: 16 models, modes=['chat_only', 'chat_schema', 'agent_tools'] ===
+2026-10-30T12:27:27 --- qwen35_9b_q4 (qwen35-9b-q4, native)
+2026-10-30T12:39:15     chat_only: exit=0 708s
+2026-10-30T12:49:40     chat_schema: exit=0 624s
+2026-10-30T13:36:06 === sweep start: 16 models, modes=['chat_only', 'chat_schema', 'agent_tools'] ===
+2026-10-30T13:36:06 --- qwen35_9b_q4 (qwen35-9b-q4, native)
+2026-10-30T13:37:12     chat_only: exit=0 65s
+2026-10-30T13:38:05     chat_schema: exit=0 53s
+2026-10-30T13:45:36 === sweep start: 16 models, modes=['chat_only', 'chat_schema', 'agent_tools'] ===
+2026-10-30T13:45:36 --- qwen35_9b_q4 (qwen35-9b-q4, native)
+2026-10-30T13:46:25     chat_only: exit=0 43s
+2026-10-30T13:47:01     chat_schema: exit=0 37s
+2026-10-30T14:05:40     agent_tools: exit=0 1118s
+2026-10-30T14:05:42 --- qwen35_9b_q4 finished in 1200s
+2026-10-30T14:05:42 --- qwen35_27b_q4 (qwen35-27b-q4, native)
+2026-10-30T15:05:41     chat_only: exit=0 3589s
+2026-10-30T16:03:06     chat_schema: exit=0 3446s
+2026-10-30T17:48:36     agent_tools: exit=0 6330s
+2026-10-30T17:48:38 --- qwen35_27b_q4 finished in 13366s
+2026-10-30T17:48:38 --- qwen35_35b_a3b_q4 (qwen35-35b-a3b-q4, native)
+2026-10-30T18:01:41     chat_only: exit=0 773s
+2026-10-30T18:14:15     chat_schema: exit=0 754s
+2026-10-30T18:45:53     agent_tools: exit=0 1898s
+2026-10-30T18:45:55 --- qwen35_35b_a3b_q4 finished in 3427s
+2026-10-30T18:45:55 --- qwen38_27b_q4 (qwen38-27b-q4, native)
+2026-10-30T19:21:47 === sweep start: 15 models, modes=['chat_only', 'chat_schema', 'agent_tools'] ===
+2026-10-30T19:21:47 --- qwen38_27b_q4 (qwen38-27b-q4, native)
+2026-10-30T19:26:48     server failed to start; skipping model
+2026-10-30T19:26:48 --- qwen35_27b_q4 (qwen35-27b-q4, native)
+2026-10-30T19:26:54     chat_only: exit=0 1s
+2026-10-30T19:26:55     chat_schema: exit=0 1s
+2026-10-30T19:26:56     agent_tools: exit=0 1s
+2026-10-30T19:26:58 --- qwen35_27b_q4 finished in 5s
+2026-10-30T19:26:58 --- qwen35_35b_a3b_q4 (qwen35-35b-a3b-q4, native)
+2026-10-30T19:27:10     chat_only: exit=0 1s
+2026-10-30T19:27:10     chat_schema: exit=0 1s
+2026-10-30T19:27:11     agent_tools: exit=0 1s
+2026-10-30T19:27:13 --- qwen35_35b_a3b_q4 finished in 5s
+2026-10-30T19:27:13 --- gptoss_20b_q4 (gptoss-20b-q4, native)
+2026-10-30T19:39:56     chat_only: exit=0 752s
+2026-10-30T19:50:57     chat_schema: exit=0 661s
+2026-10-30T20:22:11     agent_tools: exit=0 1874s
+2026-10-30T20:22:14 --- gptoss_20b_q4 finished in 3290s
+2026-10-30T20:22:14 --- mistral_small_32_24b_q4 (mistral-small-32-24b-q4, native)
+2026-10-30T20:35:19     chat_only: exit=0 775s
+2026-10-30T20:52:49     chat_schema: exit=0 1050s
+2026-10-30T22:20:08     agent_tools: exit=0 5239s
+2026-10-30T22:20:10 --- mistral_small_32_24b_q4 finished in 7066s
+2026-10-30T22:20:10 --- phi4_14b_q4 (phi4-14b-q4, text)
+2026-10-30T22:24:03     chat_only: exit=1 228s
+2026-10-30T22:24:03     stderr: ValueError: cannot convert float NaN to integer
+2026-10-30T22:34:22     chat_schema: exit=0 619s
+2026-10-30T23:12:57     agent_tools: exit=0 2315s
+2026-10-30T23:13:00 --- phi4_14b_q4 finished in 3164s
+2026-10-30T23:13:00 --- llama31_8b_q4 (llama31-8b-q4, native)
+2026-10-30T23:16:49     chat_only: exit=0 224s
+2026-10-30T23:20:33     chat_schema: exit=0 224s
+2026-10-31T01:04:41     agent_tools: exit=0 6248s
+2026-10-31T01:04:44 --- llama31_8b_q4 finished in 6699s
+2026-10-31T01:04:44 --- gemma4_12b_q4 (gemma4-12b-q4, native)
+2026-10-31T03:15:20     chat_only: exit=0 7831s
+2026-10-31T05:12:27     chat_schema: exit=0 7027s
+2026-10-31T07:40:10     agent_tools: exit=0 8863s
+2026-10-31T07:40:12 --- gemma4_12b_q4 finished in 23723s
+2026-10-31T07:40:12 --- qwen35_2b_q4 (qwen35-2b-q4, native)
+2026-10-31T07:47:17     chat_only: exit=0 420s
+2026-10-31T07:59:05     chat_schema: exit=0 708s
+2026-10-31T09:22:06     agent_tools: exit=0 4981s
+2026-10-31T09:22:09 --- qwen35_2b_q4 finished in 6111s
+2026-10-31T09:22:09 --- qwen35_4b_q4 (qwen35-4b-q4, native)
+2026-10-31T09:31:56     chat_only: exit=0 582s
+2026-10-31T09:44:32     chat_schema: exit=0 756s
+2026-10-31T10:37:15     agent_tools: exit=0 3163s
+2026-10-31T10:37:17 --- qwen35_4b_q4 finished in 4503s
+2026-10-31T10:37:17 --- qwen35_2b_bf16 (qwen35-2b-bf16, native)
+2026-10-31T10:54:23     chat_only: exit=0 1021s
+2026-10-31T11:12:49     chat_schema: exit=0 1106s
+2026-10-31T13:59:13     agent_tools: exit=0 9983s
+2026-10-31T13:59:15 --- qwen35_2b_bf16 finished in 12113s
+2026-10-31T13:59:15 --- qwen35_4b_bf16 (qwen35-4b-bf16, native)
+2026-10-31T14:25:16     chat_only: exit=0 1556s
+2026-10-31T14:50:16     chat_schema: exit=0 1500s
+2026-10-31T16:44:48     agent_tools: exit=0 6872s
+2026-10-31T16:44:51 --- qwen35_4b_bf16 finished in 9931s
+2026-10-31T16:44:51 --- qwen35_9b_bf16 (qwen35-9b-bf16, native)
+2026-10-31T17:37:24     chat_only: exit=0 3143s
+2026-10-31T18:25:31     chat_schema: exit=0 2887s
+2026-10-31T20:51:27     agent_tools: exit=0 8756s
+2026-10-31T20:51:29 --- qwen35_9b_bf16 finished in 14788s
+2026-10-31T20:51:29 --- qwen36_27b_q4 (qwen36-27b-q4, native)
+2026-10-31T21:38:01     chat_only: exit=0 2781s
+2026-10-31T22:29:31     chat_schema: exit=0 3090s
+2026-11-01T00:21:53     agent_tools: exit=0 6742s
+2026-11-01T00:21:56 --- qwen36_27b_q4 finished in 12616s
+2026-11-01T00:21:56 --- qwen36_35b_a3b_q4 (qwen36-35b-a3b-q4, native)
+2026-11-01T00:40:58     chat_only: exit=0 1132s
+2026-11-01T00:56:16     chat_schema: exit=0 918s
+2026-11-01T01:30:43     agent_tools: exit=0 2067s
+2026-11-01T01:30:46 --- qwen36_35b_a3b_q4 finished in 4120s
+2026-11-01T01:30:46 === sweep complete ===

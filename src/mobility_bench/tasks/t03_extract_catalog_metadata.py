@@ -13,9 +13,10 @@ TASK_SPEC = TaskSpec(
     output_requirements={
         "outputs/t03_mobility_catalog.csv": [
             "CSV columns: dataset_id, title, description, publisher, country, formats, license, distribution_url, keywords",
-            "Include only individual dataset rows whose title, description, or keywords are mobility-specific.",
-            "Exclude generic catalog, publisher, organization, or portal records unless the record itself describes mobility data.",
+            "Include a record only when its title or keywords identify it as mobility data.",
+            "Exclude generic catalog, publisher, organization, or portal records even when their description mentions mobility among other themes.",
             "Include at least one GTFS-like dataset.",
+            "Copy title, description, and distribution_url from the catalog record without altering them.",
             "Populate distribution_url when available.",
         ],
     },

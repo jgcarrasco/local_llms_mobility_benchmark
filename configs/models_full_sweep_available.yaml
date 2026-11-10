@@ -1,70 +1,21 @@
+# Models available on the sweep host (mariola, RTX 4090 24 GB).
+#
+# Generation settings follow each vendor's published recommendation as
+# documented by Unsloth. Reasoning-capable models run with reasoning enabled;
+# the remaining models have no reasoning mode.
+#
+# Qwen 3.5 / 3.6 (thinking, precise coding): 0.6 / 0.95 / 20 / min_p 0
+#   https://unsloth.ai/docs/models/qwen3.5.md
+#   https://unsloth.ai/docs/models/qwen3.6.md
+# Qwen 3.8 (thinking; reasoning_effort, xhigh is the vendor default):
+#   https://unsloth.ai/docs/models/qwen3.8.md
+# Gemma 4: https://unsloth.ai/docs/models/gemma-4.md
+# gpt-oss: https://unsloth.ai/docs/models/gpt-oss-how-to-run-and-fine-tune.md
+# Mistral Small 3.2: unsloth GGUF model card (0.15 / 1.0 / top_k off)
+# Phi-4: https://unsloth.ai/docs/models/tutorials/phi-4-reasoning-how-to-run-and-fine-tune.md
+# Llama 3.1: Meta model card (no Unsloth run guide published)
+
 models:
-  qwen35_35b_a3b_q4:
-    family: qwen3.5
-    size_b: 35
-    architecture: moe
-    local: true
-    backend: llamacpp
-    base_url: http://127.0.0.1:8081/v1
-    model_name: qwen35-35b-a3b-ud-q4kxl
-    quantization: UD-Q4_K_XL
-    context_length: 131072
-    source_repo: Qwen/Qwen3.5-35B-A3B
-    artifact_repo: local:/path/to/model.gguf
-    generation:
-      temperature: 0.6
-      max_tokens: 8192
-      chat_template_kwargs:
-        enable_thinking: false
-      top_p: 0.95
-      top_k: 20
-      min_p: 0.0
-      presence_penalty: 0.0
-      repeat_penalty: 1.0
-  qwen35_9b_q4:
-    family: qwen3.5
-    size_b: 9
-    architecture: dense
-    local: true
-    backend: llamacpp
-    base_url: http://127.0.0.1:8081/v1
-    model_name: qwen35-9b-ud-q4kxl
-    quantization: UD-Q4_K_XL
-    context_length: 131072
-    source_repo: Qwen/Qwen3.5-9B
-    artifact_repo: local:/path/to/model.gguf
-    generation:
-      temperature: 0.6
-      max_tokens: 8192
-      chat_template_kwargs:
-        enable_thinking: false
-      top_p: 0.95
-      top_k: 20
-      min_p: 0.0
-      presence_penalty: 0.0
-      repeat_penalty: 1.0
-  qwen35_4b_q4:
-    family: qwen3.5
-    size_b: 4
-    architecture: dense
-    local: true
-    backend: llamacpp
-    base_url: http://127.0.0.1:8081/v1
-    model_name: qwen35-4b-ud-q4kxl
-    quantization: UD-Q4_K_XL
-    context_length: 131072
-    source_repo: Qwen/Qwen3.5-4B
-    artifact_repo: local:/path/to/model.gguf
-    generation:
-      temperature: 0.6
-      max_tokens: 8192
-      chat_template_kwargs:
-        enable_thinking: false
-      top_p: 0.95
-      top_k: 20
-      min_p: 0.0
-      presence_penalty: 0.0
-      repeat_penalty: 1.0
   qwen35_2b_q4:
     family: qwen3.5
     size_b: 2
@@ -72,43 +23,71 @@ models:
     local: true
     backend: llamacpp
     base_url: http://127.0.0.1:8081/v1
-    model_name: qwen35-2b-ud-q4kxl
-    quantization: UD-Q4_K_XL
+    model_name: qwen35-2b-q4
+    quantization: Q4_K_M
     context_length: 131072
-    source_repo: Qwen/Qwen3.5-2B
+    tool_protocol: native
+    source_repo: unsloth/Qwen3.5-2B-GGUF
     artifact_repo: local:/path/to/model.gguf
     generation:
       temperature: 0.6
-      max_tokens: 8192
-      chat_template_kwargs:
-        enable_thinking: false
+      max_tokens: 32768
       top_p: 0.95
       top_k: 20
       min_p: 0.0
       presence_penalty: 0.0
       repeat_penalty: 1.0
-  qwen36_27b_q4:
-    family: qwen3.6
-    size_b: 27
+      chat_template_kwargs:
+        enable_thinking: true
+
+  qwen35_4b_q4:
+    family: qwen3.5
+    size_b: 4
     architecture: dense
     local: true
     backend: llamacpp
     base_url: http://127.0.0.1:8081/v1
-    model_name: qwen36-27b-ud-q4kxl
-    quantization: UD-Q4_K_XL
+    model_name: qwen35-4b-q4
+    quantization: Q4_K_M
     context_length: 131072
-    source_repo: Qwen/Qwen3.6-27B
+    tool_protocol: native
+    source_repo: unsloth/Qwen3.5-4B-GGUF
     artifact_repo: local:/path/to/model.gguf
     generation:
       temperature: 0.6
-      max_tokens: 8192
-      chat_template_kwargs:
-        enable_thinking: false
+      max_tokens: 32768
       top_p: 0.95
       top_k: 20
       min_p: 0.0
       presence_penalty: 0.0
       repeat_penalty: 1.0
+      chat_template_kwargs:
+        enable_thinking: true
+
+  qwen35_9b_q4:
+    family: qwen3.5
+    size_b: 9
+    architecture: dense
+    local: true
+    backend: llamacpp
+    base_url: http://127.0.0.1:8081/v1
+    model_name: qwen35-9b-q4
+    quantization: Q4_K_M
+    context_length: 131072
+    tool_protocol: native
+    source_repo: unsloth/Qwen3.5-9B-GGUF
+    artifact_repo: local:/path/to/model.gguf
+    generation:
+      temperature: 0.6
+      max_tokens: 32768
+      top_p: 0.95
+      top_k: 20
+      min_p: 0.0
+      presence_penalty: 0.0
+      repeat_penalty: 1.0
+      chat_template_kwargs:
+        enable_thinking: true
+
   qwen35_27b_q4:
     family: qwen3.5
     size_b: 27
@@ -116,43 +95,47 @@ models:
     local: true
     backend: llamacpp
     base_url: http://127.0.0.1:8081/v1
-    model_name: qwen35-27b-ud-q4kxl
-    quantization: UD-Q4_K_XL
+    model_name: qwen35-27b-q4
+    quantization: Q4_K_M
     context_length: 131072
+    tool_protocol: native
     source_repo: unsloth/Qwen3.5-27B-GGUF
     artifact_repo: local:/path/to/model.gguf
     generation:
       temperature: 0.6
-      max_tokens: 8192
-      chat_template_kwargs:
-        enable_thinking: false
+      max_tokens: 32768
       top_p: 0.95
       top_k: 20
       min_p: 0.0
       presence_penalty: 0.0
       repeat_penalty: 1.0
-  qwen36_35b_a3b_q4:
-    family: qwen3.6
+      chat_template_kwargs:
+        enable_thinking: true
+
+  qwen35_35b_a3b_q4:
+    family: qwen3.5
     size_b: 35
     architecture: moe
     local: true
     backend: llamacpp
     base_url: http://127.0.0.1:8081/v1
-    model_name: qwen36-35b-a3b-ud-q4kxl
-    quantization: UD-Q4_K_XL
+    model_name: qwen35-35b-a3b-q4
+    quantization: UD-IQ4_NL
     context_length: 131072
-    source_repo: unsloth/Qwen3.6-35B-A3B-GGUF
+    tool_protocol: native
+    source_repo: unsloth/Qwen3.5-35B-A3B-GGUF
     artifact_repo: local:/path/to/model.gguf
     generation:
       temperature: 0.6
-      max_tokens: 8192
-      chat_template_kwargs:
-        enable_thinking: false
+      max_tokens: 32768
       top_p: 0.95
       top_k: 20
       min_p: 0.0
       presence_penalty: 0.0
       repeat_penalty: 1.0
+      chat_template_kwargs:
+        enable_thinking: true
+
   qwen35_2b_bf16:
     family: qwen3.5
     size_b: 2
@@ -163,18 +146,20 @@ models:
     model_name: qwen35-2b-bf16
     quantization: BF16
     context_length: 131072
+    tool_protocol: native
     source_repo: unsloth/Qwen3.5-2B-GGUF
     artifact_repo: local:/path/to/model.gguf
     generation:
       temperature: 0.6
-      max_tokens: 8192
-      chat_template_kwargs:
-        enable_thinking: false
+      max_tokens: 32768
       top_p: 0.95
       top_k: 20
       min_p: 0.0
       presence_penalty: 0.0
       repeat_penalty: 1.0
+      chat_template_kwargs:
+        enable_thinking: true
+
   qwen35_4b_bf16:
     family: qwen3.5
     size_b: 4
@@ -185,18 +170,20 @@ models:
     model_name: qwen35-4b-bf16
     quantization: BF16
     context_length: 131072
+    tool_protocol: native
     source_repo: unsloth/Qwen3.5-4B-GGUF
     artifact_repo: local:/path/to/model.gguf
     generation:
       temperature: 0.6
-      max_tokens: 8192
-      chat_template_kwargs:
-        enable_thinking: false
+      max_tokens: 32768
       top_p: 0.95
       top_k: 20
       min_p: 0.0
       presence_penalty: 0.0
       repeat_penalty: 1.0
+      chat_template_kwargs:
+        enable_thinking: true
+
   qwen35_9b_bf16:
     family: qwen3.5
     size_b: 9
@@ -207,18 +194,193 @@ models:
     model_name: qwen35-9b-bf16
     quantization: BF16
     context_length: 131072
+    tool_protocol: native
     source_repo: unsloth/Qwen3.5-9B-GGUF
     artifact_repo: local:/path/to/model.gguf
     generation:
       temperature: 0.6
-      max_tokens: 8192
-      chat_template_kwargs:
-        enable_thinking: false
+      max_tokens: 32768
       top_p: 0.95
       top_k: 20
       min_p: 0.0
       presence_penalty: 0.0
       repeat_penalty: 1.0
+      chat_template_kwargs:
+        enable_thinking: true
+
+  qwen36_27b_q4:
+    family: qwen3.6
+    size_b: 27
+    architecture: dense
+    local: true
+    backend: llamacpp
+    base_url: http://127.0.0.1:8081/v1
+    model_name: qwen36-27b-q4
+    quantization: Q4_K_M
+    context_length: 131072
+    tool_protocol: native
+    source_repo: unsloth/Qwen3.6-27B-GGUF
+    artifact_repo: local:/path/to/model.gguf
+    generation:
+      temperature: 0.6
+      max_tokens: 32768
+      top_p: 0.95
+      top_k: 20
+      min_p: 0.0
+      presence_penalty: 0.0
+      repeat_penalty: 1.0
+      chat_template_kwargs:
+        enable_thinking: true
+
+  qwen36_35b_a3b_q4:
+    family: qwen3.6
+    size_b: 35
+    architecture: moe
+    local: true
+    backend: llamacpp
+    base_url: http://127.0.0.1:8081/v1
+    model_name: qwen36-35b-a3b-q4
+    quantization: UD-IQ4_NL
+    context_length: 131072
+    tool_protocol: native
+    source_repo: unsloth/Qwen3.6-35B-A3B-GGUF
+    artifact_repo: local:/path/to/model.gguf
+    generation:
+      temperature: 0.6
+      max_tokens: 32768
+      top_p: 0.95
+      top_k: 20
+      min_p: 0.0
+      presence_penalty: 0.0
+      repeat_penalty: 1.0
+      chat_template_kwargs:
+        enable_thinking: true
+
+  qwen38_27b_q4:
+    family: qwen3.8
+    size_b: 27
+    architecture: dense
+    local: true
+    backend: llamacpp
+    base_url: http://127.0.0.1:8081/v1
+    model_name: qwen38-27b-q4
+    quantization: UD-Q4_K_M
+    context_length: 131072
+    tool_protocol: native
+    source_repo: unsloth/Qwen3.8-27B-GGUF
+    artifact_repo: local:/path/to/model.gguf
+    generation:
+      temperature: 1.0
+      max_tokens: 32768
+      top_p: 0.95
+      top_k: 20
+      min_p: 0.0
+      presence_penalty: 0.0
+      repeat_penalty: 1.0
+      chat_template_kwargs:
+        reasoning_effort: medium
+
+  gemma4_12b_q4:
+    family: gemma4
+    size_b: 12
+    architecture: dense
+    local: true
+    backend: llamacpp
+    base_url: http://127.0.0.1:8081/v1
+    model_name: gemma4-12b-q4
+    quantization: Q4_K_M
+    context_length: 131072
+    tool_protocol: native
+    source_repo: unsloth/gemma-4-12b-it-GGUF
+    artifact_repo: local:/path/to/model.gguf
+    generation:
+      temperature: 1.0
+      max_tokens: 32768
+      top_p: 0.95
+      top_k: 64
+      chat_template_kwargs:
+        enable_thinking: true
+
+  gptoss_20b_q4:
+    family: gpt-oss
+    size_b: 20
+    architecture: moe
+    local: true
+    backend: llamacpp
+    base_url: http://127.0.0.1:8081/v1
+    model_name: gptoss-20b-q4
+    quantization: Q4_K_M
+    context_length: 131072
+    tool_protocol: native
+    source_repo: unsloth/gpt-oss-20b-GGUF
+    artifact_repo: local:/path/to/model.gguf
+    generation:
+      temperature: 1.0
+      max_tokens: 32768
+      top_p: 1.0
+      top_k: 0
+      min_p: 0.0
+      chat_template_kwargs:
+        reasoning_effort: medium
+
+  llama31_8b_q4:
+    family: llama3.1
+    size_b: 8
+    architecture: dense
+    local: true
+    backend: llamacpp
+    base_url: http://127.0.0.1:8081/v1
+    model_name: llama31-8b-q4
+    quantization: Q4_K_M
+    context_length: 131072
+    tool_protocol: native
+    source_repo: unsloth/Llama-3.1-8B-Instruct-GGUF
+    artifact_repo: local:/path/to/model.gguf
+    generation:
+      temperature: 0.6
+      max_tokens: 32768
+      top_p: 0.9
+
+  mistral_small_32_24b_q4:
+    family: mistral
+    size_b: 24
+    architecture: dense
+    local: true
+    backend: llamacpp
+    base_url: http://127.0.0.1:8081/v1
+    model_name: mistral-small-32-24b-q4
+    quantization: Q4_K_M
+    # 131k needs a 10.9 GB KV cache and does not fit beside the 14.3 GB model on
+    # the 24 GB card. 98,304 fits with the same q8_0 cache, so the window is
+    # raised without changing cache precision.
+    context_length: 98304
+    tool_protocol: native
+    source_repo: unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF
+    artifact_repo: local:/path/to/model.gguf
+    generation:
+      temperature: 0.15
+      max_tokens: 32768
+      top_p: 1.0
+      top_k: 0
+
+  phi4_14b_q4:
+    family: phi4
+    size_b: 14
+    architecture: dense
+    local: true
+    backend: llamacpp
+    base_url: http://127.0.0.1:8081/v1
+    model_name: phi4-14b-q4
+    quantization: Q4_K_M
+    context_length: 16384
+    tool_protocol: text
+    source_repo: unsloth/phi-4-GGUF
+    artifact_repo: local:/path/to/model.gguf
+    generation:
+      temperature: 0.8
+      max_tokens: 32768
+      top_p: 0.95
+
   mock:
     family: mock
     size_b: 0
@@ -229,3 +391,4 @@ models:
     model_name: mock
     quantization: none
     context_length: 32768
+    tool_protocol: text

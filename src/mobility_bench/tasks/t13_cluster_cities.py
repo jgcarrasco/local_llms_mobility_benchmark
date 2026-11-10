@@ -19,7 +19,7 @@ TASK_SPEC = TaskSpec(
             "Include every city-year row from outputs/t12_selected_matrix.csv.",
         ],
         "outputs/t13_cluster_profiles.csv": [
-            "One row per cluster_id with mean profile values for each selected numeric indicator.",
+            "One row per cluster_id with the mean of the raw indicator values of the city-year rows assigned to that cluster (the values as they appear in outputs/t12_selected_matrix.csv, before median imputation and standard scaling), computed over the non-missing values.",
         ],
     },
     checker=check_t13,

@@ -1,9 +1,13 @@
 {
   "city_name": "Alicante",
-  "city_qid": "Q8813",
+  "city_qid": "Q11959",
   "country": "Spain",
   "country_qid": "Q29",
   "poi_types": [
-    "point of interest"
+    "art gallery",
+    "library",
+    "monument",
+    "museum",
+    "theatre building"
   ]
 }

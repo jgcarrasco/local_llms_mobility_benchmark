@@ -1,0 +1,6 @@
+{
+  "threshold_overall_pass_rate": 0.85,
+  "threshold_time_multiplier": 2.0,
+  "sweet_spot_model": "deepseek_v41_flash",
+  "note": "A configured model satisfied the sweet-spot thresholds."
+}

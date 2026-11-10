@@ -1,0 +1,7 @@
+# 2026-11-09T10:06:28+00:00 live API
+phi4_14b_q4__agent_tools__T15__rep01	False/hallucinated_claim	True/None
+qwen35_2b_bf16__agent_tools__T15__rep03	False/hallucinated_claim	True/None
+qwen36_27b_q4__chat_schema__T15__rep03	False/hallucinated_claim	True/None
+qwen38_27b_q4__agent_tools__T15__rep02	False/hallucinated_claim	True/None
+qwen38_27b_q4__agent_tools__T15__rep03	False/hallucinated_claim	True/None
+qwen38_27b_q4__agent_tools__T15__rep04	False/hallucinated_claim	True/None

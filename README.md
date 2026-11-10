@@ -6,6 +6,11 @@ This repository contains the benchmark code, fixed data fixtures, and result fil
 
 The benchmark evaluates local language models on fifteen mobility data-engineering tasks. Each task asks a model to produce concrete artifacts such as CSV files, JSON summaries, Python scripts, SPARQL queries, validation reports, figures, or Markdown reports. Outputs are scored by deterministic checkers rather than by free-form textual judgment.
 
+This is release 1.1.0. It extends the 1.0.0 sweep from ten Qwen configurations in two conditions to sixteen
+configurations from six families in three conditions, adds the input-structure condition and the hosted
+reference model, and adds the task-clustered intervals, paired contrasts, reliability, and regression that
+the paper reports.
+
 ## Repository Structure
 
 - `src/mobility_bench/`: benchmark package, command-line interface, model clients, task definitions, tool loop, runtime isolation, scoring, and analysis code.
@@ -15,7 +20,9 @@ The benchmark evaluates local language models on fifteen mobility data-engineeri
 - `data/real_fixture_provenance.json`: source provenance and controlled fixture modifications.
 - `runs/full_sweep/results_jsonl/`: one JSONL result summary per scored attempt.
 - `runs/full_sweep/raw_logs/`: event traces for each attempt, including prompts, model responses, tool calls, tool outputs, and checker events.
-- `runs/full_sweep/aggregated/`: canonical aggregate CSV/JSON files used for the paper results.
+- `runs/full_sweep/aggregated/`: canonical aggregate CSV/JSON files used for the paper results, including the `significance/` files that carry the task-clustered intervals and paired tests.
+- `runs/hosted_reference/`: the calibration run of a hosted reference model, outside the local sweep.
+- `DATA_DICTIONARY.md`: every directory, file, column, and vocabulary in this package.
 - `tests/`: unit tests for the benchmark harness, task definitions, scoring logic, and analysis utilities.
 
 ## Setup
@@ -86,12 +93,15 @@ uv run mobility-bench aggregate \
 
 The paper results are stored in `runs/full_sweep/aggregated/`. The most important files are:
 
-- `attempts.csv`: all 1500 scored attempts, with task, model, mode, repetition, success, failure category, runtime, token counts, and tool-call counts.
+- `attempts.csv`: all 3600 scored attempts, with task, model, mode, repetition, success, failure category, runtime, token counts, and tool-call counts.
 - `pass_rate_by_model_mode.csv`: pass rates by model and interaction mode.
-- `agentic_gain.csv`: task-level difference between agent-with-tools and chat-only pass rates.
-- `pass_rate_by_task.csv`: pass rates by task and mode.
+- `agentic_gain.csv`: task-level pass rates for the three conditions and the two gains.
+- `pass_rate_by_task.csv`: pass rates by task.
 - `efficiency_metrics.csv`: runtime and tool-use summaries.
 - `failure_categories.csv`: failure-category counts.
+- `significance/`: task-clustered bootstrap intervals, paired contrasts, `pass^k` reliability, pairwise tests, and the pooled regression.
+
+`DATA_DICTIONARY.md` documents every column of these files.
 
 Per-attempt JSONL summaries are stored in `runs/full_sweep/results_jsonl/` for readers who want to inspect individual attempts.
 
@@ -111,9 +121,9 @@ These logs are the best place to inspect how a model approached a task: they rec
 
 ## Result Summary
 
-The full sweep contains 10 model configurations, 15 tasks, 2 interaction modes, and 5 repetitions per condition, for 1500 scored attempts.
+The full sweep contains 16 local model configurations from six families, 15 tasks, 3 interaction conditions, and 5 repetitions per condition, for 3600 scored attempts, plus a 45-attempt hosted calibration run.
 
-In the aggregate results, the closed-loop workspace condition substantially improves benchmark success. The best overall configuration is `qwen36_27b_q4` in `agent_tools` mode, with 64 successful attempts out of 75 and an 85.3% pass rate. The same model reaches 44.0% in `chat_only` mode. The compact `qwen35_9b_q4` model reaches 69.3% in `agent_tools` mode and 17.3% in `chat_only` mode.
+In the aggregate results, the closed-loop workspace condition substantially improves benchmark success. The best local configuration is `qwen35_27b_q4` in `agent_tools` mode, with 74 successful attempts out of 75 and a 98.7% pass rate; it reaches 62.7% in `chat_only` mode. The compact `qwen35_9b_q4` model reaches 80.0% in `agent_tools` mode and 28.0% in `chat_only` mode.
 
 Across all attempts, the largest unsuccessful categories are logic errors and runtime errors. This reflects the benchmark design: many failures produce parseable artifacts or executable code, but violate task-specific data-engineering rules.
 

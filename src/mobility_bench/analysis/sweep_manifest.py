@@ -126,7 +126,8 @@ def create_sweep_manifest(
             }
             for task_id, task in tasks.items()
         },
-        "planned_attempts": len(non_mock_models) * 2 * len(tasks) * benchmark.runtime.repetitions,
+        "modes": ["chat_only", "chat_schema", "agent_tools"],
+        "planned_attempts": len(non_mock_models) * 3 * len(tasks) * benchmark.runtime.repetitions,
         "artifact_footprint_bytes": {
             "runs": _dir_size(runs_dir),
             "raw_logs": _dir_size(runs_dir / "raw_logs"),

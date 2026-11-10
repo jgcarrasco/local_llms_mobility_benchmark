@@ -123,7 +123,7 @@ def make_paper_tables(
     }
     captions = {
         "main_results": "Main benchmark results.",
-        "agentic_gain": "Agentic gain by model and task.",
+        "agentic_gain": "Gain of the schema and tool conditions over the no-information baseline.",
         "failure_taxonomy": "Failure taxonomy counts.",
     }
     labels = {
@@ -131,6 +131,7 @@ def make_paper_tables(
         "agentic_gain": "tab:agentic-gain",
         "failure_taxonomy": "tab:failure-taxonomy",
     }
+    gain_columns = ["model_id", "task_id", "schema_gain", "agentic_gain", "agent_over_schema"]
     for key, csv_path in table_inputs.items():
         if csv_path.exists():
             df = pd.read_csv(csv_path)
@@ -138,6 +139,8 @@ def make_paper_tables(
                 df = pd.DataFrame({"placeholder": ["Pending benchmark results"]})
         else:
             df = pd.DataFrame({"placeholder": ["Pending benchmark results"]})
+        if key == "agentic_gain" and set(gain_columns) <= set(df.columns):
+            df = df[gain_columns]
         _write_latex_table(df, outputs[key], captions[key], labels[key])
 
     if paper_draft_dir is not None:

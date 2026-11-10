@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mobility-agent-benchmark"
-version = "1.0.0"
+version = "1.1.0"
 description = "Controlled benchmark for local LLM agents on mobility data engineering tasks."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -14,6 +14,7 @@ dependencies = [
   "pandas",
   "pydantic",
   "pyyaml",
+  "rdflib",
   "requests",
   "scikit-learn",
 ]
@@ -21,6 +22,9 @@ dependencies = [
 [project.optional-dependencies]
 test = [
   "pytest",
+]
+analysis = [
+  "statsmodels",
 ]
 
 [project.scripts]

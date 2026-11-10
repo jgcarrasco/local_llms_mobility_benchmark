@@ -1,0 +1,28 @@
+# Hosted reference calibration run.
+#
+# One repetition across the fifteen tasks and three conditions, to establish
+# that the tasks are solvable by a model of a much larger class than the local
+# ones. The runs directory is separate so these cells never mix with the 3,600
+# cells of the main sweep.
+
+runtime:
+  temperature: null
+  max_iterations: 150
+  max_tool_calls: 150
+  max_consecutive_protocol_errors: 8
+  max_repeated_tool_calls: 20
+  max_repeated_failed_tool_calls: 8
+  timeout_seconds_per_task: 5400
+  bash_timeout_seconds: 60
+  repetitions: 1
+  network_enabled: false
+  clean_workspace_per_attempt: true
+
+paths:
+  data_dir: data
+  runs_dir: runs/hosted_reference
+  reports_dir: runs/derived_artifacts
+
+execution:
+  backend: local
+  expose_sensitive_env: false

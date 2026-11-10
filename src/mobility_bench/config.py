@@ -10,14 +10,14 @@ from pydantic import BaseModel, Field
 
 
 class RuntimeConfig(BaseModel):
-    temperature: float = 0.0
-    max_iterations: int = 20
-    max_tool_calls: int = 40
+    # None means each model uses its own generation.temperature.
+    temperature: float | None = None
+    max_iterations: int = 150
+    max_tool_calls: int = 150
     max_consecutive_protocol_errors: int = 8
-    max_protocol_response_tokens: int = 8192
     max_repeated_tool_calls: int = 20
     max_repeated_failed_tool_calls: int = 8
-    timeout_seconds_per_task: int = 600
+    timeout_seconds_per_task: int = 5400
     bash_timeout_seconds: int = 60
     repetitions: int = 3
     network_enabled: bool = False
@@ -53,8 +53,16 @@ class ModelConfig(BaseModel):
     model_name: str
     quantization: str
     context_length: int
+    # How the agent interface is spoken: the model's native function-calling
+    # channel, or the benchmark's text protocol for templates that have none.
+    tool_protocol: str = "text"
     source_repo: str | None = None
     artifact_repo: str | None = None
+    # Hosted endpoints need a bearer token. The key itself never goes in a
+    # config file: name the environment variable that holds it.
+    api_key_env: str | None = None
+    # Extra HTTP headers for gateways with non-standard requirements.
+    extra_headers: dict[str, str] = Field(default_factory=dict)
     generation: dict[str, Any] = Field(default_factory=dict)
 
 

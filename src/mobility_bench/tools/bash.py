@@ -25,6 +25,22 @@ ALLOWED_ABSOLUTE_PREFIXES = (
     Path("/usr"),
 )
 ALLOWED_ABSOLUTE_PATHS = {Path(sys.executable).resolve()}
+# Only paths under a host root, or paths that actually exist, are treated as
+# filesystem references. Without this, an awk or sed regex such as
+# `/mobility|environment/` reads as an absolute path and the command is rejected.
+HOST_PATH_ROOTS = (
+    "/home", "/etc", "/var", "/tmp", "/root", "/opt", "/srv", "/mnt", "/media",
+    "/proc", "/sys", "/dev", "/boot", "/run", "/snap", "/nix",
+)
+
+
+def _looks_like_host_path(raw_path: str) -> bool:
+    if any(raw_path == root or raw_path.startswith(root + "/") for root in HOST_PATH_ROOTS):
+        return True
+    try:
+        return Path(raw_path).exists()
+    except OSError:
+        return False
 
 
 def _command_policy_error(workspace: Workspace, command: str) -> str | None:
@@ -37,6 +53,8 @@ def _command_policy_error(workspace: Workspace, command: str) -> str | None:
         raw_path = match.group(0).rstrip("),.:]")
         if raw_path == "/":
             return "bash command references filesystem root outside the workspace"
+        if not _looks_like_host_path(raw_path):
+            continue
         path = Path(raw_path)
         try:
             resolved = path.resolve(strict=False)

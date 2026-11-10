@@ -13,6 +13,7 @@ TASK_SPEC = TaskSpec(
     output_requirements={
         "outputs/t12_missingness_report.csv": [
             "CSV columns: indicator, missing_count, missing_rate, kept",
+            "missing_count must match the number of missing values for that indicator in outputs/t11_city_indicator_matrix.csv.",
             "missing_rate must match the fraction of missing values in outputs/t11_city_indicator_matrix.csv.",
         ],
         "outputs/t12_selected_matrix.csv": [

@@ -4,7 +4,8 @@ from __future__ import annotations
 
 import json
 import shutil
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -44,6 +45,26 @@ class AttemptSummary:
     output_tokens_total: int = 0
     total_tokens: int = 0
     token_counts_estimated: bool = False
+    n_truncated_responses: int = 0
+    finish_reasons: dict[str, int] = field(default_factory=dict)
+    max_prompt_tokens: int = 0
+    prompt_chars: int = 0
+    tool_protocol: str | None = None
+    started_at: str | None = None
+    finished_at: str | None = None
+    model_seconds: float = 0.0
+    tool_seconds: float = 0.0
+    checker_seconds: float = 0.0
+    max_call_seconds: float = 0.0
+    prefill_ms_total: float = 0.0
+    decode_ms_total: float = 0.0
+    decode_tokens_per_second: float | None = None
+    prompt_tokens_cached_total: int = 0
+    cache_hit_rate: float | None = None
+    reasoning_chars_total: int = 0
+    n_responses_with_reasoning: int = 0
+    n_parallel_tool_calls: int = 0
+    n_entry_point_missing: int = 0
     first_silent_checker_success: bool = False
     final_checker_success: bool = False
     infrastructure_failure: bool = False
@@ -78,11 +99,36 @@ class AttemptSummary:
             "output_tokens_total": self.output_tokens_total,
             "total_tokens": self.total_tokens,
             "token_counts_estimated": self.token_counts_estimated,
+            "n_truncated_responses": self.n_truncated_responses,
+            "finish_reasons": self.finish_reasons,
+            "max_prompt_tokens": self.max_prompt_tokens,
+            "prompt_chars": self.prompt_chars,
+            "tool_protocol": self.tool_protocol,
+            "started_at": self.started_at,
+            "finished_at": self.finished_at,
+            "model_seconds": self.model_seconds,
+            "tool_seconds": self.tool_seconds,
+            "checker_seconds": self.checker_seconds,
+            "max_call_seconds": self.max_call_seconds,
+            "prefill_ms_total": self.prefill_ms_total,
+            "decode_ms_total": self.decode_ms_total,
+            "decode_tokens_per_second": self.decode_tokens_per_second,
+            "prompt_tokens_cached_total": self.prompt_tokens_cached_total,
+            "cache_hit_rate": self.cache_hit_rate,
+            "reasoning_chars_total": self.reasoning_chars_total,
+            "n_responses_with_reasoning": self.n_responses_with_reasoning,
+            "n_parallel_tool_calls": self.n_parallel_tool_calls,
+            "n_entry_point_missing": self.n_entry_point_missing,
             "first_silent_checker_success": self.first_silent_checker_success,
             "final_checker_success": self.final_checker_success,
             "infrastructure_failure": self.infrastructure_failure,
             "notes": self.notes,
         }
+
+
+def result_path(benchmark: BenchmarkConfig, run_id: str) -> Path:
+    """Return the JSONL path where an attempt result is written."""
+    return benchmark.paths.runs_dir / "results_jsonl" / f"{run_id}.jsonl"
 
 
 def _copy_inputs(data_dir: Path, workspace_root: Path) -> None:
@@ -175,6 +221,26 @@ def run_task_attempt(
             execution_backend=benchmark.execution.backend,
             docker_image=benchmark.execution.docker_image,
             docker_network=benchmark.execution.docker_network,
+            data_dir=benchmark.paths.data_dir,
+        )
+    elif mode == "chat_schema":
+        from mobility_bench.modes.chat_schema import run_chat_schema_attempt
+
+        summary = run_chat_schema_attempt(
+            task=task,
+            model=model_client,
+            workspace=workspace,
+            run_id=run_id,
+            model_id=model_id,
+            repetition=repetition,
+            logger=logger,
+            temperature=benchmark.runtime.temperature,
+            timeout_seconds=timeout_seconds,
+            bash_timeout_seconds=benchmark.runtime.bash_timeout_seconds,
+            execution_backend=benchmark.execution.backend,
+            docker_image=benchmark.execution.docker_image,
+            docker_network=benchmark.execution.docker_network,
+            data_dir=benchmark.paths.data_dir,
         )
     elif mode == "agent_tools":
         from mobility_bench.modes.agent_tools import run_agent_tools_attempt
@@ -190,7 +256,6 @@ def run_task_attempt(
             max_iterations=benchmark.runtime.max_iterations,
             max_tool_calls=benchmark.runtime.max_tool_calls,
             max_consecutive_protocol_errors=benchmark.runtime.max_consecutive_protocol_errors,
-            max_protocol_response_tokens=benchmark.runtime.max_protocol_response_tokens,
             max_repeated_tool_calls=benchmark.runtime.max_repeated_tool_calls,
             max_repeated_failed_tool_calls=benchmark.runtime.max_repeated_failed_tool_calls,
             temperature=benchmark.runtime.temperature,
@@ -199,9 +264,19 @@ def run_task_attempt(
             execution_backend=benchmark.execution.backend,
             docker_image=benchmark.execution.docker_image,
             docker_network=benchmark.execution.docker_network,
+            data_dir=benchmark.paths.data_dir,
+            tool_protocol=model_config.tool_protocol,
         )
     else:
         raise ValueError(f"unsupported mode: {mode}")
+
+    # A mode can return before stamping its own end time (the solution script
+    # crashing, for example). Fill it here, at the one point every attempt
+    # passes through, so no record is written with a null duration.
+    if summary.finished_at is None:
+        summary = replace(
+            summary, finished_at=datetime.now(timezone.utc).isoformat()
+        )
 
     enriched = {
         **summary.to_dict(),
@@ -213,9 +288,23 @@ def run_task_attempt(
         "context_length": model_config.context_length,
         "source_repo": model_config.source_repo,
         "artifact_repo": model_config.artifact_repo,
+        "model_name": model_config.model_name,
+        "backend": model_config.backend,
+        "base_url": model_config.base_url,
+        "generation": model_config.generation,
+        "tool_protocol": model_config.tool_protocol,
+        "cap_max_iterations": benchmark.runtime.max_iterations,
+        "cap_max_tool_calls": benchmark.runtime.max_tool_calls,
+        "cap_timeout_seconds": timeout_seconds,
+        "cap_bash_timeout_seconds": benchmark.runtime.bash_timeout_seconds,
+        "max_consecutive_protocol_errors": benchmark.runtime.max_consecutive_protocol_errors,
+        "max_repeated_tool_calls": benchmark.runtime.max_repeated_tool_calls,
+        "max_repeated_failed_tool_calls": benchmark.runtime.max_repeated_failed_tool_calls,
+        "repetitions": benchmark.runtime.repetitions,
+        "execution_backend": benchmark.execution.backend,
     }
-    results_dir = benchmark.paths.runs_dir / "results_jsonl"
-    results_dir.mkdir(parents=True, exist_ok=True)
-    with (results_dir / f"{run_id}.jsonl").open("w", encoding="utf-8") as handle:
+    output_path = result_path(benchmark, run_id)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with output_path.open("w", encoding="utf-8") as handle:
         handle.write(json.dumps(enriched, ensure_ascii=True, sort_keys=True) + "\n")
     return summary

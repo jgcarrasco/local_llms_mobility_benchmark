@@ -1,10 +1,12 @@
 from pathlib import Path
 from typing import Any
 
+from mobility_bench.config import BenchmarkConfig, ModelConfig, PathsConfig
 from mobility_bench.models.base import ModelResponse
 from mobility_bench.models.mock_client import MockClient
 from mobility_bench.modes.agent_tools import AGENT_SYSTEM_PROMPT, run_agent_tools_attempt
-from mobility_bench.modes.chat_only import run_chat_only_attempt
+from mobility_bench.modes.chat_only import entry_scripts, run_chat_only_attempt
+from mobility_bench.runtime.runner import run_task_attempt
 from mobility_bench.runtime.workspace import Workspace
 from mobility_bench.scoring.base import CheckerResult
 from mobility_bench.tasks.base import TaskSpec
@@ -68,6 +70,75 @@ Path("outputs/answer.txt").write_text("ok")
     assert summary.final_checker_success is True
     assert '<solution_file path="src/solution.py">' in model.calls[0][1]["content"]
     assert "Do not put shell commands or prose inside a solution block." in model.calls[0][1]["content"]
+
+
+def test_chat_only_reports_truncated_response(tmp_path: Path) -> None:
+    class TruncatingClient:
+        def generate(self, messages: list[dict[str, str]], **kwargs: Any) -> ModelResponse:
+            del messages, kwargs
+            return ModelResponse(
+                text="",
+                output_tokens=16384,
+                total_tokens=16384,
+                token_counts_estimated=False,
+                reasoning_text="still thinking",
+                finish_reason="length",
+            )
+
+    summary = run_chat_only_attempt(
+        task=toy_task(),
+        model=TruncatingClient(),
+        workspace=Workspace(tmp_path),
+        run_id="run-truncated-chat",
+        model_id="mock",
+        repetition=1,
+    )
+    assert summary.success is False
+    assert summary.failure_category == "truncated"
+    assert summary.n_truncated_responses == 1
+    assert summary.finish_reasons == {"length": 1}
+    assert summary.max_prompt_tokens == 0
+    assert summary.prompt_chars > 0
+
+
+def test_run_task_attempt_stamps_timing_when_the_solution_crashes(tmp_path: Path) -> None:
+    """A crashing solution returns early, but must still record its end time."""
+    data_dir = tmp_path / "data"
+    (data_dir / "inputs").mkdir(parents=True)
+    model_config = ModelConfig(
+        family="mock",
+        size_b=0.0,
+        architecture="dense",
+        local=True,
+        backend="mock",
+        model_name="mock",
+        quantization="none",
+        context_length=32768,
+    )
+    benchmark = BenchmarkConfig(
+        paths=PathsConfig(data_dir=data_dir, runs_dir=tmp_path / "runs"),
+    )
+    model = MockClient(
+        [
+            """<solution_file path="src/solution.py">
+raise RuntimeError("boom")
+</solution_file>"""
+        ]
+    )
+
+    summary = run_task_attempt(
+        task=toy_task(),
+        model_client=model,
+        model_config=model_config,
+        model_id="mock",
+        mode="chat_only",
+        repetition=1,
+        benchmark=benchmark,
+    )
+
+    assert summary.failure_category == "runtime_error"
+    assert summary.finished_at is not None
+    assert summary.tool_seconds > 0
 
 
 def test_chat_only_passes_temperature_to_model(tmp_path: Path) -> None:
@@ -207,34 +278,37 @@ def test_agent_tools_counts_invalid_tool_calls_as_protocol_stall(tmp_path: Path)
     assert summary.n_failed_tool_calls == 2
 
 
-def test_agent_tools_stops_oversized_response_without_tool_call(tmp_path: Path) -> None:
-    class TokenClient:
+def test_agent_tools_reports_truncated_response_separately(tmp_path: Path) -> None:
+    class TruncatingClient:
         def generate(self, messages: list[dict[str, str]], **kwargs: Any) -> ModelResponse:
             del messages, kwargs
             return ModelResponse(
-                text="not a tool call",
-                output_tokens=10,
-                total_tokens=10,
+                text="",
+                output_tokens=16384,
+                total_tokens=16384,
                 token_counts_estimated=False,
+                reasoning_text="still thinking",
+                finish_reason="length",
             )
 
     summary = run_agent_tools_attempt(
         task=toy_task(),
-        model=TokenClient(),
+        model=TruncatingClient(),
         workspace=Workspace(tmp_path),
-        run_id="run-protocol-bloat",
+        run_id="run-truncated",
         model_id="mock",
         repetition=1,
         max_iterations=10,
-        max_protocol_response_tokens=10,
     )
 
     assert summary.success is False
-    assert summary.failure_category == "protocol_error"
-    assert summary.stop_reason == "protocol_bloat"
-    assert summary.cap_exhausted is True
+    assert summary.failure_category == "truncated"
+    assert summary.stop_reason == "truncated_response"
+    assert summary.cap_exhausted is False
     assert summary.n_model_calls == 1
     assert summary.n_failed_tool_calls == 0
+    assert summary.n_truncated_responses == 1
+    assert summary.finish_reasons == {"length": 1}
 
 
 def test_agent_tools_stops_repeated_failed_tool_call(tmp_path: Path) -> None:
@@ -304,6 +378,78 @@ def test_agent_prompt_includes_tool_argument_schemas() -> None:
     assert "use write to create a script, then bash to run it" in AGENT_SYSTEM_PROMPT
 
 
+def test_entry_scripts_prefers_declared_script() -> None:
+    declared = TaskSpec(
+        task_id="TY",
+        title="Declared script",
+        family="test",
+        input_files=[],
+        expected_outputs=["src/loader.py", "outputs/answer.txt"],
+        prompt_template="Write the expected output.",
+        checker=toy_checker,
+        timeout_seconds=60,
+    )
+    assert entry_scripts(declared) == ["src/loader.py"]
+    assert entry_scripts(toy_task()) == ["src/solution.py"]
+
+
+def test_chat_only_executes_only_the_entry_script(tmp_path: Path) -> None:
+    model = MockClient(
+        [
+            """<solution_file path="src/solution.py">
+from pathlib import Path
+Path("outputs").mkdir(exist_ok=True)
+Path("outputs/answer.txt").write_text("ok")
+</solution_file>
+<solution_file path="src/helper.py">
+raise SystemExit("helper must not be executed")
+</solution_file>"""
+        ]
+    )
+    summary = run_chat_only_attempt(
+        task=toy_task(),
+        model=model,
+        workspace=Workspace(tmp_path),
+        run_id="run-entry-point",
+        model_id="mock",
+        repetition=1,
+    )
+    assert summary.success is True
+    assert summary.n_code_executions == 1
+
+
+def test_chat_only_runs_the_declared_script(tmp_path: Path) -> None:
+    task = TaskSpec(
+        task_id="TY",
+        title="Declared script",
+        family="test",
+        input_files=[],
+        expected_outputs=["src/loader.py", "outputs/answer.txt"],
+        prompt_template="Write the expected output.",
+        checker=toy_checker,
+        timeout_seconds=60,
+    )
+    model = MockClient(
+        [
+            """<solution_file path="src/loader.py">
+from pathlib import Path
+Path("outputs").mkdir(exist_ok=True)
+Path("outputs/answer.txt").write_text("ok")
+</solution_file>"""
+        ]
+    )
+    summary = run_chat_only_attempt(
+        task=task,
+        model=model,
+        workspace=Workspace(tmp_path),
+        run_id="run-declared",
+        model_id="mock",
+        repetition=1,
+    )
+    assert summary.success is True
+    assert summary.n_code_executions == 1
+
+
 def test_agent_tools_passes_temperature_to_model(tmp_path: Path) -> None:
     model = RecordingClient(
         [
@@ -320,3 +466,169 @@ def test_agent_tools_passes_temperature_to_model(tmp_path: Path) -> None:
         temperature=0.3,
     )
     assert model.kwargs == [{"temperature": 0.3}]
+
+
+class NativeClient:
+    """Fake client that answers with native tool_calls and records the request."""
+
+    def __init__(self, responses: list[ModelResponse]) -> None:
+        self.responses = responses
+        self.kwargs: list[dict[str, Any]] = []
+
+    def generate(self, messages: list[dict[str, str]], **kwargs: Any) -> ModelResponse:
+        del messages
+        self.kwargs.append(kwargs)
+        return self.responses.pop(0)
+
+
+def _native_call(call_id: str, name: str, arguments: dict[str, Any]) -> dict[str, Any]:
+    return {"id": call_id, "name": name, "arguments": arguments}
+
+
+def test_agent_tools_native_protocol_completes_the_loop(tmp_path: Path) -> None:
+    model = NativeClient(
+        [
+            ModelResponse(
+                text="",
+                finish_reason="tool_calls",
+                tool_calls=[
+                    _native_call(
+                        "c1",
+                        "write",
+                        {"path": "outputs/answer.txt", "content": "ok"},
+                    )
+                ],
+            ),
+            ModelResponse(
+                text="",
+                finish_reason="tool_calls",
+                tool_calls=[_native_call("c2", "submit", {"message": "done"})],
+            ),
+        ]
+    )
+    summary = run_agent_tools_attempt(
+        task=toy_task(),
+        model=model,
+        workspace=Workspace(tmp_path),
+        run_id="run-native",
+        model_id="mock",
+        repetition=1,
+        tool_protocol="native",
+    )
+
+    assert summary.success is True
+    assert summary.tool_protocol == "native"
+    assert summary.n_tool_calls_total == 2
+    assert summary.n_failed_tool_calls == 0
+    # the tools are declared on every native request
+    assert all("tools" in call for call in model.kwargs)
+    assert (tmp_path / "outputs" / "answer.txt").read_text(encoding="utf-8") == "ok"
+
+
+def test_agent_tools_native_protocol_handles_parallel_calls(tmp_path: Path) -> None:
+    model = NativeClient(
+        [
+            ModelResponse(
+                text="",
+                finish_reason="tool_calls",
+                tool_calls=[
+                    _native_call("c1", "write", {"path": "outputs/answer.txt", "content": "ok"}),
+                    _native_call("c2", "bash", {"command": "echo hi"}),
+                ],
+            ),
+            ModelResponse(
+                text="",
+                finish_reason="tool_calls",
+                tool_calls=[_native_call("c3", "submit", {})],
+            ),
+        ]
+    )
+    summary = run_agent_tools_attempt(
+        task=toy_task(),
+        model=model,
+        workspace=Workspace(tmp_path),
+        run_id="run-native-parallel",
+        model_id="mock",
+        repetition=1,
+        tool_protocol="native",
+    )
+
+    assert summary.success is True
+    assert summary.n_tool_calls_total == 3
+    assert summary.n_write_calls == 1
+    assert summary.n_bash_calls == 1
+
+
+def test_agent_tools_native_protocol_treats_text_reply_as_protocol_error(tmp_path: Path) -> None:
+    model = NativeClient(
+        [ModelResponse(text="I will write the file now.", finish_reason="stop") for _ in range(3)]
+    )
+    summary = run_agent_tools_attempt(
+        task=toy_task(),
+        model=model,
+        workspace=Workspace(tmp_path),
+        run_id="run-native-text",
+        model_id="mock",
+        repetition=1,
+        tool_protocol="native",
+        max_consecutive_protocol_errors=1,
+    )
+
+    assert summary.success is False
+    assert summary.failure_category == "protocol_error"
+    assert summary.n_tool_calls_total == 0
+
+
+def test_agent_tools_text_protocol_does_not_declare_tools(tmp_path: Path) -> None:
+    model = NativeClient(
+        [ModelResponse(text='<tool_call>\n{"tool": "submit", "args": {}}\n</tool_call>')]
+    )
+    run_agent_tools_attempt(
+        task=toy_task(),
+        model=model,
+        workspace=Workspace(tmp_path),
+        run_id="run-text-no-tools",
+        model_id="mock",
+        repetition=1,
+        tool_protocol="text",
+    )
+    assert all("tools" not in call for call in model.kwargs)
+
+
+def test_chat_only_aggregates_server_timings(tmp_path: Path) -> None:
+    class TimedClient:
+        def generate(self, messages: list[dict[str, str]], **kwargs: Any) -> ModelResponse:
+            del messages, kwargs
+            return ModelResponse(
+                text='<solution_file path="src/solution.py">\nfrom pathlib import Path\n'
+                'Path("outputs").mkdir(exist_ok=True)\nPath("outputs/answer.txt").write_text("ok")\n'
+                "</solution_file>",
+                input_tokens=1000,
+                output_tokens=50,
+                total_tokens=1050,
+                token_counts_estimated=False,
+                usage={"prompt_tokens_details": {"cached_tokens": 400}},
+                timings={"prompt_ms": 120.0, "predicted_ms": 900.0, "predicted_per_second": 55.5},
+                reasoning_text="thinking about it",
+                finish_reason="stop",
+            )
+
+    summary = run_chat_only_attempt(
+        task=toy_task(),
+        model=TimedClient(),
+        workspace=Workspace(tmp_path),
+        run_id="run-timings",
+        model_id="mock",
+        repetition=1,
+    )
+
+    assert summary.success is True
+    assert summary.prefill_ms_total == 120.0
+    assert summary.decode_ms_total == 900.0
+    assert summary.decode_tokens_per_second == 55.5
+    assert summary.prompt_tokens_cached_total == 400
+    assert summary.cache_hit_rate == 0.4
+    assert summary.reasoning_chars_total == len("thinking about it")
+    assert summary.n_responses_with_reasoning == 1
+    assert summary.model_seconds > 0
+    assert summary.started_at and summary.finished_at

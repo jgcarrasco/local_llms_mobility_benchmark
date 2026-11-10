@@ -1,0 +1,16 @@
+model_id,task_id,chat_only,chat_schema,agent_tools,schema_gain,agentic_gain,agent_over_schema
+deepseek_v41_flash,T01,1.0,1.0,1.0,0.0,0.0,0.0
+deepseek_v41_flash,T02,1.0,1.0,1.0,0.0,0.0,0.0
+deepseek_v41_flash,T03,1.0,0.0,1.0,-1.0,0.0,1.0
+deepseek_v41_flash,T04,1.0,1.0,1.0,0.0,0.0,0.0
+deepseek_v41_flash,T05,1.0,1.0,1.0,0.0,0.0,0.0
+deepseek_v41_flash,T06,1.0,1.0,1.0,0.0,0.0,0.0
+deepseek_v41_flash,T07,1.0,1.0,1.0,0.0,0.0,0.0
+deepseek_v41_flash,T08,1.0,1.0,1.0,0.0,0.0,0.0
+deepseek_v41_flash,T09,1.0,1.0,1.0,0.0,0.0,0.0
+deepseek_v41_flash,T10,1.0,1.0,1.0,0.0,0.0,0.0
+deepseek_v41_flash,T11,1.0,1.0,1.0,0.0,0.0,0.0
+deepseek_v41_flash,T12,1.0,1.0,1.0,0.0,0.0,0.0
+deepseek_v41_flash,T13,1.0,1.0,1.0,0.0,0.0,0.0
+deepseek_v41_flash,T14,1.0,1.0,1.0,0.0,0.0,0.0
+deepseek_v41_flash,T15,1.0,1.0,1.0,0.0,0.0,0.0

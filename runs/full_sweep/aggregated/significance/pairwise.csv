@@ -1,0 +1,39 @@
+mode,model_a,model_b,n_tasks,median_diff,statistic,p_raw,p_holm,family,model_id,contrast
+agent_tools,qwen35_27b_q4,qwen35_35b_a3b_q4,15,0.0,0.0,0.10880943004054568,0.6528565802432741,top_models_agent_tools,,
+agent_tools,qwen35_27b_q4,qwen36_27b_q4,15,0.0,0.0,0.31731050786291415,1.0,top_models_agent_tools,,
+agent_tools,qwen35_27b_q4,qwen36_35b_a3b_q4,15,0.0,0.0,0.31731050786291415,1.0,top_models_agent_tools,,
+agent_tools,qwen35_35b_a3b_q4,qwen36_27b_q4,15,0.0,1.5,0.4142161782425252,1.0,top_models_agent_tools,,
+agent_tools,qwen35_35b_a3b_q4,qwen36_35b_a3b_q4,15,0.0,0.0,0.17971249487899976,0.8985624743949988,top_models_agent_tools,,
+agent_tools,qwen36_27b_q4,qwen36_35b_a3b_q4,15,0.0,0.0,0.31731050786291415,1.0,top_models_agent_tools,,
+,,,15,0.0,10.5,0.08173075413284171,1.0,mode_contrast_per_model,gemma4_12b_q4,chat_schema - chat_only
+,,,15,0.4,13.0,0.02246227263701685,0.40432090746630334,mode_contrast_per_model,gemma4_12b_q4,agent_tools - chat_only
+,,,15,0.2,32.0,0.344118496135312,1.0,mode_contrast_per_model,gptoss_20b_q4,chat_schema - chat_only
+,,,15,0.4,14.5,0.016622030364176633,0.33244060728353264,mode_contrast_per_model,gptoss_20b_q4,agent_tools - chat_only
+,,,15,0.0,3.0,0.4652088184521418,1.0,mode_contrast_per_model,llama31_8b_q4,chat_schema - chat_only
+,,,15,0.0,0.0,0.10247043485974937,1.0,mode_contrast_per_model,llama31_8b_q4,agent_tools - chat_only
+,,,15,0.0,12.5,0.12331764005308976,1.0,mode_contrast_per_model,mistral_small_32_24b_q4,chat_schema - chat_only
+,,,15,0.0,18.5,0.19331741025135407,1.0,mode_contrast_per_model,mistral_small_32_24b_q4,agent_tools - chat_only
+,,,15,0.0,8.5,0.3482016794131262,1.0,mode_contrast_per_model,phi4_14b_q4,chat_schema - chat_only
+,,,15,0.2,7.0,0.01173556547895191,0.2802433345973801,mode_contrast_per_model,phi4_14b_q4,agent_tools - chat_only
+,,,15,0.0,12.0,0.2115097985550598,1.0,mode_contrast_per_model,qwen35_27b_q4,chat_schema - chat_only
+,,,15,0.4,0.0,0.011209733383895203,0.2802433345973801,mode_contrast_per_model,qwen35_27b_q4,agent_tools - chat_only
+,,,15,0.0,0.0,0.17971249487899976,1.0,mode_contrast_per_model,qwen35_2b_bf16,chat_schema - chat_only
+,,,15,0.0,0.0,0.10247043485974937,1.0,mode_contrast_per_model,qwen35_2b_bf16,agent_tools - chat_only
+,,,15,0.0,0.0,0.31731050786291415,1.0,mode_contrast_per_model,qwen35_2b_q4,chat_schema - chat_only
+,,,15,0.0,1.0,0.28504940740261275,1.0,mode_contrast_per_model,qwen35_2b_q4,agent_tools - chat_only
+,,,15,0.2,14.0,0.04854404834166107,0.8252488218082381,mode_contrast_per_model,qwen35_35b_a3b_q4,chat_schema - chat_only
+,,,15,0.4,0.0,0.0013961674899416316,0.04328119218819058,mode_contrast_per_model,qwen35_35b_a3b_q4,agent_tools - chat_only
+,,,15,0.0,5.5,0.2877873901541501,1.0,mode_contrast_per_model,qwen35_4b_bf16,chat_schema - chat_only
+,,,15,0.8,3.0,0.007058332048528086,0.1905749653102583,mode_contrast_per_model,qwen35_4b_bf16,agent_tools - chat_only
+,,,15,0.0,4.0,0.16820413904818,1.0,mode_contrast_per_model,qwen35_4b_q4,chat_schema - chat_only
+,,,15,0.8,0.0,0.0013029604919163537,0.04169473574132332,mode_contrast_per_model,qwen35_4b_q4,agent_tools - chat_only
+,,,15,0.0,13.0,0.2587153167948143,1.0,mode_contrast_per_model,qwen35_9b_bf16,chat_schema - chat_only
+,,,15,0.4,11.5,0.005678511571765462,0.15899832400943292,mode_contrast_per_model,qwen35_9b_bf16,agent_tools - chat_only
+,,,15,0.0,23.5,0.6817167391664181,1.0,mode_contrast_per_model,qwen35_9b_q4,chat_schema - chat_only
+,,,15,0.6,3.0,0.0018339104445270476,0.05318340289128438,mode_contrast_per_model,qwen35_9b_q4,agent_tools - chat_only
+,,,15,0.19999999999999996,3.0,0.011340179536662017,0.2802433345973801,mode_contrast_per_model,qwen36_27b_q4,chat_schema - chat_only
+,,,15,0.19999999999999996,0.0,0.007109552693052261,0.1905749653102583,mode_contrast_per_model,qwen36_27b_q4,agent_tools - chat_only
+,,,15,0.19999999999999996,3.0,0.01868339546299768,0.35498451379695595,mode_contrast_per_model,qwen36_35b_a3b_q4,chat_schema - chat_only
+,,,15,0.19999999999999996,0.0,0.0017553794308967944,0.05266138292690383,mode_contrast_per_model,qwen36_35b_a3b_q4,agent_tools - chat_only
+,,,15,0.19999999999999996,2.0,0.014625802185752955,0.321767648086565,mode_contrast_per_model,qwen38_27b_q4,chat_schema - chat_only
+,,,15,0.19999999999999996,6.0,0.015270703918089788,0.321767648086565,mode_contrast_per_model,qwen38_27b_q4,agent_tools - chat_only

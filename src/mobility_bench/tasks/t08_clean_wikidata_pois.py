@@ -14,6 +14,7 @@ TASK_SPEC = TaskSpec(
         "outputs/t08_pois_clean.csv": [
             "CSV columns: qid, label, poi_type, latitude, longitude, source",
             "Latitude and longitude must be numeric and in valid ranges.",
+            "Latitude and longitude must reproduce the coordinate of the input record; the coord value is a WKT Point written as longitude then latitude.",
             "Use one row per unique qid and set source to wikidata or equivalent.",
             "Every label must be non-empty; when itemLabel is missing, use the qid as a deterministic fallback label.",
         ],

@@ -14,6 +14,7 @@ TASK_SPEC = TaskSpec(
         "outputs/t11_city_indicator_matrix.csv": [
             "CSV identifier columns: city_id, city_name, year",
             "Include one column for every indicator_id in outputs/t02_eurostat_raw.csv.",
+            "Each cell must contain the value of the corresponding long-format record, and must be empty when that record is absent.",
             "Use one row per city_id/year pair.",
         ],
     },

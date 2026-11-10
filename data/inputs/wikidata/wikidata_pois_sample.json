@@ -1,6 +1,12 @@
 {
   "source": "wikidata_sparql_snapshot",
-  "query": "\nSELECT ?item ?itemLabel ?coord ?typeLabel WHERE {\n  ?item wdt:P131* wd:Q11959 ;\n        wdt:P625 ?coord .\n  OPTIONAL { ?item wdt:P31 ?type . }\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en,es\". }\n}\nLIMIT 50\n",
+  "query": "SELECT DISTINCT ?item ?itemLabel ?coord ?typeLabel WHERE {\n  SERVICE wikibase:box {\n    ?item wdt:P625 ?coord .\n    bd:serviceParam wikibase:cornerWest \"Point(-0.62 38.25)\"^^geo:wktLiteral .\n    bd:serviceParam wikibase:cornerEast \"Point(-0.38 38.47)\"^^geo:wktLiteral .\n  }\n  ?item wdt:P31 ?type .\n  VALUES ?type { wd:Q33506 wd:Q4989906 wd:Q7075 wd:Q24354 wd:Q1007870 }\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en,es\". }\n}\nORDER BY ?item\nLIMIT 200\n",
+  "study_area": {
+    "lat_min": 38.25,
+    "lat_max": 38.47,
+    "lon_min": -0.62,
+    "lon_max": -0.38
+  },
   "head": {
     "vars": [
       "item",
@@ -12,361 +18,347 @@
   "results": {
     "bindings": [
       {
-        "item": "http://www.wikidata.org/entity/Q108131331",
-        "qid": "Q108131331",
-        "itemLabel": "Q108131331",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.494949 38.366174)"
+        "item": "http://www.wikidata.org/entity/Q114450503",
+        "qid": "Q114450503",
+        "itemLabel": "Biblioteca del Centro de Formación, Innovación y Recursos Educativos (CEFIRE) de Alicante",
+        "poi_type": "library",
+        "coord": "Point(-0.530694444 38.307361111)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131332",
-        "qid": "Q108131332",
+        "item": "http://www.wikidata.org/entity/Q114450868",
+        "qid": "Q114450868",
         "itemLabel": "",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.509212 38.346276)"
+        "poi_type": "library",
+        "coord": "Point(-0.486722222 38.351805555)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131333",
-        "qid": "Q108131333",
-        "itemLabel": "Q108131333",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.464536 38.361318)"
+        "item": "http://www.wikidata.org/entity/Q114451690",
+        "qid": "Q114451690",
+        "itemLabel": "Biblioteca del Museo Arqueológico de Alicante",
+        "poi_type": "library",
+        "coord": "Point(-0.476111111 38.354166666)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131334",
-        "qid": "Q108131334",
-        "itemLabel": "Q108131334",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.45383 38.371102)"
+        "item": "http://www.wikidata.org/entity/Q130200742",
+        "qid": "Q130200742",
+        "itemLabel": "Museo de Aguas de Alicante",
+        "poi_type": "museum",
+        "coord": "Point(-0.480298 38.346681)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131335",
-        "qid": "Q108131335",
-        "itemLabel": "Q108131335",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.498204 38.35384)"
+        "item": "http://www.wikidata.org/entity/Q134889027",
+        "qid": "Q134889027",
+        "itemLabel": "Jijona Turrón Museum",
+        "poi_type": "museum",
+        "coord": "Point(-0.540833333 38.288055555)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131336",
-        "qid": "Q108131336",
-        "itemLabel": "Q108131336",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.50756 38.357399)"
+        "item": "http://www.wikidata.org/entity/Q137823197",
+        "qid": "Q137823197",
+        "itemLabel": "hogueras museum",
+        "poi_type": "museum",
+        "coord": "Point(-0.484258333 38.345861111)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131337",
-        "qid": "Q108131337",
-        "itemLabel": "Q108131337",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.49811 38.359687)"
+        "item": "http://www.wikidata.org/entity/Q15977195",
+        "qid": "Q15977195",
+        "itemLabel": "Lonja del Pescado (Alicante)",
+        "poi_type": "art gallery",
+        "coord": "Point(-0.48797 38.339039)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131339",
-        "qid": "Q108131339",
-        "itemLabel": "Q108131339",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.501422 38.36236)"
+        "item": "http://www.wikidata.org/entity/Q16608940",
+        "qid": "Q16608940",
+        "itemLabel": "Monumento al foguerer",
+        "poi_type": "monument",
+        "coord": "Point(-0.485045 38.351593)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131340",
-        "qid": "Q108131340",
-        "itemLabel": "Q108131340",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.486107 38.353432)"
+        "item": "http://www.wikidata.org/entity/Q18224374",
+        "qid": "Q18224374",
+        "itemLabel": "Museo Volvo Ocean Race",
+        "poi_type": "museum",
+        "coord": "Point(-0.47934579 38.34010277)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131341",
-        "qid": "Q108131341",
-        "itemLabel": "Q108131341",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.503515 38.348644)"
+        "item": "http://www.wikidata.org/entity/Q19367593",
+        "qid": "Q19367593",
+        "itemLabel": "Aigua Amarga tower",
+        "poi_type": "monument",
+        "coord": "Point(-0.517508 38.3111)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131342",
-        "qid": "Q108131342",
-        "itemLabel": "Q108131342",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.486397 38.357197)"
+        "item": "http://www.wikidata.org/entity/Q22970040",
+        "qid": "Q22970040",
+        "itemLabel": "City walls of Alicante",
+        "poi_type": "monument",
+        "coord": "Point(-0.480835 38.345619)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131343",
-        "qid": "Q108131343",
-        "itemLabel": "Q108131343",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.506557 38.356923)"
+        "item": "http://www.wikidata.org/entity/Q27981763",
+        "qid": "Q27981763",
+        "itemLabel": "Abubilla",
+        "poi_type": "monument",
+        "coord": "Point(-0.458638888 38.368416666)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131345",
-        "qid": "Q108131345",
-        "itemLabel": "Q108131345",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.467901 38.360549)"
+        "item": "http://www.wikidata.org/entity/Q2942405",
+        "qid": "Q2942405",
+        "itemLabel": "Co-Cathedral of St. Nicholas of Bari",
+        "poi_type": "monument",
+        "coord": "Point(-0.4825 38.34541667)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131346",
-        "qid": "Q108131346",
-        "itemLabel": "Q108131346",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.476253 38.371573)"
+        "item": "http://www.wikidata.org/entity/Q29982274",
+        "qid": "Q29982274",
+        "itemLabel": "Torre del Cabo de las Huertas",
+        "poi_type": "monument",
+        "coord": "Point(-0.405053 38.353099)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131347",
-        "qid": "Q108131347",
-        "itemLabel": "Q108131347",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.48755 38.351021)"
+        "item": "http://www.wikidata.org/entity/Q3395771",
+        "qid": "Q3395771",
+        "itemLabel": "Basilica of Saint Mary",
+        "poi_type": "monument",
+        "coord": "Point(-0.47930556 38.34616667)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131348",
-        "qid": "Q108131348",
-        "itemLabel": "Q108131348",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.481328 38.357685)"
+        "item": "http://www.wikidata.org/entity/Q3527937",
+        "qid": "Q3527937",
+        "itemLabel": "church of the Saviour",
+        "poi_type": "monument",
+        "coord": "Point(-0.44498333 38.41400556)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131349",
-        "qid": "Q108131349",
-        "itemLabel": "Q108131349",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.513868 38.347344)"
+        "item": "http://www.wikidata.org/entity/Q3821731",
+        "qid": "Q3821731",
+        "itemLabel": "Gravina Museum of Fine Arts",
+        "poi_type": "monument",
+        "coord": "Point(-0.47966667 38.34555556)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131350",
-        "qid": "Q108131350",
-        "itemLabel": "Q108131350",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.480504 38.360215)"
+        "item": "http://www.wikidata.org/entity/Q43111607",
+        "qid": "Q43111607",
+        "itemLabel": "Església de Sant Nicolau",
+        "poi_type": "monument",
+        "coord": "Point(-0.482779 38.345365)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131351",
-        "qid": "Q108131351",
-        "itemLabel": "Q108131351",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.499379 38.340095)"
+        "item": "http://www.wikidata.org/entity/Q43113549",
+        "qid": "Q43113549",
+        "itemLabel": "Delimitación de Entorno de Protección de la Casa Num. 15 de la Calle Gravina",
+        "poi_type": "monument",
+        "coord": "Point(-0.479536 38.345468)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131352",
-        "qid": "Q108131352",
-        "itemLabel": "Q108131352",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.482847 38.35779)"
+        "item": "http://www.wikidata.org/entity/Q43133006",
+        "qid": "Q43133006",
+        "itemLabel": "Castillo de Santa Bárbara",
+        "poi_type": "monument",
+        "coord": "Point(-0.477997222 38.349036111)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131353",
-        "qid": "Q108131353",
-        "itemLabel": "Q108131353",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.463223 38.364331)"
+        "item": "http://www.wikidata.org/entity/Q43146296",
+        "qid": "Q43146296",
+        "itemLabel": "Muralla Ibérica del Cerro de las Balsas",
+        "poi_type": "monument",
+        "coord": "Point(-0.445506 38.36488)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131354",
-        "qid": "Q108131354",
-        "itemLabel": "Q108131354",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.479611 38.372124)"
+        "item": "http://www.wikidata.org/entity/Q43146644",
+        "qid": "Q43146644",
+        "itemLabel": "Torre Canyada",
+        "poi_type": "monument",
+        "coord": "Point(-0.583037 38.261134)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131355",
-        "qid": "Q108131355",
-        "itemLabel": "Q108131355",
-        "poi_type": "public educational institution",
-        "coord": "Point(-0.482746 38.369552)"
+        "item": "http://www.wikidata.org/entity/Q43146800",
+        "qid": "Q43146800",
+        "itemLabel": "Torre de Muchamiel",
+        "poi_type": "monument",
+        "coord": "Point(-0.445166666 38.413861111)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131356",
-        "qid": "Q108131356",
-        "itemLabel": "Q108131356",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.48475 38.356313)"
+        "item": "http://www.wikidata.org/entity/Q43146954",
+        "qid": "Q43146954",
+        "itemLabel": "Torre Salafranca",
+        "poi_type": "monument",
+        "coord": "Point(-0.44465 38.40325)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131357",
-        "qid": "Q108131357",
-        "itemLabel": "Q108131357",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.488535 38.386157)"
+        "item": "http://www.wikidata.org/entity/Q43146976",
+        "qid": "Q43146976",
+        "itemLabel": "Ansaldo Tower",
+        "poi_type": "monument",
+        "coord": "Point(-0.434583333 38.411111111)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131358",
-        "qid": "Q108131358",
-        "itemLabel": "Q108131358",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.504738 38.35177)"
+        "item": "http://www.wikidata.org/entity/Q43150811",
+        "qid": "Q43150811",
+        "itemLabel": "Torre Bosch",
+        "poi_type": "monument",
+        "coord": "Point(-0.428847 38.384914)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131360",
-        "qid": "Q108131360",
-        "itemLabel": "Q108131360",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.468228 38.358375)"
+        "item": "http://www.wikidata.org/entity/Q43150832",
+        "qid": "Q43150832",
+        "itemLabel": "Torre Boguñó",
+        "poi_type": "monument",
+        "coord": "Point(-0.573178 38.33437)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108131361",
-        "qid": "Q108131361",
-        "itemLabel": "Q108131361",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.515928 38.34941)"
+        "item": "http://www.wikidata.org/entity/Q43150901",
+        "qid": "Q43150901",
+        "itemLabel": "Torre Media Libra",
+        "poi_type": "monument",
+        "coord": "Point(-0.430088 38.378682)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132475",
-        "qid": "Q108132475",
-        "itemLabel": "CEIP Azorín",
-        "poi_type": "public educational institution",
-        "coord": "Point(-0.470628 38.363792)"
+        "item": "http://www.wikidata.org/entity/Q43150907",
+        "qid": "Q43150907",
+        "itemLabel": "Torre Plácida",
+        "poi_type": "monument",
+        "coord": "Point(-0.42824 38.380013)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132475",
-        "qid": "Q108132475",
-        "itemLabel": "CEIP Azorín",
-        "poi_type": "center for early childhood and primary education",
-        "coord": "Point(-0.470628 38.363792)"
+        "item": "http://www.wikidata.org/entity/Q43150932",
+        "qid": "Q43150932",
+        "itemLabel": "Torre Santiago",
+        "poi_type": "monument",
+        "coord": "Point(-0.438722 38.369425)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132477",
-        "qid": "Q108132477",
-        "itemLabel": "CEIP Lucentum",
-        "poi_type": "public educational institution",
-        "coord": "Point(-0.494044 38.375581)"
+        "item": "http://www.wikidata.org/entity/Q43150942",
+        "qid": "Q43150942",
+        "itemLabel": "Torre Sarrió",
+        "poi_type": "monument",
+        "coord": "Point(-0.437041 38.370749)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132477",
-        "qid": "Q108132477",
-        "itemLabel": "CEIP Lucentum",
-        "poi_type": "center for early childhood and primary education",
-        "coord": "Point(-0.494044 38.375581)"
+        "item": "http://www.wikidata.org/entity/Q43150964",
+        "qid": "Q43150964",
+        "itemLabel": "Torre Tres Olivos, Fabián o Guisot",
+        "poi_type": "monument",
+        "coord": "Point(-0.43395 38.380075)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132478",
-        "qid": "Q108132478",
-        "itemLabel": "CEIP San Nicolás de Bari",
-        "poi_type": "public educational institution",
-        "coord": "Point(-0.48592 38.360882)"
+        "item": "http://www.wikidata.org/entity/Q43154185",
+        "qid": "Q43154185",
+        "itemLabel": "Torre de la Cadena",
+        "poi_type": "monument",
+        "coord": "Point(-0.43134 38.38538)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132478",
-        "qid": "Q108132478",
-        "itemLabel": "CEIP San Nicolás de Bari",
-        "poi_type": "center for early childhood and primary education",
-        "coord": "Point(-0.48592 38.360882)"
+        "item": "http://www.wikidata.org/entity/Q5754839",
+        "qid": "Q5754839",
+        "itemLabel": "Torre Ferraz",
+        "poi_type": "monument",
+        "coord": "Point(-0.446262 38.416258)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132480",
-        "qid": "Q108132480",
-        "itemLabel": "CEIP el Tossal",
-        "poi_type": "public educational institution",
-        "coord": "Point(-0.496444 38.352957)"
+        "item": "http://www.wikidata.org/entity/Q6139865",
+        "qid": "Q6139865",
+        "itemLabel": "Teatro Principal",
+        "poi_type": "theatre building",
+        "coord": "Point(-0.48565278 38.34635278)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132480",
-        "qid": "Q108132480",
-        "itemLabel": "CEIP el Tossal",
-        "poi_type": "center for early childhood and primary education",
-        "coord": "Point(-0.496444 38.352957)"
+        "item": "http://www.wikidata.org/entity/Q63226655",
+        "qid": "Q63226655",
+        "itemLabel": "Teatro Arniches",
+        "poi_type": "theatre building",
+        "coord": "Point(-0.494894 38.343094)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132486",
-        "qid": "Q108132486",
-        "itemLabel": "CEIP d'Alacant - el Bacarot",
-        "poi_type": "public educational institution",
-        "coord": "Point(-0.55781 38.320065)"
+        "item": "http://www.wikidata.org/entity/Q636891",
+        "qid": "Q636891",
+        "itemLabel": "Archaeological Museum of Alicante",
+        "poi_type": "monument",
+        "coord": "Point(-0.47638889 38.35375)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132486",
-        "qid": "Q108132486",
-        "itemLabel": "CEIP d'Alacant - el Bacarot",
-        "poi_type": "center for early childhood and primary education",
-        "coord": "Point(-0.55781 38.320065)"
+        "item": "http://www.wikidata.org/entity/Q8342539",
+        "qid": "Q8342539",
+        "itemLabel": "Castell de Sant Ferran",
+        "poi_type": "monument",
+        "coord": "Point(-0.49111111 38.35194444)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132492",
-        "qid": "Q108132492",
-        "itemLabel": "EI el Tossalet",
-        "poi_type": "public educational institution",
-        "coord": "Point(-0.479546 38.371001)"
+        "item": "http://www.wikidata.org/entity/Q85803781",
+        "qid": "Q85803781",
+        "itemLabel": "Biblioteca Asociación Forque",
+        "poi_type": "library",
+        "coord": "Point(-0.491683 38.3481)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132493",
-        "qid": "Q108132493",
-        "itemLabel": "CEIP Mora Puchol",
-        "poi_type": "public educational institution",
-        "coord": "Point(-0.504609 38.338198)"
+        "item": "http://www.wikidata.org/entity/Q85803821",
+        "qid": "Q85803821",
+        "itemLabel": "Biblioteca Aula Tercera Edat d'Alacant",
+        "poi_type": "library",
+        "coord": "Point(-0.484509 38.3476)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132493",
-        "qid": "Q108132493",
-        "itemLabel": "CEIP Mora Puchol",
-        "poi_type": "center for early childhood and primary education",
-        "coord": "Point(-0.504609 38.338198)"
+        "item": "http://www.wikidata.org/entity/Q85803823",
+        "qid": "Q85803823",
+        "itemLabel": "Biblioteca del Centre Especialitzat d'Atenció als Majors - Parc Galícia",
+        "poi_type": "library",
+        "coord": "Point(-0.49073 38.34)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132504",
-        "qid": "Q108132504",
-        "itemLabel": "IES Virgen del Remedio",
-        "poi_type": "IES",
-        "coord": "Point(-0.490184 38.376725)"
+        "item": "http://www.wikidata.org/entity/Q85803827",
+        "qid": "Q85803827",
+        "itemLabel": "Biblioteca de la Audiència Provincial d'Alacant",
+        "poi_type": "library",
+        "coord": "Point(-0.480803 38.344952)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132504",
-        "qid": "Q108132504",
-        "itemLabel": "IES Virgen del Remedio",
-        "poi_type": "public educational institution",
-        "coord": "Point(-0.490184 38.376725)"
+        "item": "http://www.wikidata.org/entity/Q85803830",
+        "qid": "Q85803830",
+        "itemLabel": "Biblioteca de la Delegació Provincial de l'Institut Nacional d'Estadística a Alacant",
+        "poi_type": "library",
+        "coord": "Point(-0.507188 38.336554)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132505",
-        "qid": "Q108132505",
-        "itemLabel": "IES Leonardo Da Vinci",
-        "poi_type": "IES",
-        "coord": "Point(-0.49179 38.376663)"
+        "item": "http://www.wikidata.org/entity/Q85803866",
+        "qid": "Q85803866",
+        "itemLabel": "Biblioteca del Centro Gallego de Alicante",
+        "poi_type": "library",
+        "coord": "Point(-0.47411 38.34876)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132505",
-        "qid": "Q108132505",
-        "itemLabel": "IES Leonardo Da Vinci",
-        "poi_type": "public educational institution",
-        "coord": "Point(-0.49179 38.376663)"
+        "item": "http://www.wikidata.org/entity/Q85803915",
+        "qid": "Q85803915",
+        "itemLabel": "Biblioteca del Decanato de Alicante",
+        "poi_type": "library",
+        "coord": "Point(-0.501782 38.342805)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132510",
-        "qid": "Q108132510",
-        "itemLabel": "CEIP José Carlos Aguilera",
-        "poi_type": "public educational institution",
-        "coord": "Point(-0.500784 38.343752)"
+        "item": "http://www.wikidata.org/entity/Q85803923",
+        "qid": "Q85803923",
+        "itemLabel": "Biblioteca de l'Institut Alacantí de Cultura - Juan Gil-Albert",
+        "poi_type": "library",
+        "coord": "Point(-0.486025 38.342668)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132510",
-        "qid": "Q108132510",
-        "itemLabel": "CEIP José Carlos Aguilera",
-        "poi_type": "center for early childhood and primary education",
-        "coord": "Point(-0.500784 38.343752)"
+        "item": "http://www.wikidata.org/entity/Q85803964",
+        "qid": "Q85803964",
+        "itemLabel": "Biblioteca E.P.A Babel",
+        "poi_type": "library",
+        "coord": "Point(-0.504875 38.3393)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132526",
-        "qid": "Q108132526",
-        "itemLabel": "CEIP Emilio Varela",
-        "poi_type": "public educational institution",
-        "coord": "Point(-0.495533 38.376999)"
+        "item": "http://www.wikidata.org/entity/Q85803970",
+        "qid": "Q85803970",
+        "itemLabel": "Biblioteca Hogar Provincial de Alicante",
+        "poi_type": "library",
+        "coord": "Point(-0.451801 38.3852)"
       },
       {
-        "item": "http://www.wikidata.org/entity/Q108132526",
-        "qid": "Q108132526",
-        "itemLabel": "CEIP Emilio Varela",
-        "poi_type": "center for early childhood and primary education",
-        "coord": "Point(-0.495533 38.376999)"
-      },
-      {
-        "item": "http://www.wikidata.org/entity/Q108132527",
-        "qid": "Q108132527",
-        "itemLabel": "CEIP Gabriel Miró",
-        "poi_type": "public educational institution",
-        "coord": "Point(-0.506364 38.346701)"
-      },
-      {
-        "item": "http://www.wikidata.org/entity/Q108131331",
-        "qid": "Q108131331",
-        "itemLabel": "Q108131331",
-        "poi_type": "private educational institution",
-        "coord": "Point(-0.494949 38.366174)"
+        "item": "http://www.wikidata.org/entity/Q114450503",
+        "qid": "Q114450503",
+        "itemLabel": "Biblioteca del Centro de Formación, Innovación y Recursos Educativos (CEFIRE) de Alicante",
+        "poi_type": "library",
+        "coord": "Point(-0.530694444 38.307361111)"
       }
     ]
   }

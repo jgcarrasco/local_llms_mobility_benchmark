@@ -1,6 +1,5 @@
 SELECT ?item ?itemLabel ?coord WHERE {
   ?item wdt:P625 ?coord .
-  ?item rdfs:label ?itemLabel .
-  FILTER(CONTAINS(LCASE(?itemLabel), "alicante") || CONTAINS(LCASE(?itemLabel), "spain"))
+  ?item wdt:P131 wd:Q11959 .
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }

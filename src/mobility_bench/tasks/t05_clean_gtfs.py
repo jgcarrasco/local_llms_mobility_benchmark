@@ -13,7 +13,11 @@ TASK_SPEC = TaskSpec(
         "outputs/t05_clean_stops.csv",
         "outputs/t05_clean_stop_times.csv",
     ],
-    prompt_template="Clean invalid coordinates, duplicate stops, missing stop names, and preserve valid extended GTFS times.",
+    prompt_template=(
+        "Remove stops whose latitude or longitude is outside the valid range, remove duplicate stop rows keeping "
+        "the first occurrence, replace blank stop names with a non-empty placeholder, and preserve valid extended "
+        "GTFS times."
+    ),
     output_requirements={
         "outputs/t05_gtfs_cleaning_report.json": [
             "JSON object with integer fields: invalid_coordinates_removed, duplicate_stops_removed, missing_stop_names_filled, n_clean_stops, n_clean_stop_times.",

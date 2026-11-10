@@ -9,12 +9,13 @@ TASK_SPEC = TaskSpec(
     family="semantic_enrichment",
     input_files=["inputs/wikidata/city_config.json"],
     expected_outputs=["outputs/t07_query.sparql"],
-    prompt_template="Generate a SPARQL query for cultural points of interest in the configured city or region.",
+    prompt_template="Generate a syntactically valid SPARQL query for cultural points of interest in the configured city or region.",
     output_requirements={
         "outputs/t07_query.sparql": [
             "SPARQL SELECT query requesting item/entity identifiers and labels.",
             "Include coordinate property p625.",
-            "Constrain the query to the configured city or country.",
+            "Constrain the query to the configured city or country using its identifier from the configuration file.",
+            "The query must be syntactically valid SPARQL.",
         ],
     },
     checker=check_t07,

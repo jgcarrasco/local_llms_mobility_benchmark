@@ -12,7 +12,7 @@ from mobility_bench.analysis.summary import make_benchmark_summary
 from mobility_bench.analysis.sweep_manifest import create_sweep_manifest
 from mobility_bench.config import load_benchmark_config, load_models_config
 from mobility_bench.models import create_model_client
-from mobility_bench.runtime.runner import run_task_attempt
+from mobility_bench.runtime.runner import result_path, run_task_attempt
 from mobility_bench.tasks.registry import get_all_tasks
 
 
@@ -25,12 +25,22 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--benchmark", default="configs/benchmark.yaml")
     run.add_argument("--tasks", required=True)
     run.add_argument("--model-id", required=True)
-    run.add_argument("--mode", choices=["chat_only", "agent_tools"], required=True)
+    run.add_argument("--mode", choices=["chat_only", "chat_schema", "agent_tools"], required=True)
     run.add_argument("--repetitions", type=int, default=None)
+    run.add_argument(
+        "--skip-existing",
+        action="store_true",
+        help="Skip attempts whose result file already exists.",
+    )
 
     run_all = subparsers.add_parser("run-all", help="Run the configured full benchmark.")
     run_all.add_argument("--models", default="configs/models.yaml")
     run_all.add_argument("--benchmark", default="configs/benchmark.yaml")
+    run_all.add_argument(
+        "--skip-existing",
+        action="store_true",
+        help="Skip attempts whose result file already exists.",
+    )
 
     smoke = subparsers.add_parser(
         "smoke-model",
@@ -45,6 +55,15 @@ def build_parser() -> argparse.ArgumentParser:
     aggregate = subparsers.add_parser("aggregate", help="Aggregate attempt results.")
     aggregate.add_argument("--results-dir", default="runs/results_jsonl")
     aggregate.add_argument("--output-dir", default="runs/aggregated")
+
+    significance = subparsers.add_parser(
+        "significance", help="Clustered significance analysis over tasks."
+    )
+    significance.add_argument("--attempts", default="runs/aggregated/attempts.csv")
+    significance.add_argument("--output-dir", default="runs/aggregated/significance")
+    significance.add_argument("--iters", type=int, default=10000)
+    significance.add_argument("--seed", type=int, default=20261104)
+    significance.add_argument("--top", type=int, default=4)
 
     manifest = subparsers.add_parser("create-sweep-manifest", help="Write a reproducibility manifest for a sweep.")
     manifest.add_argument("--models", default="configs/models.yaml")
@@ -80,6 +99,9 @@ def main(argv: list[str] | None = None) -> int:
             if task_id not in tasks:
                 parser.error(f"unknown task id: {task_id}")
             for repetition in range(1, repetitions + 1):
+                run_id = f"{args.model_id}__{args.mode}__{task_id}__rep{repetition:02d}"
+                if args.skip_existing and result_path(benchmark, run_id).exists():
+                    continue
                 run_task_attempt(
                     task=tasks[task_id],
                     model_client=model_client,
@@ -98,9 +120,12 @@ def main(argv: list[str] | None = None) -> int:
             if model_config.backend == "mock":
                 continue
             model_client = create_model_client(model_config)
-            for mode in ("chat_only", "agent_tools"):
+            for mode in ("chat_only", "chat_schema", "agent_tools"):
                 for task in tasks.values():
                     for repetition in range(1, benchmark.runtime.repetitions + 1):
+                        run_id = f"{model_id}__{mode}__{task.task_id}__rep{repetition:02d}"
+                        if args.skip_existing and result_path(benchmark, run_id).exists():
+                            continue
                         run_task_attempt(
                             task=task,
                             model_client=model_client,
@@ -138,6 +163,19 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     if args.command == "aggregate":
         aggregate_results(args.results_dir, args.output_dir)
+        return 0
+    if args.command == "significance":
+        from mobility_bench.analysis.significance import run_significance
+
+        paths = run_significance(
+            args.attempts,
+            args.output_dir,
+            iters=args.iters,
+            seed=args.seed,
+            top=args.top,
+        )
+        for name, path in paths.items():
+            print(f"{name}: {path}")
         return 0
     if args.command == "create-sweep-manifest":
         create_sweep_manifest(

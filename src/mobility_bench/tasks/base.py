@@ -29,6 +29,12 @@ class TaskSpec:
             requirements.append(f"- {path}:")
             requirements.extend(f"  - {item}" for item in items)
         requirements_text = "\n".join(requirements) if requirements else "- Follow the task description and required output paths."
+        csv_outputs = [path for path in self.expected_outputs if path.lower().endswith(".csv")]
+        if csv_outputs:
+            requirements_text += (
+                "\n- Every CSV output must be RFC 4180 compliant: quote any field that contains a comma, "
+                "a double quote, or a newline, so that each row has exactly as many fields as the header."
+            )
         return (
             f"Task ID: {self.task_id}\n"
             f"Title: {self.title}\n"

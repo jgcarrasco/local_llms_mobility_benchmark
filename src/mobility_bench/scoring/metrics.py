@@ -15,21 +15,25 @@ def pass_rate_by(df: pd.DataFrame, group_cols: list[str]) -> pd.DataFrame:
 
 
 def agentic_gain(df: pd.DataFrame) -> pd.DataFrame:
+    modes = ("chat_only", "chat_schema", "agent_tools")
+    columns = ["model_id", "task_id", *modes, "schema_gain", "agentic_gain", "agent_over_schema"]
     if df.empty:
-        return pd.DataFrame(columns=["model_id", "task_id", "agent_tools", "chat_only", "agentic_gain"])
+        return pd.DataFrame(columns=columns)
     rates = pass_rate_by(df, ["model_id", "task_id", "mode"])
     pivot = rates.pivot_table(
         index=["model_id", "task_id"],
         columns="mode",
         values="pass_rate",
-        fill_value=0.0,
     ).reset_index()
-    if "agent_tools" not in pivot.columns:
-        pivot["agent_tools"] = 0.0
-    if "chat_only" not in pivot.columns:
-        pivot["chat_only"] = 0.0
+    # A mode that was never run stays missing rather than becoming zero, so a
+    # gain is only reported when both of its components exist.
+    for mode in modes:
+        if mode not in pivot.columns:
+            pivot[mode] = float("nan")
+    pivot["schema_gain"] = pivot["chat_schema"] - pivot["chat_only"]
     pivot["agentic_gain"] = pivot["agent_tools"] - pivot["chat_only"]
-    return pivot[["model_id", "task_id", "agent_tools", "chat_only", "agentic_gain"]]
+    pivot["agent_over_schema"] = pivot["agent_tools"] - pivot["chat_schema"]
+    return pivot[columns]
 
 
 def efficiency_metrics(df: pd.DataFrame) -> pd.DataFrame:

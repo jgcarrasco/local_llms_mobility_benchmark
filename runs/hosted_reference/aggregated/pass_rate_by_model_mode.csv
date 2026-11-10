@@ -1,0 +1,4 @@
+model_id,mode,attempts,successful_attempts,pass_rate
+deepseek_v41_flash,agent_tools,15,15,1.0
+deepseek_v41_flash,chat_only,15,15,1.0
+deepseek_v41_flash,chat_schema,15,14,0.9333333333333333

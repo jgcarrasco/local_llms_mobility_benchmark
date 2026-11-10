@@ -1,41 +1,49 @@
 qid,label,poi_type,nearest_stop_id,nearest_stop_name,distance_m
-Q108131331,Q108131331,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",33503.89389558121
-Q108131332,Q108131332,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",35759.626693995066
-Q108131333,Q108131333,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",31609.541487752755
-Q108131334,Q108131334,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",30218.156298012327
-Q108131335,Q108131335,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",34492.93972040691
-Q108131336,Q108131336,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",34955.85989641451
-Q108131337,Q108131337,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",34126.15403111662
-Q108131339,Q108131339,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",34207.67550196781
-Q108131340,Q108131340,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",33650.34453952195
-Q108131341,Q108131341,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",35200.911595340505
-Q108131342,Q108131342,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",33432.041630460044
-Q108131343,Q108131343,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",34911.11452082395
-Q108131345,Q108131345,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",31897.727210300796
-Q108131346,Q108131346,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",31808.042241408828
-Q108131347,Q108131347,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",33907.83569684304
-Q108131348,Q108131348,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",33037.74600029626
-Q108131349,Q108131349,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",36029.45374835225
-Q108131350,Q108131350,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",32818.513358669865
-Q108131351,Q108131351,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",35454.5342876468
-Q108131352,Q108131352,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",33139.84717125148
-Q108131353,Q108131353,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",31321.474210769673
-Q108131354,Q108131354,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",32020.730889541523
-Q108131355,Q108131355,public educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",32405.3004202101
-Q108131356,Q108131356,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",33369.80323197808
-Q108131357,Q108131357,private educational institution,57060020143,"C. Cantabria, 1B front",31820.265084948973
-Q108131358,Q108131358,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",35094.090666513395
-Q108131360,Q108131360,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",32062.117735141273
-Q108131361,Q108131361,private educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",36052.05883731431
-Q108132475,CEIP Azorín,public educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",31884.096014452865
-Q108132477,CEIP Lucentum,public educational institution,57060020143,"C. Cantabria, 1B front",32858.62503512407
-Q108132478,CEIP San Nicolás de Bari,public educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",33167.07940893071
-Q108132480,CEIP el Tossal,public educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",34421.20644795929
-Q108132486,CEIP d'Alacant - el Bacarot,public educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",40903.78288855724
-Q108132492,EI el Tossalet,public educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",32083.537718427644
-Q108132493,CEIP Mora Puchol,public educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",35947.6415609304
-Q108132504,IES Virgen del Remedio,IES,57060020143,"C. Cantabria, 1B front",32507.59232180668
-Q108132505,IES Leonardo Da Vinci,IES,57060020143,"C. Cantabria, 1B front",32628.343171599427
-Q108132510,CEIP José Carlos Aguilera,public educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",35316.78656530431
-Q108132526,CEIP Emilio Varela,public educational institution,57060020143,"C. Cantabria, 1B front",32881.30310613643
-Q108132527,CEIP Gabriel Miró,public educational institution,5006020206,"Av. Mariners de la Vila Joiosa, 12",35528.00973860689
+Q114450503,"Biblioteca del Centro de Formación, Innovación y Recursos Educativos (CEFIRE) de Alicante",library,125101209,"Av. Elche, 174 (PI Agua Amarga)",651.6244288250289
+Q114450868,Q114450868,library,5025240224,"Av. Alcoi, 1",109.52369713217351
+Q114451690,Biblioteca del Museo Arqueológico de Alicante,library,5025230230,"C. Indalecio Prieto, s.n",106.2025736027966
+Q130200742,Museo de Aguas de Alicante,museum,5025210240,"Av. Juan Bautista Lafora, 2",209.74349934668982
+Q134889027,Jijona Turrón Museum,museum,5031010102,Aeroport L Altet Alacant-Elx,1017.8534038417605
+Q137823197,hogueras museum,museum,5025940103,"Rambla Méndez Núñez, 40",57.96660256878571
+Q15977195,Lonja del Pescado (Alicante),art gallery,5090010122,Alacant [Alacant],34.38295706183429
+Q16608940,Monumento al foguerer,monument,5025240107,Pl. España - Panteón De Quijano,34.004618562048904
+Q18224374,Museo Volvo Ocean Race,museum,5020010101,"Pl. Puerta de la Mar, s.n",470.64568626457594
+Q19367593,Aigua Amarga tower,monument,5020010203,Av. Elche front (EUIPO),179.89370842619923
+Q22970040,City walls of Alicante,monument,5025210240,"Av. Juan Bautista Lafora, 2",126.44130776529502
+Q27981763,Abubilla,monument,5025230223,"Av. Dénia, 117",82.19686530102422
+Q2942405,Co-Cathedral of St. Nicholas of Bari,monument,5025940102,"Rb. Méndez Núñez, 22",108.84444753364873
+Q29982274,Torre del Cabo de las Huertas,monument,5025380235,"Av. Costa Blanca, 81",1285.6982926518729
+Q3395771,Basilica of Saint Mary,monument,5025210240,"Av. Juan Bautista Lafora, 2",153.31852325152755
+Q3527937,church of the Saviour,monument,5015140211,"Pl. Nova, 3 front",51.29528882452629
+Q3821731,Gravina Museum of Fine Arts,monument,5025210240,"Av. Juan Bautista Lafora, 2",80.28847133224966
+Q43111607,Església de Sant Nicolau,monument,5025940102,"Rb. Méndez Núñez, 22",84.62195709452364
+Q43113549,Delimitación de Entorno de Protección de la Casa Num. 15 de la Calle Gravina,monument,5025210240,"Av. Juan Bautista Lafora, 2",73.10692425196738
+Q43133006,Castillo de Santa Bárbara,monument,5025210108,Av. Jovellanos - Postiguet,299.94127625156386
+Q43146296,Muralla Ibérica del Cerro de las Balsas,monument,5025210236,"Av. Condomina, 5",224.81953832947332
+Q43146644,Torre Canyada,monument,5029010211,"Av. Illice, 45 - Torrellano",3561.3783511575625
+Q43146800,Torre de Muchamiel,monument,5015140211,"Pl. Nova, 3 front",33.890121273645036
+Q43146954,Torre Salafranca,monument,5025230210,"Av. Mutxamel, 1",544.5612916856352
+Q43146976,Ansaldo Tower,monument,5025230128,"Av. Mutxamel, 28",630.7703766798799
+Q43150811,Torre Bosch,monument,5025380226,"Av. Pintor Pérez Gil, 13",204.77043254218785
+Q43150832,Torre Boguñó,monument,5014010112,"N-340 km 731,2 des (Col·legi Aitana)",4222.797527963828
+Q43150901,Torre Media Libra,monument,5025380227,"Av. Pintor Pérez Gil, s.n - C. Clara Campoamor",440.3121249897678
+Q43150907,Torre Plácida,monument,5025380227,"Av. Pintor Pérez Gil, s.n - C. Clara Campoamor",223.92867329974683
+Q43150932,Torre Santiago,monument,5025210235,"Av. Condomina, 25",734.3553712486486
+Q43150942,Torre Sarrió,monument,5025910107,"Av. Condomina, 30",858.9411242825037
+Q43150964,"Torre Tres Olivos, Fabián o Guisot",monument,5025380226,"Av. Pintor Pérez Gil, 13",569.381913741841
+Q43154185,Torre de la Cadena,monument,5025380226,"Av. Pintor Pérez Gil, 13",346.54676135390054
+Q5754839,Torre Ferraz,monument,5015140210,"C. Manuel Antón, 23",29.640970326902497
+Q6139865,Teatro Principal,theatre building,5025210105,"Pl. Ruperto Chapí, 3",47.86016111268894
+Q63226655,Teatro Arniches,theatre building,5023010102,Estrella [Alacant],47.7649767256536
+Q636891,Archaeological Museum of Alicante,monument,5025230230,"C. Indalecio Prieto, s.n",62.82096643413107
+Q8342539,Castell de Sant Ferran,monument,5025240223,"Av. Alcoi, 63",447.34254676043616
+Q85803781,Biblioteca Asociación Forque,library,5020010104,"Plaça dels Estels, 17 [Alacant]",215.90100341033136
+Q85803821,Biblioteca Aula Tercera Edat d'Alacant,library,5025230106,"Av. Alfonso X el Sabio, 3",67.50726032117075
+Q85803823,Biblioteca del Centre Especialitzat d'Atenció als Majors - Parc Galícia,library,5705230102,"C. Reyes Católicos, 47",212.63997349415624
+Q85803827,Biblioteca de la Audiència Provincial d'Alacant,library,5025210240,"Av. Juan Bautista Lafora, 2",90.09541698475077
+Q85803830,Biblioteca de la Delegació Provincial de l'Institut Nacional d'Estadística a Alacant,library,5025360216,"Av. Alcalde Lorenzo Carbonell, 32 (Politècnic)",302.41655450447024
+Q85803866,Biblioteca del Centro Gallego de Alicante,library,5025210109,"Av. Villajoyosa, 2",102.53004404405839
+Q85803915,Biblioteca del Decanato de Alicante,library,5020020103,"Av. Catedrático Soler, 50",459.6435521621096
+Q85803923,Biblioteca de l'Institut Alacantí de Cultura - Juan Gil-Albert,library,5025210106,"Rb. Méndez Núñez, 7",310.4063345308435
+Q85803964,Biblioteca E.P.A Babel,library,5025360216,"Av. Alcalde Lorenzo Carbonell, 32 (Politècnic)",169.35044011423395
+Q85803970,Biblioteca Hogar Provincial de Alicante,library,5025230219,"Av. Dénia, 183",209.92669352593146

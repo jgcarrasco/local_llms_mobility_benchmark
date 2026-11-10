@@ -13,14 +13,18 @@ TASK_SPEC = TaskSpec(
         "figures/fig_accessibility_distribution.png",
         "figures/fig_cluster_profiles.png",
     ],
-    prompt_template="Generate a reproducible Markdown report and two non-empty figures without unsupported claims.",
+    prompt_template="Generate a reproducible Markdown report and two distinct non-empty figures without unsupported claims.",
     output_requirements={
         "reports/pipeline_report.md": [
             "Markdown sections: # Overview, # Input data, # Methods, # Generated outputs, # Main results, # Limitations, # Reproducibility",
-            "Reference generated outputs and do not claim live API access.",
+            "Each section must contain at least one sentence (at least 80 characters of text).",
+            "Reference the pipeline artifacts by their paths under outputs/.",
+            "Do not claim live API access.",
         ],
-        "figures/fig_accessibility_distribution.png": ["Non-empty image file."],
-        "figures/fig_cluster_profiles.png": ["Non-empty image file."],
+        "figures/fig_accessibility_distribution.png": ["Non-empty PNG image of at least 400x300 pixels."],
+        "figures/fig_cluster_profiles.png": [
+            "Non-empty PNG image of at least 400x300 pixels, distinct from the other figure.",
+        ],
     },
     checker=check_t15,
     timeout_seconds=600,

@@ -1,8 +1,28 @@
 [
   {
-    "check_name": "t01_selected_indicators_exists",
+    "check_name": "t01_selected_indicators_present",
     "passed": true,
-    "message": "outputs/t01_selected_indicators.csv exists."
+    "message": "outputs/t01_selected_indicators.csv is present and non-empty."
+  },
+  {
+    "check_name": "t05_clean_stops_present",
+    "passed": true,
+    "message": "outputs/t05_clean_stops.csv is present and non-empty."
+  },
+  {
+    "check_name": "t08_pois_clean_present",
+    "passed": true,
+    "message": "outputs/t08_pois_clean.csv is present and non-empty."
+  },
+  {
+    "check_name": "t10_accessibility_scores_present",
+    "passed": true,
+    "message": "outputs/t10_accessibility_scores.csv is present and non-empty."
+  },
+  {
+    "check_name": "t13_city_clusters_present",
+    "passed": true,
+    "message": "outputs/t13_city_clusters.csv is present and non-empty."
   },
   {
     "check_name": "t05_clean_stops_columns",

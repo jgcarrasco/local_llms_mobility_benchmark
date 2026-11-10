@@ -77,14 +77,25 @@ def main() -> None:
         outputs / "t02_eurostat_raw.csv",
         index=False,
     )
-    (src / "t02_load_eurostat.py").write_text("# reference upstream loader\n", encoding="utf-8")
+    (src / "t02_load_eurostat.py").write_text(
+        "import pandas as pd\n"
+        "\n"
+        "selected = pd.read_csv('outputs/t01_selected_indicators.csv')\n"
+        "raw = pd.read_csv('inputs/eurostat/eurostat_city_values_sample.csv')\n"
+        "raw = raw[raw['indicator_id'].isin(selected['indicator_id'])]\n"
+        "columns = ['city_id', 'city_name', 'year', 'indicator_id', 'indicator_name', 'value', 'unit']\n"
+        "raw[columns].to_csv('outputs/t02_eurostat_raw.csv', index=False)\n",
+        encoding="utf-8",
+    )
 
     catalog = json.loads((SOURCE_INPUTS / "catalog" / "dataeuropa_mobility_catalog_sample.json").read_text(encoding="utf-8"))
     rows = []
     terms = ("mobility", "transport", "gtfs", "traffic", "rail", "bike")
     for dataset in catalog["datasets"]:
-        text = " ".join([dataset["title"], dataset["description"], " ".join(dataset["keywords"])]).lower()
-        if any(term in text for term in terms):
+        # Identity, not description: a catalogue or portal that lists mobility
+        # among many themes is not itself a mobility dataset.
+        identity = " ".join([dataset["title"], " ".join(dataset["keywords"])]).lower()
+        if any(term in identity for term in terms):
             rows.append(
                 {
                     "dataset_id": dataset["id"],
@@ -112,7 +123,6 @@ def main() -> None:
                 "n_routes": len(gtfs["routes"]),
                 "n_trips": len(gtfs["trips"]),
                 "n_stop_times": len(gtfs["stop_times"]),
-                "missing_required_columns": [],
             },
             indent=2,
         ),
@@ -163,14 +173,14 @@ def main() -> None:
     service["last_departure"] = service["stop_id"].map(last_departures).fillna("")
     service.to_csv(outputs / "t06_stop_service_intensity.csv", index=False)
 
+    city = json.loads((SOURCE_INPUTS / "wikidata" / "city_config.json").read_text(encoding="utf-8"))
     (outputs / "t07_query.sparql").write_text(
-        """
-SELECT ?item ?itemLabel ?coord WHERE {
+        f"""
+SELECT ?item ?itemLabel ?coord WHERE {{
   ?item wdt:P625 ?coord .
-  ?item rdfs:label ?itemLabel .
-  FILTER(CONTAINS(LCASE(?itemLabel), "alicante") || CONTAINS(LCASE(?itemLabel), "spain"))
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-}
+  ?item wdt:P131 wd:{city["city_qid"]} .
+  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
+}}
 """.strip()
         + "\n",
         encoding="utf-8",
@@ -270,28 +280,53 @@ import pandas as pd
 root = Path(".")
 checks = []
 
-selected = root / "outputs" / "t01_selected_indicators.csv"
-checks.append({"check_name": "t01_selected_indicators_exists", "passed": selected.exists(), "message": "outputs/t01_selected_indicators.csv exists."})
+outputs = {
+    "t01_selected_indicators": root / "outputs" / "t01_selected_indicators.csv",
+    "t05_clean_stops": root / "outputs" / "t05_clean_stops.csv",
+    "t08_pois_clean": root / "outputs" / "t08_pois_clean.csv",
+    "t10_accessibility_scores": root / "outputs" / "t10_accessibility_scores.csv",
+    "t13_city_clusters": root / "outputs" / "t13_city_clusters.csv",
+}
 
-stops = pd.read_csv(root / "outputs" / "t05_clean_stops.csv")
-checks.append({"check_name": "t05_clean_stops_columns", "passed": {"stop_id", "stop_name", "stop_lat", "stop_lon"}.issubset(stops.columns), "message": "outputs/t05_clean_stops.csv has required columns."})
+readable = {}
+for name, path in outputs.items():
+    if not path.exists():
+        readable[name] = False
+        checks.append({"check_name": f"{name}_present", "passed": False, "message": f"{path} is missing."})
+    elif path.stat().st_size == 0:
+        readable[name] = False
+        checks.append({"check_name": f"{name}_present", "passed": False, "message": f"{path} is empty."})
+    else:
+        readable[name] = True
+        checks.append({"check_name": f"{name}_present", "passed": True, "message": f"{path} is present and non-empty."})
 
-pois = pd.read_csv(root / "outputs" / "t08_pois_clean.csv")
-checks.append({"check_name": "t08_pois_clean_columns", "passed": {"qid", "label", "latitude", "longitude"}.issubset(pois.columns), "message": "outputs/t08_pois_clean.csv has required columns."})
+if readable["t05_clean_stops"]:
+    stops = pd.read_csv(outputs["t05_clean_stops"])
+    checks.append({"check_name": "t05_clean_stops_columns", "passed": {"stop_id", "stop_name", "stop_lat", "stop_lon"}.issubset(stops.columns), "message": "outputs/t05_clean_stops.csv has required columns."})
 
-access = pd.read_csv(root / "outputs" / "t10_accessibility_scores.csv")
-scores_ok = pd.to_numeric(access["accessibility_score"], errors="coerce").between(0, 1).all()
-checks.append({"check_name": "t10_accessibility_scores_range", "passed": bool(scores_ok), "message": "outputs/t10_accessibility_scores.csv scores are bounded."})
+if readable["t08_pois_clean"]:
+    pois = pd.read_csv(outputs["t08_pois_clean"])
+    checks.append({"check_name": "t08_pois_clean_columns", "passed": {"qid", "label", "latitude", "longitude"}.issubset(pois.columns), "message": "outputs/t08_pois_clean.csv has required columns."})
 
-clusters = pd.read_csv(root / "outputs" / "t13_city_clusters.csv")
-matrix = pd.read_csv(root / "outputs" / "t12_selected_matrix.csv")
-checks.append({"check_name": "t13_city_clusters_rows", "passed": len(clusters) == len(matrix), "message": "outputs/t13_city_clusters.csv covers selected matrix rows."})
+if readable["t10_accessibility_scores"]:
+    access = pd.read_csv(outputs["t10_accessibility_scores"])
+    scores_ok = pd.to_numeric(access["accessibility_score"], errors="coerce").between(0, 1).all()
+    checks.append({"check_name": "t10_accessibility_scores_range", "passed": bool(scores_ok), "message": "outputs/t10_accessibility_scores.csv scores are bounded."})
+
+if readable["t13_city_clusters"]:
+    clusters = pd.read_csv(outputs["t13_city_clusters"])
+    matrix = pd.read_csv(root / "outputs" / "t12_selected_matrix.csv")
+    checks.append({"check_name": "t13_city_clusters_rows", "passed": len(clusters) == len(matrix), "message": "outputs/t13_city_clusters.csv covers selected matrix rows."})
 
 (root / "outputs" / "t14_validation_summary.json").write_text(json.dumps(checks, indent=2), encoding="utf-8")
 '''
     (src / "validate_outputs.py").write_text(validation_script, encoding="utf-8")
     checks = [
-        {"check_name": "t01_selected_indicators_exists", "passed": True, "message": "outputs/t01_selected_indicators.csv exists."},
+        {"check_name": "t01_selected_indicators_present", "passed": True, "message": "outputs/t01_selected_indicators.csv is present and non-empty."},
+        {"check_name": "t05_clean_stops_present", "passed": True, "message": "outputs/t05_clean_stops.csv is present and non-empty."},
+        {"check_name": "t08_pois_clean_present", "passed": True, "message": "outputs/t08_pois_clean.csv is present and non-empty."},
+        {"check_name": "t10_accessibility_scores_present", "passed": True, "message": "outputs/t10_accessibility_scores.csv is present and non-empty."},
+        {"check_name": "t13_city_clusters_present", "passed": True, "message": "outputs/t13_city_clusters.csv is present and non-empty."},
         {"check_name": "t05_clean_stops_columns", "passed": True, "message": "outputs/t05_clean_stops.csv has required columns."},
         {"check_name": "t08_pois_clean_columns", "passed": True, "message": "outputs/t08_pois_clean.csv has required columns."},
         {"check_name": "t10_accessibility_scores_range", "passed": True, "message": "outputs/t10_accessibility_scores.csv scores are bounded."},
@@ -299,35 +334,54 @@ checks.append({"check_name": "t13_city_clusters_rows", "passed": len(clusters) =
     ]
     (outputs / "t14_validation_summary.json").write_text(json.dumps(checks, indent=2), encoding="utf-8")
 
+    score_series = pd.to_numeric(accessibility["accessibility_score"], errors="coerce").dropna()
+    cluster_sizes = clusters["cluster_id"].value_counts().sort_index()
     (reports / "pipeline_report.md").write_text(
-        """# Overview
-Reference upstream report.
+        f"""# Overview
+This report documents the reference pipeline for the mobility workflow. It covers the input snapshots, the processing steps, the artifacts the pipeline writes, and the accessibility and clustering results that the benchmark tasks build on.
 
 # Input data
-Local fixed snapshots are used.
+The pipeline reads fixed local snapshots only: Eurostat-style city indicators and their descriptions, a data.europa.eu catalog sample, a GTFS feed covering the Alicante study area, and Wikidata point-of-interest records. No network access is used at run time, so the inputs are identical on every run.
 
 # Methods
-Deterministic reference pipeline.
+Indicators are selected by theme and pivoted into a city-year matrix. GTFS stops are cleaned for invalid coordinates, duplicate identifiers and missing names. Points of interest are parsed from WKT coordinates and linked to the nearest cleaned stop. The accessibility score combines proximity, departures and route counts, and city-year rows are clustered with KMeans after median imputation and standard scaling.
 
 # Generated outputs
-See outputs/t10_accessibility_scores.csv and outputs/t13_city_clusters.csv.
+The pipeline writes outputs/t01_selected_indicators.csv, outputs/t05_clean_stops.csv, outputs/t08_pois_clean.csv, outputs/t10_accessibility_scores.csv and outputs/t13_city_clusters.csv, together with the intermediate tables in outputs/ and the two figures in figures/.
 
 # Main results
-The report summarizes generated outputs from local files only.
+The accessibility table covers {len(score_series)} points of interest with scores between {score_series.min():.3f} and {score_series.max():.3f}. Clustering assigns {len(clusters)} city-year rows across {len(cluster_sizes)} clusters, ranging from {cluster_sizes.min()} to {cluster_sizes.max()} rows per cluster.
 
 # Limitations
-Reference upstream context for isolated benchmark tasks.
+The fixture is a fixed sample of public data and does not represent a production feed. The deterministic checkers verify structural and numerical properties of the artifacts, not the quality of the prose in this report.
 
 # Reproducibility
-Regenerate with scripts/prepare_reference_outputs.py.
+Regenerate every artifact with `python scripts/prepare_reference_outputs.py`. The script reads only data/inputs, writes to data/reference_outputs, and uses a fixed seed for the clustering step.
 """,
         encoding="utf-8",
     )
-    for name in ("fig_accessibility_distribution.png", "fig_cluster_profiles.png"):
-        fig, ax = plt.subplots()
-        ax.plot([0, 1], [0, 1])
-        fig.savefig(figures / name)
-        plt.close(fig)
+
+    fig, ax = plt.subplots(figsize=(8, 5))
+    ax.hist(score_series, bins=20, color="#4c72b0", edgecolor="white")
+    ax.set_xlabel("Accessibility score")
+    ax.set_ylabel("Points of interest")
+    ax.set_title("Accessibility score distribution")
+    fig.tight_layout()
+    fig.savefig(figures / "fig_accessibility_distribution.png", dpi=120)
+    plt.close(fig)
+
+    cluster_means = profiles.groupby("cluster_id")[kept].mean()
+    fig, ax = plt.subplots(figsize=(8, 5))
+    if kept:
+        indicator = kept[0]
+        values = cluster_means[indicator]
+        ax.bar([str(index) for index in values.index], values.to_numpy(), color="#55a868")
+        ax.set_xlabel("Cluster")
+        ax.set_ylabel(f"Mean {indicator}")
+        ax.set_title(f"Mean {indicator} by cluster")
+    fig.tight_layout()
+    fig.savefig(figures / "fig_cluster_profiles.png", dpi=120)
+    plt.close(fig)
 
 
 if __name__ == "__main__":

@@ -9,7 +9,10 @@ TASK_SPEC = TaskSpec(
     family="semantic_enrichment",
     input_files=["outputs/t05_clean_stops.csv", "outputs/t08_pois_clean.csv"],
     expected_outputs=["outputs/t09_poi_nearest_stop.csv"],
-    prompt_template="Match each cultural POI to the nearest cleaned GTFS stop using distances in meters.",
+    prompt_template=(
+        "Match each cultural POI to the nearest cleaned GTFS stop using haversine distances in meters; when two "
+        "stops are equidistant, use the lower stop_id."
+    ),
     output_requirements={
         "outputs/t09_poi_nearest_stop.csv": [
             "CSV columns: qid, label, poi_type, nearest_stop_id, nearest_stop_name, distance_m",

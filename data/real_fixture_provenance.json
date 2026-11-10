@@ -1,9 +1,8 @@
 {
-  "created_at_utc": "2026-04-27T16:06:40+00:00",
+  "created_at_utc": "2026-10-28T09:36:06+00:00",
   "source_policy": "real public-data excerpts with documented controlled corruptions",
   "sources": {
     "eurostat": {
-      "endpoint": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/",
       "datasets": [
         "urb_ctran",
         "urb_cpop1",
@@ -14,22 +13,43 @@
       "indicators": 160
     },
     "dataeuropa": {
-      "endpoint": "https://data.europa.eu/api/hub/search/search",
       "rows": 26,
       "raw_snapshot": "data/raw/real_sources/catalog/dataeuropa_search.json"
     },
     "gtfs": {
-      "catalog_url": "https://files.mobilitydatabase.org/feeds_v2.csv",
-      "feed_catalog": "data/raw/real_sources/gtfs/mobilitydata_feeds_v2.csv",
       "source_gtfs": "data/raw/real_sources/gtfs/source_gtfs.zip",
       "selected_url": "https://gvinterbus.gva.es/estatico/gtfs.zip",
-      "n_stops_with_controls": 81,
+      "study_area": {
+        "lat_min": 38.25,
+        "lat_max": 38.47,
+        "lon_min": -0.62,
+        "lon_max": -0.38
+      },
+      "sampling": {
+        "method": "random trips serving the study area",
+        "seed": 0,
+        "max_trips": 80
+      },
+      "n_stops_with_controls": 409,
       "n_trips": 80,
-      "n_stop_times": 180
+      "n_stop_times": 1893,
+      "n_routes": 25
     },
     "wikidata": {
-      "endpoint": "https://query.wikidata.org/sparql",
-      "rows_with_controls": 51,
+      "rows_with_controls": 49,
+      "poi_types": [
+        "art gallery",
+        "library",
+        "monument",
+        "museum",
+        "theatre building"
+      ],
+      "study_area": {
+        "lat_min": 38.25,
+        "lat_max": 38.47,
+        "lon_min": -0.62,
+        "lon_max": -0.38
+      },
       "raw_snapshot": "data/raw/real_sources/wikidata/alicante_pois_sparql.json"
     }
   },

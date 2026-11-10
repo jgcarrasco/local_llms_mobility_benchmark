@@ -120,7 +120,7 @@ def aggregate_results(results_dir: str | Path, output_dir: str | Path) -> dict[s
     if attempts.empty:
         failure_categories = pd.DataFrame(columns=["failure_category", "count"])
     else:
-        failure_categories = attempts["failure_category"].fillna("none").value_counts().reset_index()
+        failure_categories = attempts["failure_category"].fillna("success").value_counts().reset_index()
         failure_categories.columns = ["failure_category", "count"]
     failure_categories.to_csv(outputs["failure_categories"], index=False)
     write_sweet_spot_summary(attempts, outputs["sweet_spot_summary"])

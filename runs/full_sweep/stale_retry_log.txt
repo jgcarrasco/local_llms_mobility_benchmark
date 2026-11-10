@@ -1,0 +1,9 @@
+=== mistral_small_32_24b_q4 agent_tools T02,T14 16:20:32
+=== phi4_14b_q4 agent_tools T05,T15 16:21:30
+=== qwen35_9b_bf16 agent_tools T10 16:22:29
+=== qwen35_4b_q4 agent_tools T13 16:24:15
+=== qwen35_4b_bf16 agent_tools T05,T07 16:24:53
+=== qwen35_2b_q4 agent_tools T01,T06,T08,T15 16:36:23
+=== qwen35_2b_bf16 agent_tools T01,T03,T05,T06,T08,T11,T12,T13,T14 16:42:14
+=== llama31_8b_q4 agent_tools T01,T05,T06,T11,T12,T13,T15 17:05:32
+STALE_RETRY_DONE

@@ -1,12 +1,11 @@
 runtime:
-  temperature: 0.6
-  max_iterations: 1000
-  max_tool_calls: 1000
+  temperature: null
+  max_iterations: 150
+  max_tool_calls: 150
   max_consecutive_protocol_errors: 8
-  max_protocol_response_tokens: 8192
   max_repeated_tool_calls: 20
   max_repeated_failed_tool_calls: 8
-  timeout_seconds_per_task: 3600
+  timeout_seconds_per_task: 5400
   bash_timeout_seconds: 60
   repetitions: 5
   network_enabled: false

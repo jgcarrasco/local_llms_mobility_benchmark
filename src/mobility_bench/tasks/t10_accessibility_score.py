@@ -14,8 +14,9 @@ TASK_SPEC = TaskSpec(
         "outputs/t10_accessibility_scores.csv": [
             "CSV columns: qid, label, poi_type, distance_m, n_departures, n_routes, accessibility_score",
             "Include exactly one row per qid in outputs/t09_poi_nearest_stop.csv.",
+            "distance_m must be taken from outputs/t09_poi_nearest_stop.csv, and n_departures and n_routes from outputs/t06_stop_service_intensity.csv for that nearest stop.",
             "accessibility_score must be numeric between 0 and 1.",
-            "Formula: 0.50 * max(0, 1 - min(distance_m, 1000) / 1000) + 0.35 * log1p(n_departures) / max_log_departures + 0.15 * log1p(n_routes) / max_log_routes.",
+            "Formula: 0.50 * max(0, 1 - min(distance_m, 1000) / 1000) + 0.35 * log1p(n_departures) / max_log_departures + 0.15 * log1p(n_routes) / max_log_routes, where max_log_departures is the maximum of log1p(n_departures) and max_log_routes the maximum of log1p(n_routes) over the rows of this output file (not over the whole stop table).",
         ],
     },
     checker=check_t10,

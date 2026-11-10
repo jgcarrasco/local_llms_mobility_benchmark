@@ -1,0 +1,10 @@
+{
+  "bootstrap_iters": 10000,
+  "correction": "holm",
+  "method": "cluster bootstrap over tasks; pass^k combinatorial",
+  "n_attempts": 3600,
+  "n_models": 16,
+  "n_tasks": 15,
+  "randomisation_unit": "task",
+  "seed": 20261104
+}

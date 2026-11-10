@@ -171,4 +171,4 @@ def test_cli_create_sweep_manifest(tmp_path: Path) -> None:
     assert code == 0
     data = json.loads(output.read_text(encoding="utf-8"))
     assert data["notes"] == "cli test"
-    assert data["planned_attempts"] == 810
+    assert data["planned_attempts"] == 1215

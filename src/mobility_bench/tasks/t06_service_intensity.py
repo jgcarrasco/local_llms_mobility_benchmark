@@ -18,6 +18,7 @@ TASK_SPEC = TaskSpec(
         "outputs/t06_stop_service_intensity.csv": [
             "CSV columns: stop_id, stop_name, stop_lat, stop_lon, n_departures, n_routes, first_departure, last_departure",
             "One row per cleaned stop_id from outputs/t05_clean_stops.csv.",
+            "stop_name, stop_lat and stop_lon must be copied from outputs/t05_clean_stops.csv.",
             "n_departures counts clean stop_times rows per stop_id.",
             "n_routes counts distinct route_id values serving the stop by joining clean stop_times to trips.txt from the GTFS zip.",
             "first_departure and last_departure are the earliest/latest clean departure_time values for the stop.",

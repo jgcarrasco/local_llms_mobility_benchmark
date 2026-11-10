@@ -12,6 +12,7 @@ import argparse
 import csv
 import json
 import os
+import random
 import zipfile
 from collections.abc import Iterable
 from datetime import datetime, timezone
@@ -37,6 +38,20 @@ EUROSTAT_DATASETS = {
     "urb_cenv": "environment",
     "urb_clivcon": "living_conditions",
 }
+
+# The study area is the Alicante municipality and its immediate surroundings.
+# It is used for two selections: points of interest must fall inside it, and a
+# GTFS trip is selected because it stops inside it (the trip is then kept in
+# full, so some of its stops lie outside).
+STUDY_AREA = {"lat_min": 38.25, "lat_max": 38.47, "lon_min": -0.62, "lon_max": -0.38}
+
+CITY_NAME = "Alicante"
+CITY_QID = "Q11959"
+COUNTRY_NAME = "Spain"
+COUNTRY_QID = "Q29"
+
+# Museums, cultural heritage monuments, libraries, theatres and art galleries.
+CULTURAL_POI_TYPES = ["Q33506", "Q4989906", "Q7075", "Q24354", "Q1007870"]
 
 
 def now_iso() -> str:
@@ -374,32 +389,59 @@ def choose_gtfs_urls(feeds: pd.DataFrame) -> list[str]:
     return list(dict.fromkeys(candidates[url_col].astype(str).tolist()))
 
 
-def prepare_gtfs(inputs_dir: Path, raw_dir: Path, max_trips: int, max_stops: int) -> dict[str, Any]:
-    feeds_bytes = fetch_bytes(MOBILITYDATA_FEEDS)
-    feeds_path = raw_dir / "gtfs" / "mobilitydata_feeds_v2.csv"
-    feeds_path.parent.mkdir(parents=True, exist_ok=True)
-    feeds_path.write_bytes(feeds_bytes)
+def existing_gtfs_url(provenance_path: Path) -> str:
+    """Return the GTFS URL recorded by a previous fixture run, if any."""
+    try:
+        payload = json.loads(provenance_path.read_text(encoding="utf-8"))
+        url = payload["sources"]["gtfs"]["selected_url"]
+        if isinstance(url, str) and url.startswith("http"):
+            return url
+    except (OSError, KeyError, TypeError, ValueError):
+        pass
+    return "https://gvinterbus.gva.es/estatico/gtfs.zip"
 
-    feeds = pd.read_csv(BytesIO(feeds_bytes), dtype=str)
-    errors: list[str] = []
-    gtfs_url = ""
-    gtfs_bytes = b""
-    for candidate_url in choose_gtfs_urls(feeds)[:25]:
-        try:
-            gtfs_bytes = fetch_bytes(candidate_url, timeout=180)
-        except requests.RequestException as exc:
-            errors.append(f"{candidate_url}: {exc}")
-            continue
-        try:
-            with zipfile.ZipFile(BytesIO(gtfs_bytes)):
-                gtfs_url = candidate_url
-                break
-        except zipfile.BadZipFile as exc:
-            errors.append(f"{candidate_url}: not a zip file ({exc})")
-    if not gtfs_url:
-        raise RuntimeError("No downloadable GTFS zip found. Tried candidates: " + "; ".join(errors[:5]))
+
+def prepare_gtfs(
+    inputs_dir: Path,
+    raw_dir: Path,
+    max_trips: int,
+    provenance_path: Path,
+    reuse_raw: bool = True,
+    seed: int = 0,
+) -> dict[str, Any]:
     raw_zip_path = raw_dir / "gtfs" / "source_gtfs.zip"
-    raw_zip_path.write_bytes(gtfs_bytes)
+    feed_catalog: str | None = None
+
+    if reuse_raw and raw_zip_path.exists():
+        gtfs_bytes = raw_zip_path.read_bytes()
+        gtfs_url = existing_gtfs_url(provenance_path)
+    else:
+        feeds_bytes = fetch_bytes(MOBILITYDATA_FEEDS)
+        feeds_path = raw_dir / "gtfs" / "mobilitydata_feeds_v2.csv"
+        feeds_path.parent.mkdir(parents=True, exist_ok=True)
+        feeds_path.write_bytes(feeds_bytes)
+        feed_catalog = display_path(feeds_path)
+
+        feeds = pd.read_csv(BytesIO(feeds_bytes), dtype=str)
+        errors: list[str] = []
+        gtfs_url = ""
+        gtfs_bytes = b""
+        for candidate_url in choose_gtfs_urls(feeds)[:25]:
+            try:
+                gtfs_bytes = fetch_bytes(candidate_url, timeout=180)
+            except requests.RequestException as exc:
+                errors.append(f"{candidate_url}: {exc}")
+                continue
+            try:
+                with zipfile.ZipFile(BytesIO(gtfs_bytes)):
+                    gtfs_url = candidate_url
+                    break
+            except zipfile.BadZipFile as exc:
+                errors.append(f"{candidate_url}: not a zip file ({exc})")
+        if not gtfs_url:
+            raise RuntimeError("No downloadable GTFS zip found. Tried candidates: " + "; ".join(errors[:5]))
+        raw_zip_path.parent.mkdir(parents=True, exist_ok=True)
+        raw_zip_path.write_bytes(gtfs_bytes)
 
     with zipfile.ZipFile(BytesIO(gtfs_bytes)) as source_zip:
         tables = {
@@ -411,23 +453,61 @@ def prepare_gtfs(inputs_dir: Path, raw_dir: Path, max_trips: int, max_stops: int
         agency = source_zip.read("agency.txt").decode("utf-8") if "agency.txt" in source_zip.namelist() else ""
         calendar = source_zip.read("calendar.txt").decode("utf-8") if "calendar.txt" in source_zip.namelist() else ""
 
-    trips = tables["trips"].head(max_trips).copy()
-    stop_times = tables["stop_times"][tables["stop_times"]["trip_id"].isin(trips["trip_id"])].copy()
-    stop_ids = list(dict.fromkeys(stop_times["stop_id"].astype(str).tolist()))[:max_stops]
-    stops = tables["stops"][tables["stops"]["stop_id"].astype(str).isin(stop_ids)].copy()
-    stop_times = stop_times[stop_times["stop_id"].astype(str).isin(set(stops["stop_id"].astype(str)))].copy()
-    routes = tables["routes"][tables["routes"]["route_id"].astype(str).isin(set(trips["route_id"].astype(str)))].copy()
+    # Sample trips that serve the study area instead of the first rows of the
+    # feed. The feed is ordered by location, so taking the head() selects a
+    # single region and leaves the points of interest without nearby stops.
+    lat_min = STUDY_AREA["lat_min"]
+    lat_max = STUDY_AREA["lat_max"]
+    lon_min = STUDY_AREA["lon_min"]
+    lon_max = STUDY_AREA["lon_max"]
+
+    stops_all = tables["stops"].copy()
+    stops_all["stop_id"] = stops_all["stop_id"].astype(str)
+    trips_all = tables["trips"].copy()
+    trips_all["trip_id"] = trips_all["trip_id"].astype(str)
+    routes_all = tables["routes"].copy()
+    routes_all["route_id"] = routes_all["route_id"].astype(str)
+    stop_times_all = tables["stop_times"].copy()
+    stop_times_all["trip_id"] = stop_times_all["trip_id"].astype(str)
+    stop_times_all["stop_id"] = stop_times_all["stop_id"].astype(str)
+
+    in_box = stops_all[
+        pd.to_numeric(stops_all["stop_lat"], errors="coerce").between(lat_min, lat_max)
+        & pd.to_numeric(stops_all["stop_lon"], errors="coerce").between(lon_min, lon_max)
+    ]
+    if in_box.empty:
+        raise RuntimeError("No stops fall inside the POI study area")
+
+    box_stop_ids = set(in_box["stop_id"])
+    serving_trips = stop_times_all.loc[stop_times_all["stop_id"].isin(box_stop_ids), "trip_id"].unique().tolist()
+    known_trips = set(trips_all["trip_id"])
+    candidate_trips = sorted(trip for trip in serving_trips if trip in known_trips)
+    if len(candidate_trips) < max_trips:
+        raise RuntimeError(f"Only {len(candidate_trips)} trips serve the study area; cannot sample {max_trips}")
+
+    rng = random.Random(seed)
+    chosen_trips = sorted(rng.sample(candidate_trips, max_trips))
+
+    # Keep each chosen trip in full, including stops outside the study area: an
+    # interurban trip passes through the city and continues elsewhere. Trimming
+    # the stop times is what left most trips without a schedule before.
+    trips = trips_all[trips_all["trip_id"].isin(chosen_trips)].sort_values("trip_id").copy()
+    stop_times = stop_times_all[stop_times_all["trip_id"].isin(chosen_trips)].copy()
+    stop_times["_sequence"] = pd.to_numeric(stop_times["stop_sequence"], errors="coerce")
+    stop_times = stop_times.sort_values(["trip_id", "_sequence"], kind="stable").drop(columns="_sequence")
+    stops = stops_all[stops_all["stop_id"].isin(set(stop_times["stop_id"]))].sort_values("stop_id").copy()
+    routes = routes_all[routes_all["route_id"].isin(set(trips["route_id"]))].sort_values("route_id").copy()
 
     if len(stops) < 3 or stop_times.empty:
         raise RuntimeError("Selected GTFS snapshot is too small for controlled corruptions")
 
-    stops = stops[["stop_id", "stop_name", "stop_lat", "stop_lon"]].copy()
+    stops = stops[["stop_id", "stop_name", "stop_lat", "stop_lon"]].reset_index(drop=True)
     stops.iloc[1, stops.columns.get_loc("stop_name")] = ""
     stops.iloc[2, stops.columns.get_loc("stop_lat")] = "95.0"
     stops.iloc[2, stops.columns.get_loc("stop_lon")] = "-200.0"
     stops = pd.concat([stops, stops.iloc[[0]].assign(stop_name="Duplicate stop id control")], ignore_index=True)
 
-    stop_times = stop_times[["trip_id", "arrival_time", "departure_time", "stop_id", "stop_sequence"]].copy()
+    stop_times = stop_times[["trip_id", "arrival_time", "departure_time", "stop_id", "stop_sequence"]].reset_index(drop=True)
     stop_times.iloc[-1, stop_times.columns.get_loc("arrival_time")] = "25:10:00"
     stop_times.iloc[-1, stop_times.columns.get_loc("departure_time")] = "25:10:00"
 
@@ -442,26 +522,44 @@ def prepare_gtfs(inputs_dir: Path, raw_dir: Path, max_trips: int, max_stops: int
         if calendar:
             output_zip.writestr("calendar.txt", calendar)
 
-    return {
-        "feed_catalog": display_path(feeds_path),
+    result: dict[str, Any] = {
         "source_gtfs": display_path(raw_zip_path),
         "selected_url": gtfs_url,
+        "study_area": STUDY_AREA,
+        "sampling": {
+            "method": "random trips serving the study area",
+            "seed": seed,
+            "max_trips": max_trips,
+        },
         "n_stops_with_controls": len(stops),
         "n_trips": len(trips),
         "n_stop_times": len(stop_times),
+        "n_routes": len(routes),
     }
+    if feed_catalog:
+        result["feed_catalog"] = feed_catalog
+    return result
 
 
-def prepare_wikidata(inputs_dir: Path, raw_dir: Path, limit: int) -> dict[str, Any]:
-    query = """
-SELECT ?item ?itemLabel ?coord ?typeLabel WHERE {
-  ?item wdt:P131* wd:Q11959 ;
-        wdt:P625 ?coord .
-  OPTIONAL { ?item wdt:P31 ?type . }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,es". }
-}
-LIMIT %d
-""" % limit
+def prepare_wikidata(inputs_dir: Path, raw_dir: Path) -> dict[str, Any]:
+    corners = (
+        f'bd:serviceParam wikibase:cornerWest "Point({STUDY_AREA["lon_min"]} {STUDY_AREA["lat_min"]})"^^geo:wktLiteral .\n'
+        f'    bd:serviceParam wikibase:cornerEast "Point({STUDY_AREA["lon_max"]} {STUDY_AREA["lat_max"]})"^^geo:wktLiteral .'
+    )
+    type_values = " ".join(f"wd:{qid}" for qid in CULTURAL_POI_TYPES)
+    query = (
+        "SELECT DISTINCT ?item ?itemLabel ?coord ?typeLabel WHERE {\n"
+        "  SERVICE wikibase:box {\n"
+        "    ?item wdt:P625 ?coord .\n"
+        f"    {corners}\n"
+        "  }\n"
+        "  ?item wdt:P31 ?type .\n"
+        f"  VALUES ?type {{ {type_values} }}\n"
+        '  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,es". }\n'
+        "}\n"
+        "ORDER BY ?item\n"
+        "LIMIT 200\n"
+    )
     payload = fetch_json(
         WIKIDATA_SPARQL,
         params={"query": query, "format": "json"},
@@ -489,55 +587,98 @@ LIMIT %d
     if len(rows) < 2:
         raise RuntimeError("Wikidata query returned too few rows for controlled corruptions")
 
+    poi_types = sorted({row["poi_type"] for row in rows if row["poi_type"]})
+
     rows[1]["itemLabel"] = ""
     rows.append(dict(rows[0]))
     write_json(
         inputs_dir / "wikidata" / "city_config.json",
-        {"city_name": "Alicante", "country": "Spain", "poi_types": ["point of interest"]},
+        {
+            "city_name": CITY_NAME,
+            "city_qid": CITY_QID,
+            "country": COUNTRY_NAME,
+            "country_qid": COUNTRY_QID,
+            "poi_types": poi_types,
+        },
     )
     write_json(
         inputs_dir / "wikidata" / "wikidata_pois_sample.json",
         {
             "source": "wikidata_sparql_snapshot",
             "query": query,
+            "study_area": STUDY_AREA,
             "head": {"vars": ["item", "itemLabel", "poi_type", "coord"]},
             "results": {"bindings": rows},
         },
     )
-    return {"rows_with_controls": len(rows), "raw_snapshot": display_path(raw_path)}
+    return {
+        "rows_with_controls": len(rows),
+        "poi_types": poi_types,
+        "study_area": STUDY_AREA,
+        "raw_snapshot": display_path(raw_path),
+    }
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--inputs-dir", type=Path, default=ROOT / "data" / "inputs")
     parser.add_argument("--raw-dir", type=Path, default=ROOT / "data" / "raw" / "real_sources")
+    parser.add_argument(
+        "--only",
+        choices=["all", "eurostat", "catalog", "gtfs", "wikidata"],
+        default="all",
+        help="Rebuild a single fixture group instead of all of them.",
+    )
     parser.add_argument("--eurostat-last-periods", type=int, default=3)
     parser.add_argument("--eurostat-max-rows", type=int, default=1500)
     parser.add_argument("--catalog-limit", type=int, default=25)
     parser.add_argument("--gtfs-max-trips", type=int, default=80)
-    parser.add_argument("--gtfs-max-stops", type=int, default=80)
-    parser.add_argument("--wikidata-limit", type=int, default=50)
+    parser.add_argument("--gtfs-seed", type=int, default=0)
+    parser.add_argument(
+        "--gtfs-redownload",
+        dest="gtfs_reuse_raw",
+        action="store_false",
+        default=True,
+        help="Fetch the feed again instead of reusing the committed raw snapshot.",
+    )
     parser.add_argument("--provenance-path", type=Path, default=ROOT / "data" / "real_fixture_provenance.json")
     args = parser.parse_args()
 
     args.inputs_dir.mkdir(parents=True, exist_ok=True)
     args.raw_dir.mkdir(parents=True, exist_ok=True)
 
-    eurostat = prepare_eurostat(args.inputs_dir, args.raw_dir, args.eurostat_last_periods, args.eurostat_max_rows)
-    gtfs = prepare_gtfs(args.inputs_dir, args.raw_dir, args.gtfs_max_trips, args.gtfs_max_stops)
-    dataeuropa = prepare_catalog(args.inputs_dir, args.raw_dir, args.catalog_limit, gtfs)
-    wikidata = prepare_wikidata(args.inputs_dir, args.raw_dir, args.wikidata_limit)
+    def wanted(group: str) -> bool:
+        return args.only in ("all", group)
 
-    provenance = {
-        "created_at_utc": now_iso(),
-        "source_policy": "real public-data excerpts with documented controlled corruptions",
-        "sources": {
-            "eurostat": eurostat,
-            "dataeuropa": dataeuropa,
-            "gtfs": gtfs,
-            "wikidata": wikidata,
-        },
-        "controlled_corruptions": [
+    provenance_path = args.provenance_path
+    provenance: dict[str, Any] = {}
+    if provenance_path.exists():
+        provenance = json.loads(provenance_path.read_text(encoding="utf-8"))
+    sources = provenance.setdefault("sources", {})
+
+    if wanted("eurostat"):
+        sources["eurostat"] = prepare_eurostat(args.inputs_dir, args.raw_dir, args.eurostat_last_periods, args.eurostat_max_rows)
+    if wanted("wikidata"):
+        sources["wikidata"] = prepare_wikidata(args.inputs_dir, args.raw_dir)
+    if wanted("gtfs"):
+        sources["gtfs"] = prepare_gtfs(
+            args.inputs_dir,
+            args.raw_dir,
+            args.gtfs_max_trips,
+            provenance_path,
+            reuse_raw=args.gtfs_reuse_raw,
+            seed=args.gtfs_seed,
+        )
+    if wanted("catalog"):
+        if "gtfs" not in sources:
+            raise RuntimeError("The catalog fixture needs a GTFS snapshot; run with --only gtfs first.")
+        sources["catalog"] = prepare_catalog(args.inputs_dir, args.raw_dir, args.catalog_limit, sources["gtfs"])
+
+    provenance["created_at_utc"] = now_iso()
+    provenance["source_policy"] = "real public-data excerpts with documented controlled corruptions"
+    provenance.setdefault(
+        "controlled_corruptions",
+        [
             {
                 "file": "inputs/gtfs/sample_city_gtfs.zip/stops.txt",
                 "description": "Duplicate first stop_id appended to test duplicate-stop handling.",
@@ -559,8 +700,8 @@ def main() -> None:
                 "description": "One Wikidata label blanked and one QID duplicated to test POI cleaning.",
             },
         ],
-    }
-    write_json(args.provenance_path, provenance)
+    )
+    write_json(provenance_path, provenance)
     print(json.dumps(provenance, indent=2))
 
 
