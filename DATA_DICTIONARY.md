@@ -254,8 +254,8 @@ Reference artifacts used by task setup and by checkers that compare against a kn
 | Benchmark | 15 tasks in five workflow families, three conditions |
 | Sweep window | 30 October 2026 to 1 November 2026, with the retry and re-scoring logs released alongside the results |
 | Scored attempts | 3,600 local, 45 hosted |
-| Hardware | One NVIDIA GeForce RTX 4090, 24 GB |
-| Serving | Local `llama.cpp` OpenAI-compatible endpoint at `127.0.0.1:8081/v1` |
+| Hardware | One NVIDIA GeForce RTX 4090, 24 GB, driver 595.91.07, on Ubuntu 26.04.1 |
+| Serving | `llama.cpp` build b11756 (commit d80619397), CUDA 12.8 runtime, OpenAI-compatible endpoint at `127.0.0.1:8081/v1` |
 | Decoding | Per family, fixed within each model; see `configs/models_full_sweep_available.yaml` |
 | Harness caps | 150 model iterations, 150 tool calls, 90 minutes per task, 60 seconds per command |
 | Fixtures | `data/real_fixture_provenance.json` records the source and the controlled modifications |
